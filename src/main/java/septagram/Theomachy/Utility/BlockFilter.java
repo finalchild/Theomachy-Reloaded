@@ -10,7 +10,7 @@ public class BlockFilter
 {
 	public static boolean AirToFar(Player player, Block block)
 	{
-		if (block.getTypeId() != 0)
+		if (!block.isEmpty())
 			return true;
 		else
 		{

@@ -156,7 +156,7 @@ public class GameReadyTimer extends TimerTask
 				Location spawnLocation = world.getSpawnLocation();
 				while (true)
 				{
-					if (spawnLocation.getBlock().getTypeId() == 0)
+					if (spawnLocation.getBlock().isEmpty())
 						break;
 					else
 						spawnLocation.setY(spawnLocation.getY()+1);
