@@ -134,7 +134,7 @@ public class Wizard extends Ability
 			if (!targetList.isEmpty())
 			{
 				Skill.Use(player, material, stack2, 2, coolTime2);
-				player.setHealth(player.getHealth()>>1);
+				player.setHealth(player.getHealth() / 2);
 				Vector v = new Vector(0,1.6,0);
 				for (Player e : targetList)
 				{

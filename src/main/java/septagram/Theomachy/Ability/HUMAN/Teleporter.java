@@ -1,7 +1,10 @@
 package septagram.Theomachy.Ability.HUMAN;
 
+import java.util.Set;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -65,7 +68,7 @@ public class Teleporter extends Ability
 	{
 		if (CoolTimeChecker.Check(player, 1)&&PlayerInventory.ItemCheck(player, material, stack1))
 		{
-			Block block = player.getTargetBlock(null, 25);
+			Block block = player.getTargetBlock((Set<Material>) null, 25);
 			if (BlockFilter.AirToFar(player, block))
 			{
 				Location location0 = block.getLocation();

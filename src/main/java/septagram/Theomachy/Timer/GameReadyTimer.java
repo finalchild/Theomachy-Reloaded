@@ -31,7 +31,7 @@ public class GameReadyTimer extends TimerTask
 	private World world;
 	public GameReadyTimer()
 	{
-		this.playerList=Bukkit.getOnlinePlayers();
+		this.playerList=Bukkit.getOnlinePlayers().toArray(new Player[0]);
 		setting[0] = Theomachy.INVENTORY_CLEAR ? ChatColor.AQUA+"ON" : ChatColor.RED+"OFF";
 		setting[1] = Theomachy.GIVE_ITEM ? ChatColor.AQUA+"ON" : ChatColor.RED+"OFF";
 		setting[2] = Theomachy.IGNORE_BED ? ChatColor.AQUA+"ON" : ChatColor.RED+"OFF";

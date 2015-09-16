@@ -1,7 +1,10 @@
 package septagram.Theomachy.Ability.ETC;
 
+import java.util.Set;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -46,7 +49,7 @@ public class Septagram extends Ability
 
 	private void leftAction(Player player)
 	{		
-		Location location = player.getTargetBlock(null, 40).getLocation();
+		Location location = player.getTargetBlock((Set<Material>) null, 40).getLocation();
 		Vector v = new Vector(0,-10,0);
 		Fireball fireball = (Fireball)player.getWorld().spawn(location.add(0, 70, 0), Fireball.class);
 		fireball.setDirection(v);

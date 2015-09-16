@@ -112,7 +112,7 @@ public class AbilitySet
 			Bukkit.broadcastMessage("모든 능력을 삭제 한후 재 추첨합니다.");
 			GameData.PlayerAbility.clear();
 		}
-		Player[] playerlist=Bukkit.getOnlinePlayers();
+		Player[] playerlist=Bukkit.getOnlinePlayers().toArray(new Player[0]);
 		Bukkit.broadcastMessage(ChatColor.DARK_AQUA+"인식된 플레이어 목록");
 		for(Player e : playerlist)
 			Bukkit.broadcastMessage(ChatColor.GOLD+"  "+e.getName());

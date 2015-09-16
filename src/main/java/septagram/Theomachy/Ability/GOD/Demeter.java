@@ -71,6 +71,6 @@ public class Demeter extends Ability
 	
 	public void T_Passive(EntityRegainHealthEvent event)
 	{
-		event.setAmount(event.getAmount()<<2);
+		event.setAmount(event.getAmount() * 4);
 	}
 }

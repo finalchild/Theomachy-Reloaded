@@ -33,7 +33,7 @@ public class Stance extends Ability
 		if (event.getCause() == DamageCause.ENTITY_ATTACK || event.getCause() == DamageCause.PROJECTILE)
 		{
 			Player player = (Player)event.getEntity();
-			int damage = event.getDamage();
+			double damage = event.getDamage();
 			player.damage(damage);
 			event.setCancelled(true);
 		}

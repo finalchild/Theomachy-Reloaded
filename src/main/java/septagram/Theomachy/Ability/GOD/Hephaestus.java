@@ -1,10 +1,12 @@
 package septagram.Theomachy.Ability.GOD;
 
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -59,7 +61,7 @@ public class Hephaestus extends Ability
 
 	private void leftAction(Player player)
 	{
-		Location location = player.getTargetBlock(null, 5).getLocation();
+		Location location = player.getTargetBlock((Set<Material>) null, 5).getLocation();
 		location.setY(location.getY()+1);
 		Block block = location.getBlock();
 		if (block.getTypeId() == 0)
@@ -86,7 +88,7 @@ public class Hephaestus extends Ability
 			player.setFireTicks(0);
 		}
 		else if (dc.equals(DamageCause.DROWNING))
-			event.setDamage(event.getDamage()<<1);
+			event.setDamage(event.getDamage() * 2);
 	}
 	
 	public void conditionSet()

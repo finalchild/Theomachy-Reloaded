@@ -1,9 +1,11 @@
 package septagram.Theomachy.Ability.GOD;
 
 import java.util.Random;
+import java.util.Set;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -71,7 +73,7 @@ public class Zeus extends Ability
 	{
 		if (CoolTimeChecker.Check(player, 1)&&PlayerInventory.ItemCheck(player, material, stack1))
 		{
-			Block block = player.getTargetBlock(null, 50);
+			Block block = player.getTargetBlock((Set<Material>) null, 50);
 			if (BlockFilter.AirToFar(player, block))
 			{
 				Skill.Use(player, material, stack1, 1, coolTime1);
@@ -86,7 +88,7 @@ public class Zeus extends Ability
 	{
 		if (CoolTimeChecker.Check(player, 2)&&PlayerInventory.ItemCheck(player, material, stack2))
 		{
-			Block block = player.getTargetBlock(null, 30);
+			Block block = player.getTargetBlock((Set<Material>) null, 30);
 			if (BlockFilter.AirToFar(player, block))
 			{
 				Skill.Use(player, material, stack2, 2, coolTime2);

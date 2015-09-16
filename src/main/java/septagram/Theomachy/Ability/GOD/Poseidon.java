@@ -96,7 +96,7 @@ public class Poseidon extends Ability
 		public void run()
 		{
 			flag = false;
-			Player[] players = Bukkit.getOnlinePlayers();
+			Player[] players = Bukkit.getOnlinePlayers().toArray(new Player[0]);
 			for (int i=0; i<5; i++)
 			{
 				for (Player player : players)

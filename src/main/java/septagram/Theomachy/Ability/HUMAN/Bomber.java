@@ -1,7 +1,10 @@
 package septagram.Theomachy.Ability.HUMAN;
 
+import java.util.Set;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -59,7 +62,7 @@ public class Bomber extends Ability
 
 	private void leftAction(Player player)
 	{
-		Block block = player.getTargetBlock(null, 5);
+		Block block = player.getTargetBlock((Set<Material>) null, 5);
 		if (block.getTypeId() != 0)
 		{
 			Location location = block.getLocation();
