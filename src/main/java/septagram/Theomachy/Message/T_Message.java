@@ -1,6 +1,7 @@
 package septagram.Theomachy.Message;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import septagram.Theomachy.DB.GameData;
@@ -81,19 +82,20 @@ public class T_Message
 		}
 	}
 	
-	public static void LackItemError(Player player, int material, int stack)
+	@SuppressWarnings("incomplete-switch")
+	public static void LackItemError(Player player, Material material, int stack)
 	{
 		switch(material)
 		{
-		case 4:
+		case COBBLESTONE:
 			player.sendMessage("코블스톤이 부족합니다.");
 			player.sendMessage("필요갯수 : "+ChatColor.RED+stack);
 			break;
-		case 5:
+		case WOOD:
 			player.sendMessage("가공된 나무가 부족합니다.");
 			player.sendMessage("필요갯수 : "+ChatColor.RED+stack);
 			break;
-		case 265:
+		case IRON_INGOT:
 			player.sendMessage("철괴가 부족합니다.");
 			player.sendMessage("필요갯수 : "+ChatColor.RED+stack);
 		}
