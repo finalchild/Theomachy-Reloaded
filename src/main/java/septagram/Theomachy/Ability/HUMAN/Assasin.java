@@ -26,10 +26,10 @@ import septagram.Theomachy.Utility.Skill;
 public class Assasin extends Ability
 {
 	private final int coolTime1=1;
-	private final int coolTime2=20;
+	private final int coolTime2=5;
 	private final int material=4;
 	private final int stack1=0;
-	private final int stack2=1;
+	private final int stack2=0;
 	
 	public Assasin(String playerName)
 	{

@@ -1,4 +1,4 @@
-package septagram.Theomachy.Ability.HUMAN;
+package septagram.Theomachy.Ability.ETC;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -13,9 +13,10 @@ import septagram.Theomachy.DB.GameData;
 import septagram.Theomachy.Utility.EventFilter;
 import septagram.Theomachy.Utility.PlayerInventory;
 
-public class Test extends Ability
+// TODO Reload this class
+public class Septagram extends Ability
 {	
-	public Test(String playerName)
+	public Septagram(String playerName)
 	{
 		super(playerName,"제작자", -1, true, false, false);
 		Theomachy.log.info(playerName+abilityName);

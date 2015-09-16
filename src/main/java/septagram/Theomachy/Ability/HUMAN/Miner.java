@@ -28,7 +28,7 @@ public class Miner extends Ability
 		player.sendMessage(ChatColor.DARK_GREEN+"=================== "+ChatColor.YELLOW+"능력 정보"+ChatColor.DARK_GREEN+" ===================");
 		player.sendMessage(ChatColor.YELLOW+"[ 광부 ]  "+ChatColor.RED+"[ 인간 ]  "+ChatColor.BLUE+"Passive  "+ChatColor.GREEN+"Rank[ B ]");
 		player.sendMessage("돌을 효율적으로 캐는 능력입니다.\n"+
-						   "코블스톤을 캘 때 일정 3% 확률로 한번에 10개를 얻을 수 있습니다.\n");
+						   "코블스톤을 캘 때 일정 5% 확률로 한번에 10개를 얻을 수 있습니다.\n");
 	}
 	
 	public void T_Passive(BlockBreakEvent event)
@@ -39,7 +39,7 @@ public class Miner extends Ability
 			Location location = block.getLocation();
 			World world = event.getPlayer().getWorld();
 			Random random = new Random();
-			if (random.nextInt(33) == 0)
+			if (random.nextInt(20) == 0)
 			{
 				Player player = event.getPlayer();
 				player.sendMessage("잭팟!");

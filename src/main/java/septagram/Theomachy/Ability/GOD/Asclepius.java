@@ -17,7 +17,7 @@ import septagram.Theomachy.Utility.GetPlayerList;
 
 public class Asclepius extends Ability
 {
-	private final int coolTime1=60;
+	private final int coolTime1=30;
 	private final int coolTime2=120;
 	private final int material=4;
 	private final int stack1=1;

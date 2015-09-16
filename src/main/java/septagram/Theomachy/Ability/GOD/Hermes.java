@@ -20,7 +20,7 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Hermes extends Ability
 {
-	private final int coolTime0=60;
+	private final int coolTime0=80;
 	private final int material=4;
 	private final int stack0=2;
 	

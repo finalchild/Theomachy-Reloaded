@@ -19,7 +19,7 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Voodoo extends Ability
 {
-	private final int coolTime0=180;
+	private final int coolTime0=150;
 	private final int material=4;
 	private final int stack0=5;
 	private String targetName=null;

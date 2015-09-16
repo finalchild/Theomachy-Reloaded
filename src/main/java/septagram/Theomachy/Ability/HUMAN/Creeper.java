@@ -19,7 +19,7 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Creeper extends Ability
 {
-	private final int coolTime0=30;
+	private final int coolTime0=60;
 	private final int material=4;
 	private final int stack0=5;
 	private boolean plasma = false;
@@ -37,7 +37,7 @@ public class Creeper extends Ability
 		player.sendMessage(ChatColor.YELLOW+"[ 크리퍼 ]  "+ChatColor.RED+"[ 인간 ]  "+ChatColor.BLUE+"Active,Passive  "+ChatColor.GREEN+"Rank[ C ]");
 		player.sendMessage("몬스터형 능력입니다.\n"+
 						   "블레이즈 로드를 통해 능력을 사용하면\n" +
-						   "크리퍼와 같은 폭발력의 폭발을 일으킵니다.\n" +
+						   "1.0의 폭발을 일으킵니다.\n" +
 						   "번개를 맞은적이 있다면 폭발력이 두배로 증가합니다.(죽으면 초기화됩니다.)\n" +
 						   ChatColor.GREEN+"(좌클릭) "+ChatColor.WHITE+" 코블스톤 "+stack0+"개 소모, 쿨타임 "+coolTime0+"초\n");
 	}
@@ -63,7 +63,7 @@ public class Creeper extends Ability
 			Skill.Use(player, material, stack0, 0, coolTime0);
 			World world = player.getWorld();
 			Location location = player.getLocation();
-			float power = plasma ? 3.0f : 6.0f;
+			float power = plasma ? 1.0f : 2.0f;
 			player.setHealth(0);
 			world.createExplosion(location, power);
 		}

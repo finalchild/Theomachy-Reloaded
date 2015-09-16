@@ -19,11 +19,11 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Athena extends Ability
 {
-	private final int coolTime1=10;
+	private final int coolTime1=30;
 	private final int coolTime2=3;
 	private final int material=4;
-	private final int stack1=5;
-	private final int stack2=64;
+	private final int stack1=1;
+	private final int stack2=32;
 	private int abilityLimitCounter=2;
 	public Athena(String playerName)
 	{

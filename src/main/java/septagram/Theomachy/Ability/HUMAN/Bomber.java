@@ -34,7 +34,7 @@ public class Bomber extends Ability
 		player.sendMessage(ChatColor.DARK_GREEN+"=================== "+ChatColor.YELLOW+"능력 정보"+ChatColor.DARK_GREEN+" ===================");
 		player.sendMessage(ChatColor.YELLOW+"[ 봄버 ]  "+ChatColor.RED+"[ 인간 ]  "+ChatColor.BLUE+"Active  "+ChatColor.GREEN+"Rank[ A ]");
 		player.sendMessage("폭발을 다루는 능력입니다.\n"+
-						   "지정된 위치에 2.0의 폭발을 일으킵니다.\n" +
+						   "지정된 위치에 1.5의 폭발을 일으킵니다.\n" +
 						   "우클릭으로 해당 위치에 보이지 않는 tnt를 설치하며\n" +
 						   "좌클릭으로 어디서든 폭발시킬 수 있습니다.\n" +
 						   ChatColor.GREEN+"(좌클릭) "+ChatColor.WHITE+" 코블스톤 "+stack0+"개 소모, 쿨타임 "+coolTime0+"초"); 
@@ -77,7 +77,7 @@ public class Bomber extends Ability
 			{
 				Skill.Use(player, material, stack0, 0, coolTime0);
 				World world = player.getWorld();
-				world.createExplosion(tntLocation, 2.0f, true);
+				world.createExplosion(tntLocation, 1.5f, true);
 				tntLocation = null;
 				player.sendMessage("TNT가 폭발했습니다!");
 				

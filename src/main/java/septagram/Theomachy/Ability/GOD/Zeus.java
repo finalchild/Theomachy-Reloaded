@@ -22,7 +22,7 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Zeus extends Ability
 {
-	private final int coolTime1=90;
+	private final int coolTime1=120;
 	private final int coolTime2=180;
 	private final int material=4;
 	private final int stack1=1;

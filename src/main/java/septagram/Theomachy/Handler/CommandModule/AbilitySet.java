@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import septagram.Theomachy.Ability.Ability;
+import septagram.Theomachy.Ability.ETC.Septagram;
 import septagram.Theomachy.Ability.GOD.Apollon;
 import septagram.Theomachy.Ability.GOD.Ares;
 import septagram.Theomachy.Ability.GOD.Artemis;
@@ -35,7 +36,6 @@ import septagram.Theomachy.Ability.HUMAN.Reflection;
 import septagram.Theomachy.Ability.HUMAN.Sniper;
 import septagram.Theomachy.Ability.HUMAN.Stance;
 import septagram.Theomachy.Ability.HUMAN.Teleporter;
-import septagram.Theomachy.Ability.HUMAN.Test;
 import septagram.Theomachy.Ability.HUMAN.Voodoo;
 import septagram.Theomachy.Ability.HUMAN.Witch;
 import septagram.Theomachy.Ability.HUMAN.Wizard;
@@ -154,9 +154,7 @@ public class AbilitySet
 	
 	private static void abiltiyAssignment(int abilityCode, String playerName, CommandSender sender)
 	{
-		if (abilityCode == 0)
-			GameData.PlayerAbility.put(playerName, new Test(playerName));
-		else if (abilityCode == 1)
+		if (abilityCode == 1)
 			GameData.PlayerAbility.put(playerName, new Zeus(playerName));
 		else if (abilityCode == 2)
 			GameData.PlayerAbility.put(playerName, new Poseidon(playerName));
@@ -218,6 +216,8 @@ public class AbilitySet
 			GameData.PlayerAbility.put(playerName, new Sniper(playerName));
 		else if (abilityCode == 119)
 			GameData.PlayerAbility.put(playerName, new Voodoo(playerName));
+		else if (abilityCode == 940523)
+			GameData.PlayerAbility.put(playerName, new Septagram(playerName));
 		else
 		{
 			sender.sendMessage("능력 혹은 능력 코드 번호를 잘못 입력하셨습니다.");

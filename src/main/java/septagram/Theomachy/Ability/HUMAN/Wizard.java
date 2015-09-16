@@ -25,8 +25,8 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Wizard extends Ability
 {
-	private final int coolTime1=180;
-	private final int coolTime2=300;
+	private final int coolTime1=150;
+	private final int coolTime2=200;
 	private final int material=4;
 	private final int stack1=5;
 	private final int stack2=10;

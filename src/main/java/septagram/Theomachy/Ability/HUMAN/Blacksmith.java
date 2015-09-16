@@ -21,7 +21,7 @@ public class Blacksmith extends Ability
 	private final int coolTime2=600;
 	private final int material1=4;
 	private final int material2=265;//철괴
-	private final int stack1=70;
+	private final int stack1=20;
 	private final int stack2=20;
 	
 	public Blacksmith(String playerName)

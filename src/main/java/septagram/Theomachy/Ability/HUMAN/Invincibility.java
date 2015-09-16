@@ -18,7 +18,7 @@ import septagram.Theomachy.Utility.Skill;
 
 public class Invincibility extends Ability
 {
-	private final int coolTime1=50;
+	private final int coolTime1=80;
 	private final int coolTime2=120;
 	private final int material=4;
 	private final int stack1=1;

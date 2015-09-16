@@ -26,7 +26,7 @@ public class Artemis extends Ability
 	private final int coolTime1=20;
 	private final int coolTime2=180;
 	private final int material=4;
-	private final int stack1=7;
+	private final int stack1=4;
 	private final int stack2=15;
 	
 	public Artemis(String playerName)

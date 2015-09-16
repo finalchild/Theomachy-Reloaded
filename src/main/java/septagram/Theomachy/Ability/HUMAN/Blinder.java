@@ -37,7 +37,7 @@ public class Blinder extends Ability
 		player.sendMessage(ChatColor.DARK_GREEN+"=================== "+ChatColor.YELLOW+"능력 정보"+ChatColor.DARK_GREEN+" ===================");
 		player.sendMessage(ChatColor.YELLOW+"[ 블라인더 ]  "+ChatColor.RED+"[ 인간 ]  "+ChatColor.BLUE+"Active,Passive  "+ChatColor.GREEN+"Rank[ A ]");
 		player.sendMessage("상대방의 시야를 가리는 능력입니다.\n"+
-						   "자신을 공격한 상대는 일정확률로 시야가 가려집니다.(4초 지속)\n" +
+						   "자신을 공격한 상대는 33% 확률로 시야가 가려집니다.(4초 지속)\n" +
 						   "블레이즈 로드를 이용한 능력으로 자신의 팀원을 제외한 10칸 안에 있는 유저를 블라인드 할 수 있습니다.(8초 지속)\n" +
 						   ChatColor.GREEN+"(좌클릭) "+ChatColor.WHITE+" 코블스톤 "+stack0+"개 소모, 쿨타임 "+coolTime0+"초\n");
 	}
@@ -82,7 +82,7 @@ public class Blinder extends Ability
 		if (player.getName().equals(this.playerName))
 		{
 			Random random = new Random();
-			if (random.nextInt(10) == 0)
+			if (random.nextInt(3) == 0)
 			{
 				Player target = (Player) event.getDamager();
 				target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 80, 0), true);

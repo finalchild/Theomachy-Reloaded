@@ -23,7 +23,7 @@ import septagram.Theomachy.Utility.Skill;
 public class Poseidon extends Ability
 {
 	private boolean flag = true;
-	private final int coolTime0=240;
+	private final int coolTime0=200;
 	private final int material=4;
 	private final int stack0=5
 			;
