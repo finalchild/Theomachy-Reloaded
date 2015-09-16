@@ -1,6 +1,6 @@
-name: Theomachy_septagram
+name: Theomachy-Reloaded
 main: septagram.Theomachy.Theomachy
-version: 1.3.9
+version: 1.4-SNAPSHOT
 commands:
   t:
        description: 신들의전쟁
