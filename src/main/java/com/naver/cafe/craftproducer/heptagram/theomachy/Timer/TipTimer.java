@@ -70,10 +70,11 @@ public class TipTimer extends TimerTask
 				break;
 			case 600:
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
-				Bukkit.broadcastMessage(ChatColor.RED+"신들의 전쟁 (Theomachy)");
+				Bukkit.broadcastMessage(ChatColor.RED+"신들의 전쟁 (Theomachy) - Reloaded");
 				Bukkit.broadcastMessage("버전  : "+PluginData.version);
 				Bukkit.broadcastMessage("빌드  : "+PluginData.buildnumber);
-				Bukkit.broadcastMessage("제작자  : 칠각별(septagram)");
+				Bukkit.broadcastMessage("원작자  : 칠각별(septagram)");
+				Bukkit.broadcastMessage("제작자 : 파차(finalchild)");
 				Bukkit.broadcastMessage(ChatColor.GREEN+"http://blog.naver.com/septagram/");
 				break;
 			case 675:
@@ -116,7 +117,7 @@ public class TipTimer extends TimerTask
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
 				Bukkit.broadcastMessage("플러그인 제작에 도움을 주신 분들");
 				Bukkit.broadcastMessage("소스 참고 및 조언 : 제온 (많은 충고 감사합니다.)");
-				Bukkit.broadcastMessage("테스터 : Headings, Patrasue, raito_, 김정민, 박위선, 해럴드 그외...");
+				Bukkit.broadcastMessage("테스터 : Headings, Patrasue, raito_, 김정민, 박위선, 해럴드, ZackLee 그외...");
 				break;
 			case 1275:
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
@@ -126,10 +127,10 @@ public class TipTimer extends TimerTask
 				break;
 			case 1350:
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
-				Bukkit.broadcastMessage("플러그인 수정 및 재배포, 무단 게시 금지");
-				Bukkit.broadcastMessage("저작권은 septagram에게 있습니다.");
+				Bukkit.broadcastMessage("플러그인 라이선스: MIT License");
+				Bukkit.broadcastMessage("저작권은 septagram, 파차에게 있습니다.");
 				Bukkit.broadcastMessage(ChatColor.GREEN+"http://cafe.naver.com/craftproducer");
-				Bukkit.broadcastMessage("현재 위 까페 외에 배포중인 곳은 없습니다.");
+				Bukkit.broadcastMessage("현재 배포중인 곳은 없습니다.");
 				break;
 			case 1425:
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
@@ -143,7 +144,7 @@ public class TipTimer extends TimerTask
 				break;
 			case 1575:
 				Bukkit.broadcastMessage(ChatColor.YELLOW+"[ Tip ]");
-				Bukkit.broadcastMessage("제작자의 또 다른 플러그인");
+				Bukkit.broadcastMessage("원작자의 또 다른 플러그인");
 				Bukkit.broadcastMessage("꼬리잡기, 팀플러그인, 위스퍼, 스나이퍼, NoFoul(접속시 3초무적 무시), DogFight, ServerControler");
 				break;
 			case 1650:
