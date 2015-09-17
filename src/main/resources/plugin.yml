@@ -1,5 +1,5 @@
 name: Theomachy-Reloaded
-main: septagram.Theomachy.Theomachy
+main: com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy
 version: 1.4-SNAPSHOT
 commands:
   t:
