@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
 
 import java.util.Random;

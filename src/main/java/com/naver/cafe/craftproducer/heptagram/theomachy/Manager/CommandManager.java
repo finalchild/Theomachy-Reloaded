@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Manager;
+package com.naver.cafe.craftproducer.heptagram.theomachy.manager;
 
 
 import org.bukkit.ChatColor;
@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.CommandHandler;
 
 
 public class CommandManager implements CommandExecutor {

@@ -1,19 +1,19 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Handler;
+package com.naver.cafe.craftproducer.heptagram.theomachy.handler;
 
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.AbilityInfo;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.AbilitySet;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.CoolTimeHandler;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.GameHandler;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.Help;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.Spawn;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.Team;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.TeamInfo;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.AbilityInfo;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.AbilitySet;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.CoolTimeHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Help;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Spawn;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Team;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.TeamInfo;
 
 
 public class CommandHandler {

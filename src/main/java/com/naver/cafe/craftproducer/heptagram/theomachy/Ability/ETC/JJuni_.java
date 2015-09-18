@@ -1,12 +1,12 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Ability.ETC;
+package com.naver.cafe.craftproducer.heptagram.theomachy.ability.etc;
 
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class JJuni_ extends Ability {

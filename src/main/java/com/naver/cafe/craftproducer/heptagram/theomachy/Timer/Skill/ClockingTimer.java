@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.TimerTask;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class ClockingTimer extends TimerTask {

@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule;
+package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
 
 import java.util.Collection;
@@ -10,13 +10,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.ServerSetting;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.CoolTime;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.GameReadyTimer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.TipTimer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.PermissionChecker;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.ServerSetting;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.GameReadyTimer;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.TipTimer;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
 
 public class GameHandler {

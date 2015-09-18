@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
 
 import java.util.List;
@@ -9,7 +9,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class ApollonPlayerScorching extends TimerTask {

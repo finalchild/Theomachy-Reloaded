@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Ability.GOD;
+package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 
 
 import java.util.Random;
@@ -10,8 +10,8 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class Dionysus extends Ability {	

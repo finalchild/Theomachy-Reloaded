@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Utility;
+package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
 
 import org.bukkit.entity.Player;

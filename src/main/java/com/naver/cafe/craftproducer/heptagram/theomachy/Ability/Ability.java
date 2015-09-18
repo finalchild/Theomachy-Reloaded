@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Ability;
+package com.naver.cafe.craftproducer.heptagram.theomachy.ability;
 
 
 import org.bukkit.command.CommandSender;

@@ -1,10 +1,10 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Utility;
+package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
 
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Message.T_Message;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
 
 
 public class CoolTimeChecker {

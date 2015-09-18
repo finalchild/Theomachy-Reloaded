@@ -1,12 +1,12 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule;
+package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.CoolTime;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.PermissionChecker;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
 
 public class CoolTimeHandler {

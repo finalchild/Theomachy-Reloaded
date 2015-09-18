@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
 
 import java.util.TimerTask;
@@ -6,7 +6,7 @@ import java.util.TimerTask;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.HUMAN.Sniper;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Sniper;
 
 
 public class SnipingDuration extends TimerTask {

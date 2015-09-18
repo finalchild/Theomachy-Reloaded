@@ -8,10 +8,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.PluginData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Manager.CommandManager;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Manager.EventManager;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.PluginData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.manager.CommandManager;
+import com.naver.cafe.craftproducer.heptagram.theomachy.manager.EventManager;
 
 
 public class Theomachy extends JavaPlugin {

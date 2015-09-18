@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Utility;
+package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class GetPlayerList {

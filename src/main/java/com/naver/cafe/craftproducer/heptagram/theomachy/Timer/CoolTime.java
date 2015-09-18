@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer;
 
 
 import java.util.Collection;
@@ -7,10 +7,10 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.GameHandler;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Message.T_Message;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 import java.util.TimerTask;
 

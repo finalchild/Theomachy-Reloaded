@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Manager;
+package com.naver.cafe.craftproducer.heptagram.theomachy.manager;
 
 
 import java.util.ArrayList;
@@ -29,9 +29,9 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.GameHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 
 public class EventManager implements Listener {

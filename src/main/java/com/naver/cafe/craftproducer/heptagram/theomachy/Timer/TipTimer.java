@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Timer;
+package com.naver.cafe.craftproducer.heptagram.theomachy.timer;
 
 
 import java.util.TimerTask;
@@ -7,9 +7,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.PluginData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule.GameHandler;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.PluginData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 
 public class TipTimer extends TimerTask {

@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Ability.GOD;
+package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 
 
 import java.util.List;
@@ -15,12 +15,12 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.CoolTimeChecker;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.EventFilter;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.PlayerInventory;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.Skill;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 
 public class Hades extends Ability {	

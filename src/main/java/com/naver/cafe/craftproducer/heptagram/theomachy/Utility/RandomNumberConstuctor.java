@@ -1,10 +1,10 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Utility;
+package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
 
 import java.util.Random;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.AbilityData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
 
 
 public class RandomNumberConstuctor {

@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.DB;
+package com.naver.cafe.craftproducer.heptagram.theomachy.db;
 
 
 public interface PluginData {

@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Ability.HUMAN;
+package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
 
 import java.util.ArrayList;
@@ -12,15 +12,15 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill.WizardDisasterTimer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Timer.Skill.WizardWindTimer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.CoolTimeChecker;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.DirectionChecker;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.EventFilter;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.PlayerInventory;
-import com.naver.cafe.craftproducer.heptagram.theomachy.Utility.Skill;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill.WizardDisasterTimer;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill.WizardWindTimer;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.DirectionChecker;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 
 public class Wizard extends Ability {

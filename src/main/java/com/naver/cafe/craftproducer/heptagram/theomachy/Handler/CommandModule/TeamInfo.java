@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Handler.CommandModule;
+package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
 
 import java.util.Iterator;
@@ -8,7 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class TeamInfo {

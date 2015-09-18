@@ -1,11 +1,11 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.Message;
+package com.naver.cafe.craftproducer.heptagram.theomachy.message;
 
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.DB.GameData;
+import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 
 public class T_Message {

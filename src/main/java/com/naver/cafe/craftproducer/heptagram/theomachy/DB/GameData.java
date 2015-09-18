@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.DB;
+package com.naver.cafe.craftproducer.heptagram.theomachy.db;
 
 
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.Ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 
 
 public class GameData {
