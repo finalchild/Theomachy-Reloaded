@@ -20,14 +20,14 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 
-public class Clocking extends Ability {
+public class Cloaking extends Ability {
     private final int coolTime0 = 30;
     private final int material = 4;
     private final int stack0 = 5;
     private List<Player> targetList;
 	
-    public Clocking(String playerName) {
-        super(playerName, "Clocking", 112, true, true, false);
+    public Cloaking(String playerName) {
+        super(playerName, "Cloaking", 112, true, true, false);
         Theomachy.log.info(playerName + abilityName);
     }
 	

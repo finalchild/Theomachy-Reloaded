@@ -25,15 +25,15 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 
-public class Assasin extends Ability {
+public class Assassin extends Ability {
     private final int coolTime1 = 1;
     private final int coolTime2 = 5;
     private final int material = 4;
     private final int stack1 = 0;
     private final int stack2 = 0;
 	
-    public Assasin(String playerName) {
-        super(playerName, "Assasin", 108, true, false, false);
+    public Assassin(String playerName) {
+        super(playerName, "Assassin", 108, true, false, false);
         Theomachy.log.info(playerName + abilityName);
     }
 	

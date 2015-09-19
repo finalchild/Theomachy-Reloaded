@@ -22,12 +22,12 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.ability.god.Hermes;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.god.Poseidon;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.god.Zeus;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Archer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Assasin;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Assassin;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Blacksmith;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Blinder;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Bomber;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Boxer;
-import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Clocking;
+import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Cloaking;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Creeper;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Invincibility;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Meteor;
@@ -209,7 +209,7 @@ public class AbilitySet {
         } else if (abilityCode == 107) {
             GameData.PlayerAbility.put(playerName, new Wizard(playerName));
         } else if (abilityCode == 108) {
-            GameData.PlayerAbility.put(playerName, new Assasin(playerName));
+            GameData.PlayerAbility.put(playerName, new Assassin(playerName));
         } else if (abilityCode == 109) {
             GameData.PlayerAbility.put(playerName, new Reflection(playerName));
         } else if (abilityCode == 110) {
@@ -217,7 +217,7 @@ public class AbilitySet {
         } else if (abilityCode == 111) {
             GameData.PlayerAbility.put(playerName, new Invincibility(playerName));
         } else if (abilityCode == 112) {
-            GameData.PlayerAbility.put(playerName, new Clocking(playerName));
+            GameData.PlayerAbility.put(playerName, new Cloaking(playerName));
         } else if (abilityCode == 113) {
             GameData.PlayerAbility.put(playerName, new Blacksmith(playerName));
         } else if (abilityCode == 114) {

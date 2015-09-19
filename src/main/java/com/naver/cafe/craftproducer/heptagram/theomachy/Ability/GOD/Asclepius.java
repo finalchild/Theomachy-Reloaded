@@ -37,7 +37,7 @@ public class Asclepius extends Ability {
                 + "능력 정보" + ChatColor.DARK_GREEN
                 + " ===================");
         player.sendMessage(
-                ChatColor.YELLOW + "[ 아스클리피어스 ]  " + ChatColor.RED
+                ChatColor.YELLOW + "[ 아스클레피오스 ]  " + ChatColor.RED
                 + "[ 신 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN
                 + "Rank[ B ]");
         player.sendMessage(

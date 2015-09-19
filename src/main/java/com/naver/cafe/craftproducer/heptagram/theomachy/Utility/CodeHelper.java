@@ -86,7 +86,7 @@ public class CodeHelper {
                         + w[3] + "s",
                         "Ares",
                         "8",
-                        "Assasin",
+                        "Assassin",
                         "108"));
         Theomachy.log.info(
                 String.format(
@@ -118,7 +118,7 @@ public class CodeHelper {
                         + w[3] + "s",
                         "Dionysus",
                         "12",
-                        "Clocking",
+                        "Cloaking",
                         "112"));
         Theomachy.log.info(
                 String.format("%" + w[4] + "s : %" + w[3] + "s", "Blacksmith",
@@ -153,7 +153,7 @@ public class CodeHelper {
                 + ChatColor.RED + "아레스 " + ChatColor.WHITE + ":"
                 + ChatColor.GOLD + " 8\n" + ChatColor.RED + "헤파이토스 "
                 + ChatColor.WHITE + ":" + ChatColor.GOLD + " 9\n"
-                + ChatColor.RED + "아스클리피어스 " + ChatColor.WHITE
+                + ChatColor.RED + "아스클레피오스 " + ChatColor.WHITE
                 + ":" + ChatColor.GOLD + " 10\n" + ChatColor.RED
                 + "헤르메스 " + ChatColor.WHITE + ":" + ChatColor.GOLD
                 + " 11\n" + ChatColor.RED + "디오니소스 " + ChatColor.WHITE

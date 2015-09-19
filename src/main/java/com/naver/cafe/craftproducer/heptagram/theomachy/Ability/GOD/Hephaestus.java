@@ -41,7 +41,7 @@ public class Hephaestus extends Ability {
                 + "능력 정보" + ChatColor.DARK_GREEN
                 + " ===================");
         player.sendMessage(
-                ChatColor.YELLOW + "[ 헤파이토스 ]  " + ChatColor.RED
+                ChatColor.YELLOW + "[ 헤파이스토스 ]  " + ChatColor.RED
                 + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  "
                 + ChatColor.GREEN + "Rank[ B ]");
         player.sendMessage(
