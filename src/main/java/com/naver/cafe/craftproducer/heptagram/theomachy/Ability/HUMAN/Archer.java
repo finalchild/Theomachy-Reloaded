@@ -22,7 +22,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Archer extends Ability {
     private final int coolTime1 = 20;
     private final int coolTime2 = 60;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 4;
     private final int stack2 = 15;
 	
@@ -57,7 +57,7 @@ public class Archer extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -79,7 +79,7 @@ public class Archer extends Ability {
             World world = player.getWorld();
             Location location = player.getLocation();
 
-            world.dropItem(location, new ItemStack(Material.ARROW.getId(), 1));
+            world.dropItem(location, new ItemStack(Material.ARROW, 1));
         }
     }
 	
@@ -90,7 +90,7 @@ public class Archer extends Ability {
             World world = player.getWorld();
             Location location = player.getLocation();
 
-            world.dropItem(location, new ItemStack(Material.BOW.getId(), 1));
+            world.dropItem(location, new ItemStack(Material.BOW, 1));
         }
     }
 	
