@@ -25,18 +25,17 @@ public class Theomachy extends JavaPlugin {
     public static int DIFFICULTY = 1;
 	
     public CommandManager cm;
-    public static Logger log = Logger.getLogger("MineCraft");
 	
     public void onEnable() {
-        log.info(
-                "[신들의 전쟁] 플러그인 활성화  "
+        getLogger().info(
+                "플러그인 활성화  "
                         + PluginData.buildnumber + "  " + PluginData.version);
-        log.info("[신들의 전쟁] 등록된 능력");
-        log.info(
-                "[신들의 전쟁] 신: " + AbilityData.GOD_ABILITY_NUMBER
+        getLogger().info("등록된 능력");
+        getLogger().info(
+                "신: " + AbilityData.GOD_ABILITY_NUMBER
                 + ", 인간: " + AbilityData.HUMAN_ABILITY_NUMBER);
-        log.info("[신들의 전쟁] 총합: " + AbilityData.ABILITY_NUMBER);
-        log.info("[신들의 전쟁] 플러그인 스크립트 적용중");
+        getLogger().info("총합: " + AbilityData.ABILITY_NUMBER);
+        getLogger().info("플러그인 스크립트 적용중");
         cm = new CommandManager(this);
         ShapedRecipe recipe = new ShapedRecipe(new ItemStack(Material.BLAZE_ROD)).shape(new String[] { "|", "|", "|"}).setIngredient(
                 '|', Material.STICK);
@@ -44,7 +43,7 @@ public class Theomachy extends JavaPlugin {
         getServer().addRecipe(recipe);
         getServer().getPluginManager().registerEvents(new EventManager(), this);
 		
-        log.info("[신들의 전쟁] 게임의 설정 불러오는중");
+        getLogger().info("게임의 설정 불러오는중");
         getConfig().options().copyDefaults(true);
         saveConfig();
         INVENTORY_CLEAR = getConfig().getBoolean("Inventory Clear");
@@ -56,27 +55,27 @@ public class Theomachy extends JavaPlugin {
         MONSTER = getConfig().getBoolean("Spawn Monster");
         DIFFICULTY = getConfig().getInt("Difficulty");
 		
-        log.info("[신들의 전쟁] ---------------------------------------");
-        log.info(
-                "[신들의 전쟁] 게임 시작시 인벤토리 클리어 : "
+        getLogger().info("---------------------------------------");
+        getLogger().info(
+                "게임 시작시 인벤토리 클리어 : "
                         + String.valueOf(INVENTORY_CLEAR));
-        log.info(
-                "[신들의 전쟁] 게임 시작시 스카이블럭 기본 아이템 지급 : "
+        getLogger().info(
+                "게임 시작시 스카이블럭 기본 아이템 지급 : "
                         + String.valueOf(GIVE_ITEM));
-        log.info(
-                "[신들의 전쟁] 게임 시작시 몬스터,동물,아이템삭제 : "
+        getLogger().info(
+                "게임 시작시 몬스터,동물,아이템삭제 : "
                         + String.valueOf(ENTITIES_REMOVE));
-        log.info(
-                "[신들의 전쟁] 리스폰시 침대 무시 : "
+        getLogger().info(
+                "리스폰시 침대 무시 : "
                         + String.valueOf(IGNORE_BED));
-        log.info(
-                "[신들의 전쟁] 서버 자동저장 : "
+        getLogger().info(
+                "서버 자동저장 : "
                         + String.valueOf(AUTO_SAVE));
-        log.info("[신들의 전쟁] 동물 스폰 : " + String.valueOf(ANIMAL));
-        log.info(
-                "[신들의 전쟁] 몬스터 스폰 : "
+        getLogger().info("동물 스폰 : " + String.valueOf(ANIMAL));
+        getLogger().info(
+                "몬스터 스폰 : "
                         + String.valueOf(MONSTER));
-        log.info("[신들의 전쟁] 난이도 : " + String.valueOf(DIFFICULTY));
-        log.info("[신들의 전쟁] ---------------------------------------");
+        getLogger().info("난이도 : " + String.valueOf(DIFFICULTY));
+        getLogger().info("---------------------------------------");
     }
 }
