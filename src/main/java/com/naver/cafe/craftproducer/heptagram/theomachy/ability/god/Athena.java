@@ -78,8 +78,7 @@ public class Athena extends Ability {
         if (CoolTimeChecker.Check(player, 1)
                 && PlayerInventory.ItemCheck(player, material, stack1)) {
             Skill.Use(player, material, stack1, 1, coolTime1);
-            player.getInventory().addItem(
-                    new ItemStack(Material.BOOK.getId(), 3));
+            player.getInventory().addItem(new ItemStack(Material.BOOK, 3));
         }
     }
 	

@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -28,7 +29,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Assassin extends Ability {
     private final int coolTime1 = 1;
     private final int coolTime2 = 5;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 0;
     private final int stack2 = 0;
 	
@@ -64,7 +65,7 @@ public class Assassin extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -83,7 +84,7 @@ public class Assassin extends Ability {
         Location temp = player.getLocation();
         Block b = temp.add(0, -1, 0).getBlock();
 
-        if ((b.getTypeId() == 0) || (b.getTypeId() == 78)
+        if ((b.isEmpty()) || (b.equals(Material.SNOW))
                 || (b.getTypeId() == 44)) {	
             if ((!CoolTime.COOL0.containsKey(playerName + "0")
                     && (PlayerInventory.ItemCheck(player, material, stack1)))) {
@@ -161,7 +162,7 @@ public class Assassin extends Ability {
                         }
                         player.teleport(location);
                         world.dropItem(fakeLocation.add(0, 1, 0),
-                                new ItemStack(38, 1));
+                                new ItemStack(Material.RED_ROSE, 1));
                         for (Player each : playerlist) {
                             each.showPlayer(player);
                         }
