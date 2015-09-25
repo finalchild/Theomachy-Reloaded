@@ -1,0 +1,11 @@
+### Game Setting ###
+Inventory Clear: true
+Give SkyBlock Item: true
+Remove Entities: true
+Ignore Bed: true
+
+### World Setting ###
+Auto Save: false
+Spawn Animal: true
+Spawn Monster: true
+Difficulty: 1

@@ -1,0 +1,12 @@
+name: Theomachy-Reloaded
+main: com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy
+version: 1.4-SNAPSHOT
+commands:
+  t:
+       description: 신들의전쟁
+       permission:
+       usage: /<command>
+  x:
+       description: 신들의전쟁 타겟 등록
+       permission:
+       usage: /<command>
