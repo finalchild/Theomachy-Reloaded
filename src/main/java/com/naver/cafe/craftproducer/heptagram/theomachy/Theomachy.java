@@ -24,9 +24,11 @@ public class Theomachy extends JavaPlugin {
     public static boolean MONSTER = true;
     public static int DIFFICULTY = 1;
 	
+    public static Logger log;
     public CommandManager cm;
 	
     public void onEnable() {
+    	Theomachy.log = this.getLogger();
         getLogger().info(
                 "플러그인 활성화  "
                         + PluginData.buildnumber + "  " + PluginData.version);
