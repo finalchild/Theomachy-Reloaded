@@ -5,6 +5,7 @@ import java.util.Timer;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
 
@@ -20,7 +21,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Meteor extends Ability {
     private final int coolTime0 = 110;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 5;
 	
     public Meteor(String playerName) {
@@ -52,7 +53,7 @@ public class Meteor extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -23,7 +24,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Witch extends Ability {
     private final int coolTime0 = 60;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 1;
 	
     public Witch(String playerName) {
@@ -54,7 +55,7 @@ public class Witch extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:

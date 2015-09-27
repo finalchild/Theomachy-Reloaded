@@ -23,7 +23,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Sniper extends Ability {
     private final int coolTime0 = 70;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 1;
     public boolean ready = false;
     public boolean sniping = false;
@@ -57,7 +57,7 @@ public class Sniper extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BOW.getId())) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BOW)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -99,7 +99,7 @@ public class Sniper extends Ability {
     public void conditionSet() {
         Player player = GameData.OnlinePlayer.get(this.playerName);
 
-        player.getInventory().addItem(new ItemStack(Material.BOW.getId(), 1));
-        player.getInventory().addItem(new ItemStack(Material.ARROW.getId(), 10));
+        player.getInventory().addItem(new ItemStack(Material.BOW, 1));
+        player.getInventory().addItem(new ItemStack(Material.ARROW, 10));
     }
 }

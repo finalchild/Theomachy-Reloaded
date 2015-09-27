@@ -5,6 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
@@ -21,7 +22,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Voodoo extends Ability {
     private final int coolTime0 = 150;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 5;
     private String targetName = null;
     private Block postSign = null;
@@ -54,9 +55,9 @@ public class Voodoo extends Ability {
     }
 
     public void T_Passive(BlockPlaceEvent event) {
-        int blockId = event.getBlock().getTypeId();
+        Material blockType = event.getBlock().getType();
 
-        if (blockId == 63 || blockId == 68) {
+        if (blockType == Material.SIGN_POST || blockType == Material.WALL_SIGN) {
             Player player = event.getPlayer();
 
             if (!(CoolTimeChecker.Check(player, 0)
@@ -71,7 +72,7 @@ public class Voodoo extends Ability {
             if (event.getAction() == Action.LEFT_CLICK_BLOCK) {
                 Block block = event.getClickedBlock();
 
-                if ((block.getTypeId() == 63 || block.getTypeId() == 68)
+                if ((block.getType() == Material.SIGN_POST || block.getType() == Material.WALL_SIGN)
                         && this.postSign.getState().equals(block.getState())) {
                     Player player = GameData.OnlinePlayer.get(targetName);
 
@@ -81,7 +82,7 @@ public class Voodoo extends Ability {
 
                 }
             }
-        } else if (event.getPlayer().getItemInHand().getTypeId() == 323) {
+        } else if (event.getPlayer().getItemInHand().getType() == Material.SIGN) {
             Action action = event.getAction();
 
             if (action == Action.LEFT_CLICK_AIR

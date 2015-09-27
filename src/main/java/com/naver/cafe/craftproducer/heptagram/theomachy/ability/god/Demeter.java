@@ -21,7 +21,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Demeter extends Ability {
     private final int coolTime0 = 30;
-    private final int material = 4; // 나무
+    private final Material material = Material.COBBLESTONE; // 나무
     private final int stack0 = 10;
     public Demeter(String playerName) {
         super(playerName, "Demeter", 4, true, true, false);
@@ -51,7 +51,7 @@ public class Demeter extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -69,7 +69,7 @@ public class Demeter extends Ability {
             Skill.Use(player, material, stack0, 0, coolTime0);
             Inventory inventory = player.getInventory();
 
-            inventory.addItem(new ItemStack(Material.BREAD.getId(), stack0));
+            inventory.addItem(new ItemStack(Material.BREAD, stack0));
         }
     }
 	

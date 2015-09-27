@@ -20,8 +20,8 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Blacksmith extends Ability {
     private final int coolTime1 = 300;
     private final int coolTime2 = 600;
-    private final int material1 = 4;
-    private final int material2 = 265; // 철괴
+    private final Material material1 = Material.COBBLESTONE;
+    private final Material material2 = Material.IRON_INGOT; // 철괴
     private final int stack1 = 20;
     private final int stack2 = 20;
 	
@@ -56,7 +56,7 @@ public class Blacksmith extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -78,7 +78,7 @@ public class Blacksmith extends Ability {
             World world = player.getWorld();
 
             world.dropItem(player.getLocation().add(0, 2, 0),
-                    new ItemStack(Material.IRON_INGOT.getId(), 10));
+                    new ItemStack(Material.IRON_INGOT, 10));
         }
     }
 	
@@ -89,7 +89,7 @@ public class Blacksmith extends Ability {
             World world = player.getWorld();
 
             world.dropItem(player.getLocation().add(0, 2, 0),
-                    new ItemStack(Material.DIAMOND.getId(), 5));
+                    new ItemStack(Material.DIAMOND, 5));
         }
     }
 }

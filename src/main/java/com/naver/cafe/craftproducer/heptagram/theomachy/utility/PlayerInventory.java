@@ -11,14 +11,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 
 public class PlayerInventory {
-    @Deprecated
-    public static boolean InHandItemCheck(Player player, int material) {
-        if (player.getItemInHand().getTypeId() == material) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 	
     public static boolean InHandItemCheck(Player player, Material material) {
         if (player.getItemInHand().getType() == material) {
@@ -26,12 +18,6 @@ public class PlayerInventory {
         } else {
             return false;
         }
-    }
-	
-    @Deprecated
-    public static boolean ItemCheck(Player player, int material, int stack) {
-        return PlayerInventory.ItemCheck(player, Material.getMaterial(material),
-                stack);
     }
 	
     public static boolean ItemCheck(Player player, Material material, int stack) {
@@ -43,11 +29,6 @@ public class PlayerInventory {
             T_Message.LackItemError(player, material, stack);
             return false;
         }
-    }
-	
-    @Deprecated
-    public static void ItemRemove(Player player, int material, int stack) {
-        PlayerInventory.ItemRemove(player, Material.getMaterial(material), stack);
     }
 	
     public static void ItemRemove(Player player, Material material, int stack) {

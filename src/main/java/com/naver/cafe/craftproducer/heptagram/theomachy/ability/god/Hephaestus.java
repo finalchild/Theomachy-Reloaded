@@ -25,7 +25,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Hephaestus extends Ability {
     private final int coolTime0 = 10;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 1;
 	
     public Hephaestus(String playerName) {
@@ -57,7 +57,7 @@ public class Hephaestus extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 1:
                 leftAction(player);
@@ -72,11 +72,11 @@ public class Hephaestus extends Ability {
         location.setY(location.getY() + 1);
         Block block = location.getBlock();
 
-        if (block.getTypeId() == 0) {
+        if (block.isEmpty()) {
             if (CoolTimeChecker.Check(player, 0)
                     && PlayerInventory.ItemCheck(player, material, stack0)) {
                 Skill.Use(player, material, stack0, 0, coolTime0);
-                block.setTypeId(10);
+                block.setType(Material.LAVA);
                 Timer t = new Timer();
 
                 t.schedule(new LavaTimer(block), 2000);
@@ -119,7 +119,7 @@ public class Hephaestus extends Ability {
         }
 		
         public void run() {
-            block.setTypeId(0);
+            block.setType(Material.AIR);
         }
     }
 	

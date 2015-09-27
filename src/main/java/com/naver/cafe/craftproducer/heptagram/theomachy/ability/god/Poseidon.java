@@ -4,6 +4,7 @@ package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -25,7 +26,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Poseidon extends Ability {
     private boolean flag = true;
     private final int coolTime0 = 200;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 5;
     public Poseidon(String playerName) {
         super(playerName, "Poseidon", 2, true, true, false);
@@ -56,7 +57,7 @@ public class Poseidon extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -106,9 +107,9 @@ public class Poseidon extends Ability {
             for (int i = 0; i < 5; i++) {
                 for (Player player : players) {
                     if (player != this.player
-                            && (player.getLocation().getBlock().getTypeId() == 9
-                                    || player.getLocation().getBlock().getTypeId()
-                                            == 8)) {
+                            && (player.getLocation().getBlock().getType() == Material.STATIONARY_WATER
+                                    || player.getLocation().getBlock().getType()
+                                            == Material.WATER)) {
                         player.setVelocity(v);
                     }
                 }
@@ -139,16 +140,16 @@ public class Poseidon extends Ability {
                 for (int i = 0; i < 9; i++) {
                     Block b = location.add(v).getBlock();
 
-                    if (b.getTypeId() == 0 || b.getTypeId() == 4) {
-                        b.setTypeId(8);
+                    if (b.isEmpty() || b.getType() == Material.COBBLESTONE) {
+                        b.setType(Material.WATER);
                     }
                 }
                 sleep(3000);
                 for (int i = 0; i < 9; i++) {
                     Block b = remove.add(v).getBlock();
 
-                    if (b.getTypeId() == 8 || b.getTypeId() == 9) {
-                        b.setTypeId(0);
+                    if (b.getType() == Material.WATER || b.getType() == Material.STATIONARY_WATER) {
+                        b.setType(Material.AIR);
                     }
                 }
             } catch (Exception e) {}

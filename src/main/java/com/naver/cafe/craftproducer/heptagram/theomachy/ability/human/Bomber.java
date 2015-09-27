@@ -22,7 +22,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Bomber extends Ability {
     private final int coolTime0 = 27;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 2;
     private Location tntLocation;
 	
@@ -55,7 +55,7 @@ public class Bomber extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 1:
                 leftAction(player);
@@ -72,7 +72,7 @@ public class Bomber extends Ability {
     private void leftAction(Player player) {
         Block block = player.getTargetBlock((Set<Material>) null, 5);
 
-        if (block.getTypeId() != 0) {
+        if (!block.isEmpty()) {
             Location location = block.getLocation();
 
             location.setY(location.getY() + 1);

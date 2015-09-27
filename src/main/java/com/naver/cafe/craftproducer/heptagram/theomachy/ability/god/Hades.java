@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -26,7 +27,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Hades extends Ability {	
     private final int coolTime1 = 100;
     private final int coolTime2 = 300;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 5;
     private final int stack2 = 10;
     public Hades(String playerName) {
@@ -62,7 +63,7 @@ public class Hades extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:

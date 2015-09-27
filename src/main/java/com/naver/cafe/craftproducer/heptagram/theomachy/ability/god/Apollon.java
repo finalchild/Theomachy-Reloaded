@@ -5,6 +5,7 @@ import java.util.Timer;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -22,7 +23,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Apollon extends Ability {
     private final int coolTime1 = 90;
     private final int coolTime2 = 180;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 1;
     private final int stack2 = 10;
 	
@@ -58,7 +59,7 @@ public class Apollon extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:

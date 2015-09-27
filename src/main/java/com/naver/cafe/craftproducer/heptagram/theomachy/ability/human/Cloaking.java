@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Timer;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -22,7 +23,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
 public class Cloaking extends Ability {
     private final int coolTime0 = 30;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack0 = 5;
     private List<Player> targetList;
 	
@@ -53,7 +54,7 @@ public class Cloaking extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 2:
             case 3:

@@ -24,7 +24,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Teleporter extends Ability {
     private final int coolTime1 = 25;
     private final int coolTime2 = 30;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 2;
     private final int stack2 = 2;
     private String abilitytarget;
@@ -61,7 +61,7 @@ public class Teleporter extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -90,8 +90,8 @@ public class Teleporter extends Ability {
                 Block block0 = location0.getBlock();
                 Block block1 = location1.getBlock();
 
-                if ((block0.getTypeId() == 0 || block1.getTypeId() == 78)
-                        && block1.getTypeId() == 0) {
+                if ((block0.isEmpty() || block1.getType() == Material.SNOW)
+                        && block1.isEmpty()) {
                     Skill.Use(player, material, stack1, 1, coolTime1);
                     Location plocation = player.getLocation();
                     Location tlocation = block.getLocation();

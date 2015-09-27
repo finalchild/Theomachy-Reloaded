@@ -5,6 +5,7 @@ import java.util.Random;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -41,7 +42,7 @@ public class Miner extends Ability {
     public void T_Passive(BlockBreakEvent event) {
         Block block = event.getBlock();
 
-        if (block.getTypeId() == 4) {
+        if (block.getType() == Material.COBBLESTONE) {
             Location location = block.getLocation();
             World world = event.getPlayer().getWorld();
             Random random = new Random();
@@ -50,7 +51,7 @@ public class Miner extends Ability {
                 Player player = event.getPlayer();
 
                 player.sendMessage("잭팟!");
-                world.dropItemNaturally(location, new ItemStack(4, 9));
+                world.dropItemNaturally(location, new ItemStack(Material.COBBLESTONE, 9));
             }
         }
     }

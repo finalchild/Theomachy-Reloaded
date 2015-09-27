@@ -10,11 +10,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
 
 
 public class Skill {
-    @Deprecated
-    public static void Use(Player player, int material, int stack, int abilityCase, int coolTime) {
-        Skill.Use(player, Material.getMaterial(material), stack, abilityCase,
-                coolTime);
-    }
 	
     public static void Use(Player player, Material material, int stack, int abilityCase, int coolTime) {
         player.getInventory().removeItem(new ItemStack(material, stack));

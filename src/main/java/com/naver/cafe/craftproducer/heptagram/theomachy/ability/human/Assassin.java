@@ -84,8 +84,8 @@ public class Assassin extends Ability {
         Location temp = player.getLocation();
         Block b = temp.add(0, -1, 0).getBlock();
 
-        if ((b.isEmpty()) || (b.equals(Material.SNOW))
-                || (b.getTypeId() == 44)) {	
+        if ((b.isEmpty()) || (b.getType() == Material.SNOW)
+                || (b.getType() == Material.STEP)) {	
             if ((!CoolTime.COOL0.containsKey(playerName + "0")
                     && (PlayerInventory.ItemCheck(player, material, stack1)))) {
                 CoolTime.COOL0.put(playerName + "0", coolTime1);

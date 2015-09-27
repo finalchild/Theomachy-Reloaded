@@ -2,6 +2,7 @@ package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
@@ -38,7 +39,7 @@ public class Boxer extends Ability {
     public void T_Passive(EntityDamageByEntityEvent event) {
         Player player = (Player) event.getDamager();
 
-        if (player.getItemInHand().getTypeId() == 0
+        if (player.getItemInHand().getType() == Material.AIR
                 && player.getName().equals(this.playerName)) {
             Player target = (Player) event.getEntity();
 

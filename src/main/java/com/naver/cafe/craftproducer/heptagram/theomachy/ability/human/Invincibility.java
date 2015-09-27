@@ -2,6 +2,7 @@ package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -21,7 +22,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Invincibility extends Ability {
     private final int coolTime1 = 80;
     private final int coolTime2 = 120;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 1;
     private final int stack2 = 5;
 	
@@ -57,7 +58,7 @@ public class Invincibility extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:

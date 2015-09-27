@@ -22,7 +22,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 public class Athena extends Ability {
     private final int coolTime1 = 30;
     private final int coolTime2 = 3;
-    private final int material = 4;
+    private final Material material = Material.COBBLESTONE;
     private final int stack1 = 1;
     private final int stack2 = 32;
     private int abilityLimitCounter = 2;
@@ -59,7 +59,7 @@ public class Athena extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, 369)) {
+        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
             switch (EventFilter.PlayerInteract(event)) {
             case 0:
             case 1:
@@ -89,13 +89,13 @@ public class Athena extends Ability {
                 if (abilityLimitCounter > 1) {
                     Skill.Use(player, material, stack2, 2, coolTime2);
                     player.getInventory().addItem(
-                            new ItemStack(Material.ENCHANTMENT_TABLE.getId(), 1));
+                            new ItemStack(Material.ENCHANTMENT_TABLE, 1));
                     player.sendMessage(
                             "남은 교환 횟수 : " + --abilityLimitCounter);
                 } else {
                     Skill.Use(player, material, stack2, 2, 0);
                     player.getInventory().addItem(
-                            new ItemStack(Material.ENCHANTMENT_TABLE.getId(), 1));
+                            new ItemStack(Material.ENCHANTMENT_TABLE, 1));
                     player.sendMessage(
                             "남은 교환 횟수 : " + --abilityLimitCounter);
                 }
