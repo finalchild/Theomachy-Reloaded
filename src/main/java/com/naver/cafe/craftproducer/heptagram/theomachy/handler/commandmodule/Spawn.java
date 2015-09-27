@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -10,7 +9,6 @@ import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
-
 
 public class Spawn {
     public static void Module(CommandSender sender, Command command, String label, String[] data) {
@@ -24,8 +22,7 @@ public class Spawn {
                 int z = location.getBlockZ();
 
                 world.setSpawnLocation(x, y, z);
-                player.sendMessage(
-                        "현재 위치가 모든 플레이어의 스폰지역으로 설정되었습니다.");				
+                player.sendMessage("현재 위치가 모든 플레이어의 스폰지역으로 설정되었습니다.");				
             } else {
                 Player player = (Player) sender;
                 String teamName = data[1];
@@ -35,10 +32,7 @@ public class Spawn {
                 location.setZ(location.getZ() + 0.5);
                 location.setYaw((int) player.getLocation().getYaw());
                 GameData.SpawnArea.put(teamName, location);
-                player.sendMessage(
-                        "현재 위치가 팀 " + ChatColor.DARK_AQUA + teamName
-                        + ChatColor.WHITE
-                        + " 의 스폰지역으로 설정되었습니다.");	
+                player.sendMessage("현재 위치가 팀 " + ChatColor.DARK_AQUA + teamName + ChatColor.WHITE + " 의 스폰지역으로 설정되었습니다.");	
             }
         }
     }

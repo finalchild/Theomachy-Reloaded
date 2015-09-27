@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability;
 
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -15,7 +14,6 @@ import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
-
 
 public class Ability {
     public final String playerName;

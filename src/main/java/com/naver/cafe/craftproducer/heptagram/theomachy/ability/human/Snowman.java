@@ -1,9 +1,7 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
-
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
-
 
 public class Snowman extends Ability {
 

@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.handler;
 
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
@@ -14,7 +13,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.He
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Spawn;
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Team;
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.TeamInfo;
-
 
 public class CommandHandler {
     public static void T_Handler(CommandSender sender, Command command, String label, String[] data) {
@@ -50,8 +48,7 @@ public class CommandHandler {
             if (GameData.OnlinePlayer.containsKey(targetName)) {
                 ability.targetSet(sender, targetName);
             } else {
-                sender.sendMessage(
-                        "온라인 플레이어가 아닙니다.  " + targetName);
+                sender.sendMessage("온라인 플레이어가 아닙니다.  " + targetName);
             }
         } else {
             sender.sendMessage("능력이 없습니다.");

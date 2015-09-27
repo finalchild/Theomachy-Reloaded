@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -22,7 +21,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
-
 public class Poseidon extends Ability {
     private boolean flag = true;
     private final int coolTime0 = 200;
@@ -36,22 +34,9 @@ public class Poseidon extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 포세이돈 ]  " + ChatColor.RED
-                + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  "
-                + ChatColor.GREEN + "Rank[ S ]");
-        player.sendMessage(
-                "물의 신입니다.\n"
-                        + "물 속에 있을때 일정확률로 모든 피격을 33% 확률로 회피합니다. 나온 직후 7초 동안 효과가 지속됩니다.\n"
-                        + "블레이즈 로드를 이용한 능력으로 자신의 앞으로 물을 생성하며 이후 7초 동안 물에 있는 플레이어는 모두 날려버립니다.\n"
-                        + "물벽은 코블스톤을 뚫을 수 있습니다.\n"
-                        + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE
-                        + " 코블스톤 " + stack0 + "개 소모, 쿨타임 "
-                        + coolTime0 + "초\n");
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 포세이돈 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ S ]");
+        player.sendMessage("물의 신입니다.\n" + "물 속에 있을때 일정확률로 모든 피격을 33% 확률로 회피합니다. 나온 직후 7초 동안 효과가 지속됩니다.\n" + "블레이즈 로드를 이용한 능력으로 자신의 앞으로 물을 생성하며 이후 7초 동안 물에 있는 플레이어는 모두 날려버립니다.\n" + "물벽은 코블스톤을 뚫을 수 있습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
     public void T_Active(PlayerInteractEvent event) {
@@ -68,8 +53,7 @@ public class Poseidon extends Ability {
     }
 	
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 0)
-                && PlayerInventory.ItemCheck(player, material, stack0)) {
+        if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
             if (flag) {
                 Skill.Use(player, material, stack0, 0, coolTime0);
                 Location location = player.getLocation();
@@ -84,8 +68,7 @@ public class Poseidon extends Ability {
                 k.start();
                 w.start();
             } else {
-                player.sendMessage(
-                        "스킬의 지속시간이 끝나지 않아 사용할 수 없습니다.");
+                player.sendMessage("스킬의 지속시간이 끝나지 않아 사용할 수 없습니다.");
             }
         }
     }
@@ -106,10 +89,7 @@ public class Poseidon extends Ability {
 
             for (int i = 0; i < 5; i++) {
                 for (Player player : players) {
-                    if (player != this.player
-                            && (player.getLocation().getBlock().getType() == Material.STATIONARY_WATER
-                                    || player.getLocation().getBlock().getType()
-                                            == Material.WATER)) {
+                    if (player != this.player && (player.getLocation().getBlock().getType() == Material.STATIONARY_WATER || player.getLocation().getBlock().getType() == Material.WATER)) {
                         player.setVelocity(v);
                     }
                 }

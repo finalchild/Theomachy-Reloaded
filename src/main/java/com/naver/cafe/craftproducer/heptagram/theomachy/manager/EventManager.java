@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.manager;
 
-
 import java.util.ArrayList;
 
 import org.bukkit.Location;
@@ -32,7 +31,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
-
 
 public class EventManager implements Listener {
     @EventHandler
@@ -73,8 +71,7 @@ public class EventManager implements Listener {
                     GameData.PlayerAbility.get(playerName).T_Passive(event);
                 }
             }
-            if (event.getCause() == DamageCause.LIGHTNING
-                    && event.getEntity() instanceof LivingEntity) {
+            if (event.getCause() == DamageCause.LIGHTNING && event.getEntity() instanceof LivingEntity) {
                 LivingEntity le = (LivingEntity) event.getEntity();
 
                 le.setNoDamageTicks(0);
@@ -86,8 +83,7 @@ public class EventManager implements Listener {
     public static void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         try {
             if (GameHandler.Start) {
-                if (event.getEntity() instanceof Player
-                        && event.getDamager() instanceof Player) {
+                if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
                     String key1 = ((Player) event.getEntity()).getName();
                     String key2 = ((Player) event.getDamager()).getName();
                     Ability ability1 = GameData.PlayerAbility.get(key1);
@@ -99,8 +95,7 @@ public class EventManager implements Listener {
                     if (ability2 != null) {
                         ability2.T_Passive(event);
                     }
-                } else if (event.getDamager() instanceof Arrow
-                        && event.getEntity() instanceof Player) {
+                } else if (event.getDamager() instanceof Arrow && event.getEntity() instanceof Player) {
                     Arrow arrow = (Arrow) event.getDamager();
 
                     if (arrow.getShooter() instanceof Player) {
@@ -108,16 +103,14 @@ public class EventManager implements Listener {
                         String key = player.getName();
                         Ability ability = GameData.PlayerAbility.get(key);
 
-                        if (ability != null && ability.abilityCode == 7
-                                || ability.abilityCode == 101) {
+                        if (ability != null && ability.abilityCode == 7 || ability.abilityCode == 101) {
                             ability.T_Passive(event);
                         }
                     }
                 }
             }
         } catch (Exception e) {
-            Theomachy.log.info(
-                    "onEntityDamageByEntity Error\n" + e.getLocalizedMessage());
+            Theomachy.log.info("onEntityDamageByEntity Error\n" + e.getLocalizedMessage());
         }
     }
     public static ArrayList<Ability> PlayerDeathEventList = new ArrayList<Ability>();
@@ -192,8 +185,7 @@ public class EventManager implements Listener {
                     }
                 }
             } else {
-                if (!event.isBedSpawn()
-                        && GameData.PlayerTeam.containsKey(player.getName())) {
+                if (!event.isBedSpawn() && GameData.PlayerTeam.containsKey(player.getName())) {
                     String teamName = GameData.PlayerTeam.get(player.getName());
                     Location respawnLocation = GameData.SpawnArea.get(teamName);
 
@@ -245,8 +237,7 @@ public class EventManager implements Listener {
     @EventHandler
     public void onSignChange(SignChangeEvent event) {
         if (GameHandler.Start) {
-            Ability ability = GameData.PlayerAbility.get(
-                    event.getPlayer().getName());
+            Ability ability = GameData.PlayerAbility.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.T_Passive(event);
@@ -257,8 +248,7 @@ public class EventManager implements Listener {
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (GameHandler.Start) {
-            Ability ability = GameData.PlayerAbility.get(
-                    event.getPlayer().getName());
+            Ability ability = GameData.PlayerAbility.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.T_Passive(event);
@@ -274,8 +264,7 @@ public class EventManager implements Listener {
         if (GameHandler.Start) {
             Ability ability = GameData.PlayerAbility.get(player.getName());
 
-            if (ability != null
-                    && (ability.abilityCode == 2 || ability.abilityCode == 9)) {
+            if (ability != null && (ability.abilityCode == 2 || ability.abilityCode == 9)) {
                 ability.conditionSet();
             }
         }
@@ -297,8 +286,7 @@ public class EventManager implements Listener {
     public static void onEntityExplode(EntityExplodeEvent event) {
         Entity entity = event.getEntity();
 
-        if (GameHandler.Start && entity != null
-                && entity.getType() == EntityType.FIREBALL) {
+        if (GameHandler.Start && entity != null && entity.getType() == EntityType.FIREBALL) {
             event.blockList().clear();
         }
     }

@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.timer;
 
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,7 +12,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Ga
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 import java.util.TimerTask;
-
 
 public class CoolTime extends TimerTask {
     public static boolean ini = false;
@@ -101,8 +99,7 @@ public class CoolTime extends TimerTask {
                 }
             }
         } catch (Exception e) {
-            Theomachy.log.info(
-                    "쿨타이머에 에러가 발생하여 쿨타임이 1초 느려집니다.");
+            Theomachy.log.info("쿨타이머에 에러가 발생하여 쿨타임이 1초 느려집니다.");
             Theomachy.log.info(e.getLocalizedMessage() + "");
 			
         }

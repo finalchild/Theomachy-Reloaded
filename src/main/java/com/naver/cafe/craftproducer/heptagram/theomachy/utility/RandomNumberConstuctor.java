@@ -1,11 +1,9 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import java.util.Random;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
-
 
 public class RandomNumberConstuctor {
     public static int[] nonDuplicate() {
@@ -17,8 +15,7 @@ public class RandomNumberConstuctor {
         }
         int a = 101;
 
-        for (int i = AbilityData.GOD_ABILITY_NUMBER; i
-                < AbilityData.ABILITY_NUMBER; i++) {
+        for (int i = AbilityData.GOD_ABILITY_NUMBER; i < AbilityData.ABILITY_NUMBER; i++) {
             rn[i] = a++;
         }
         for (int i = 0; i < rn.length; i++) // 섞기

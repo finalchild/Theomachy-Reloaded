@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.etc;
 
-
 import java.util.Set;
 
 import org.bukkit.ChatColor;
@@ -17,7 +16,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 
-
 // TODO Reload this class
 public class Septagram extends Ability {	
     public Septagram(String playerName) {
@@ -28,14 +26,8 @@ public class Septagram extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 칠각별 ]  " + ChatColor.RED
-                + "[ 제작자 ]  " + ChatColor.BLUE + "Active,Passive  "
-                + ChatColor.GREEN + "Rank[ F ]");
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 칠각별 ]  " + ChatColor.RED + "[ 제작자 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ F ]");
         player.sendMessage("제작자입니다.\n");
     }
 	
@@ -55,8 +47,7 @@ public class Septagram extends Ability {
     private void leftAction(Player player) {		
         Location location = player.getTargetBlock((Set<Material>) null, 40).getLocation();
         Vector v = new Vector(0, -10, 0);
-        Fireball fireball = (Fireball) player.getWorld().spawn(
-                location.add(0, 70, 0), Fireball.class);
+        Fireball fireball = (Fireball) player.getWorld().spawn(location.add(0, 70, 0), Fireball.class);
 
         fireball.setDirection(v);
         fireball.setShooter(player);

@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -8,7 +7,6 @@ import org.bukkit.inventory.ItemStack;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
-
 
 public class PlayerInventory {
 	

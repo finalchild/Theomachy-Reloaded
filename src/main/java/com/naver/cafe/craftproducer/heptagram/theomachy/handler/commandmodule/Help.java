@@ -1,12 +1,10 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-
 
 public class Help {
 

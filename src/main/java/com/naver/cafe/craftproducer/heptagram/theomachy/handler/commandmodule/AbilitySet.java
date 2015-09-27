@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -46,22 +45,16 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CodeHelper;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.RandomNumberConstuctor;
 
-
 public class AbilitySet {
     public static void Module(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.Sender(sender)) {
             if (!GameHandler.Ready) {
                 if (data.length <= 1) {
-                    sender.sendMessage(
-                            "/t a help   모든 능력의 코드표를 확인합니다.");
-                    sender.sendMessage(
-                            "/t a random 현재 접속한 모든 플레이어에게 랜덤으로 능력을 할당합니다.");
-                    sender.sendMessage(
-                            "/t a remove <Player> 해당 플레이어의 능력을 삭제합니다.");
-                    sender.sendMessage(
-                            "/t a reset  모든 능력을 초기화 합니다");
-                    sender.sendMessage(
-                            "/t a <AbilityCode> <Player>  플레이어에게 해당 능력을 적용합니다.");
+                    sender.sendMessage("/t a help   모든 능력의 코드표를 확인합니다.");
+                    sender.sendMessage("/t a random 현재 접속한 모든 플레이어에게 랜덤으로 능력을 할당합니다.");
+                    sender.sendMessage("/t a remove <Player> 해당 플레이어의 능력을 삭제합니다.");
+                    sender.sendMessage("/t a reset  모든 능력을 초기화 합니다");
+                    sender.sendMessage("/t a <AbilityCode> <Player>  플레이어에게 해당 능력을 적용합니다.");
                 } else if (data[1].equalsIgnoreCase("help")) {
                     CodeHelper.ShowAbilityCodeNumber(sender);
                 } else if (data[1].equalsIgnoreCase("remove")) // 삭제
@@ -69,8 +62,7 @@ public class AbilitySet {
                     if (data[2] != null) {
                         Remove(sender, data[2]);
                     } else {
-                        sender.sendMessage(
-                                "능력을 삭제할 플레이어의 이름을 적어주세요.");
+                        sender.sendMessage("능력을 삭제할 플레이어의 이름을 적어주세요.");
                     }
                 } else if (data[1].equalsIgnoreCase("reset")) { // 리셋
                     Reset();
@@ -83,8 +75,7 @@ public class AbilitySet {
                     sender.sendMessage("/t a 로 명령어를 확인하세요.");
                 }
             } else {
-                sender.sendMessage(
-                        "게임 시작 후에는 능력을 변경 할 수 없습니다.");
+                sender.sendMessage("게임 시작 후에는 능력을 변경 할 수 없습니다.");
             }
         }
     }
@@ -94,8 +85,7 @@ public class AbilitySet {
 
         if (ability != null) {
             GameData.PlayerAbility.remove(playerName);
-            sender.sendMessage(
-                    "플레이어의 능력을 삭제하였습니다.");
+            sender.sendMessage("플레이어의 능력을 삭제하였습니다.");
         } else {
             sender.sendMessage("플레이어의 능력이 없습니다.");
         }
@@ -103,28 +93,22 @@ public class AbilitySet {
 	
     public static void Reset() {
         GameData.PlayerAbility.clear();
-        Bukkit.broadcastMessage(
-                ChatColor.AQUA
-                        + "관리자가 모두의 능력을 초기화 하였습니다.");
+        Bukkit.broadcastMessage(ChatColor.AQUA + "관리자가 모두의 능력을 초기화 하였습니다.");
     }
 	
     private static void RandomAssignment(CommandSender sender) {
         if (!GameData.PlayerAbility.isEmpty()) {
-            Bukkit.broadcastMessage(
-                    "모든 능력을 삭제 한후 재 추첨합니다.");
+            Bukkit.broadcastMessage("모든 능력을 삭제 한후 재 추첨합니다.");
             GameData.PlayerAbility.clear();
         }
         Player[] playerlist = Bukkit.getOnlinePlayers().toArray(new Player[0]);
 
-        Bukkit.broadcastMessage(
-                ChatColor.DARK_AQUA + "인식된 플레이어 목록");
+        Bukkit.broadcastMessage(ChatColor.DARK_AQUA + "인식된 플레이어 목록");
         for (Player e : playerlist) {
             Bukkit.broadcastMessage(ChatColor.GOLD + "  " + e.getName());
         }
         int[] rn = RandomNumberConstuctor.nonDuplicate();
-        int length = playerlist.length > AbilityData.ABILITY_NUMBER
-                ? AbilityData.ABILITY_NUMBER
-                : playerlist.length;
+        int length = playerlist.length > AbilityData.ABILITY_NUMBER ? AbilityData.ABILITY_NUMBER : playerlist.length;
 
         for (int i = 0; i < length; i++) {
             String playerName = playerlist[i].getName();
@@ -134,8 +118,7 @@ public class AbilitySet {
         Bukkit.broadcastMessage("모두에게 능력이 적용되었습니다.");
         Bukkit.broadcastMessage("/t help 로 확인해보세요.");
         if (playerlist.length > AbilityData.ABILITY_NUMBER) {
-            Bukkit.broadcastMessage(
-                    "인원이 너무 많습니다. 전부에게 능력을 할당 하지 못했습니다.");
+            Bukkit.broadcastMessage("인원이 너무 많습니다. 전부에게 능력을 할당 하지 못했습니다.");
         }
     }
 	
@@ -151,20 +134,13 @@ public class AbilitySet {
                     abiltiyAssignment(abilityCode, playerName, sender);
                     Player player = GameData.OnlinePlayer.get(playerName);
 
-                    Bukkit.broadcastMessage(
-                            "관리자가 " + ChatColor.RED + playerName
-                            + ChatColor.WHITE
-                            + " 에게 능력을 할당하였습니다.");
-                    player.sendMessage(
-                            "능력이 할당되었습니다. /t help로 능력을 확인해보세요.");
+                    Bukkit.broadcastMessage("관리자가 " + ChatColor.RED + playerName + ChatColor.WHITE + " 에게 능력을 할당하였습니다.");
+                    player.sendMessage("능력이 할당되었습니다. /t help로 능력을 확인해보세요.");
                 } catch (NumberFormatException e) {
-                    sender.sendMessage(
-                            "능력코드는 정수를 입력해 주세요");
+                    sender.sendMessage("능력코드는 정수를 입력해 주세요");
                 }
             } else {
-                sender.sendMessage(
-                        playerName
-                                + " 에 해당하는 온라인 유저가 없습니다.");
+                sender.sendMessage(playerName + " 에 해당하는 온라인 유저가 없습니다.");
             }
         }
     }
@@ -235,10 +211,8 @@ public class AbilitySet {
         } else if (abilityCode == 940523) {
             GameData.PlayerAbility.put(playerName, new Septagram(playerName));
         } else {
-            sender.sendMessage(
-                    "능력 혹은 능력 코드 번호를 잘못 입력하셨습니다.");
-            sender.sendMessage(
-                    "/t a help 명령어로 능력 코드를 확인하실 수 있습니다.");
+            sender.sendMessage("능력 혹은 능력 코드 번호를 잘못 입력하셨습니다.");
+            sender.sendMessage("/t a help 명령어로 능력 코드를 확인하실 수 있습니다.");
         }
     }
 }

@@ -1,9 +1,7 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.db;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
-
 
 public interface ServerSetting {
     boolean PVP = Bukkit.getWorlds().get(0).getPVP();

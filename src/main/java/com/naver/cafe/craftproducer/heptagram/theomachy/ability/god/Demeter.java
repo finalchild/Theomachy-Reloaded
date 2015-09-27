@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,7 +17,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
-
 public class Demeter extends Ability {
     private final int coolTime0 = 30;
     private final Material material = Material.COBBLESTONE; // 나무
@@ -31,21 +29,9 @@ public class Demeter extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 데메테르 ]  " + ChatColor.RED
-                + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  "
-                + ChatColor.GREEN + "Rank[ B ]");
-        player.sendMessage(
-                "수확의 신입니다.\n"
-                        + "코블스톤을 이용해서 빵을 얻을 수 있습니다.\n"
-                        + "기본적으로 배고픔이 닳지 않으며 체력 회복속도가 4배로 상승합니다.\n"
-                        + ChatColor.GREEN + "(좌,우클릭) " + ChatColor.WHITE
-                        + " 코블스톤 " + stack0 + "개 소모, 쿨타임 "
-                        + coolTime0 + "초\n");
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 데메테르 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ B ]");
+        player.sendMessage("수확의 신입니다.\n" + "코블스톤을 이용해서 빵을 얻을 수 있습니다.\n" + "기본적으로 배고픔이 닳지 않으며 체력 회복속도가 4배로 상승합니다.\n" + ChatColor.GREEN + "(좌,우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 
     public void T_Active(PlayerInteractEvent event) {
@@ -64,8 +50,7 @@ public class Demeter extends Ability {
     }
 
     private void Action(Player player) {
-        if (CoolTimeChecker.Check(player, 0)
-                && PlayerInventory.ItemCheck(player, material, stack0)) {
+        if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
             Skill.Use(player, material, stack0, 0, coolTime0);
             Inventory inventory = player.getInventory();
 

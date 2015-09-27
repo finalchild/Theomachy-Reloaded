@@ -1,13 +1,11 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
-
 import java.util.List;
 import java.util.TimerTask;
 
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-
 
 public class WizardDisasterTimer extends TimerTask {
     final private List<Player> targetList;

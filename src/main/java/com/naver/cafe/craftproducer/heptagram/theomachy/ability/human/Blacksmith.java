@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -15,7 +14,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
-
 
 public class Blacksmith extends Ability {
     private final int coolTime1 = 300;
@@ -33,24 +31,9 @@ public class Blacksmith extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 대장장이 ]  " + ChatColor.RED
-                + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN
-                + "Rank[ S ]");
-        player.sendMessage(
-                "철,다이아를 만들어 낼 수 있는 능력입니다.\n"
-                        + "일반능력으로 코블스톤을 소비하여 철괴 10개를 획득 할 수 있습니다.\n"
-                        + "고급능력으로 철괴를 소비하여 다이아 5개를 얻을 수 있습니다.\n"
-                        + ChatColor.AQUA + "일반(좌클릭) "
-                        + ChatColor.WHITE + " 코블스톤 " + stack1
-                        + "개 소모, 쿨타임 " + coolTime1 + "초\n"
-                        + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE
-                        + " 철괴 " + stack2 + "개 소모, 쿨타임 "
-                        + coolTime2 + "초\n");
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 대장장이 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ S ]");
+        player.sendMessage("철,다이아를 만들어 낼 수 있는 능력입니다.\n" + "일반능력으로 코블스톤을 소비하여 철괴 10개를 획득 할 수 있습니다.\n" + "고급능력으로 철괴를 소비하여 다이아 5개를 얻을 수 있습니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 철괴 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
     public void T_Active(PlayerInteractEvent event) {
@@ -72,24 +55,20 @@ public class Blacksmith extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1)
-                && PlayerInventory.ItemCheck(player, material1, stack1)) {
+        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material1, stack1)) {
             Skill.Use(player, material1, stack1, 1, coolTime1);
             World world = player.getWorld();
 
-            world.dropItem(player.getLocation().add(0, 2, 0),
-                    new ItemStack(Material.IRON_INGOT, 10));
+            world.dropItem(player.getLocation().add(0, 2, 0), new ItemStack(Material.IRON_INGOT, 10));
         }
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2)
-                && PlayerInventory.ItemCheck(player, material2, stack2)) {
+        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material2, stack2)) {
             Skill.Use(player, material2, stack2, 2, coolTime2);
             World world = player.getWorld();
 
-            world.dropItem(player.getLocation().add(0, 2, 0),
-                    new ItemStack(Material.DIAMOND, 5));
+            world.dropItem(player.getLocation().add(0, 2, 0), new ItemStack(Material.DIAMOND, 5));
         }
     }
 }

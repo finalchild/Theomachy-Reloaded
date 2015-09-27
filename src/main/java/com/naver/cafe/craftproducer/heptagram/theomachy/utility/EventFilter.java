@@ -1,9 +1,7 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-
 
 public class EventFilter {
     public static int PlayerInteract(PlayerInteractEvent event) {

@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +9,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-
 
 public class GetPlayerList {
     public static List<Player> getTeamMember(Player player) {
@@ -51,8 +49,7 @@ public class GetPlayerList {
                 for (Entity e : nearByEntityList) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.PlayerTeam.get(
-                                memberName);
+                        String memberTeamName = GameData.PlayerTeam.get(memberName);
 
                         if (memberTeamName.equals(playerTeamName)) {
                             nearByTeamMembers.add((Player) e);
@@ -76,8 +73,7 @@ public class GetPlayerList {
                 for (Entity e : nearByEntityList) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.PlayerTeam.get(
-                                memberName);
+                        String memberTeamName = GameData.PlayerTeam.get(memberName);
 
                         if (!memberTeamName.equals(playerTeamName)) {
                             nearByNotTeamMembers.add((Player) e);

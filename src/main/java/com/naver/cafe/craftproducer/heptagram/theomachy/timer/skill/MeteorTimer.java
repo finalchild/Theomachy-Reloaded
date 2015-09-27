@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
-
 import java.util.Random;
 import java.util.TimerTask;
 
@@ -9,7 +8,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
-
 
 public class MeteorTimer extends TimerTask {
     private int count;
@@ -31,8 +29,7 @@ public class MeteorTimer extends TimerTask {
         if (count > 0) {
             int X = random.nextInt(11) - 5;
             int Z = random.nextInt(11) - 5;
-            Fireball fireball = world.spawn(location.add(X, 0, Z),
-                    Fireball.class);
+            Fireball fireball = world.spawn(location.add(X, 0, Z), Fireball.class);
 
             fireball.setShooter(player);
             fireball.setDirection(v);

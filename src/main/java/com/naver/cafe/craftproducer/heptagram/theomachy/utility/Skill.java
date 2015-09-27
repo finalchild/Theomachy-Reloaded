@@ -1,13 +1,11 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
-
 
 public class Skill {
 	

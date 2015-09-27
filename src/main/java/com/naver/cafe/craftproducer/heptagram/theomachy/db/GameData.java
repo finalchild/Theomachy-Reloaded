@@ -1,13 +1,11 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.db;
 
-
 import java.util.HashMap;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
-
 
 public class GameData {
     public static HashMap<String, Player> OnlinePlayer = new HashMap<String, Player>(); // 온라인플레이어

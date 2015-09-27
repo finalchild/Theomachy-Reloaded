@@ -1,13 +1,11 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.timer.skill;
 
-
 import java.util.TimerTask;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.human.Sniper;
-
 
 public class SnipingDuration extends TimerTask {
 
@@ -23,21 +21,15 @@ public class SnipingDuration extends TimerTask {
     @Override
     public void run() {
         if (count > 0) {
-            player.sendMessage(
-                    ChatColor.RED + "[스나이핑 모드] " + ChatColor.WHITE
-                    + count + "초 전");
+            player.sendMessage(ChatColor.RED + "[스나이핑 모드] " + ChatColor.WHITE + count + "초 전");
         } else if (count == 0) {
-            player.sendMessage(
-                    ChatColor.RED + "[스나이핑 모드] " + ChatColor.AQUA
-                    + "ON");
+            player.sendMessage(ChatColor.RED + "[스나이핑 모드] " + ChatColor.AQUA + "ON");
             sniper.sniping = true;
         }
         if (!player.isSneaking()) {
             sniper.ready = false;
             sniper.sniping = false;
-            player.sendMessage(
-                    ChatColor.RED + "[스나이핑 모드] " + ChatColor.RED
-                    + "OFF");
+            player.sendMessage(ChatColor.RED + "[스나이핑 모드] " + ChatColor.RED + "OFF");
             this.cancel();
         }
         count--;

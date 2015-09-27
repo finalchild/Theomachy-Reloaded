@@ -1,8 +1,6 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 
-
 import org.bukkit.entity.Player;
-
 
 public class DirectionChecker {
     public static int PlayerDirection(Player player) {

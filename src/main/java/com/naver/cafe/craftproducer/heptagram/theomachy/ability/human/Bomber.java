@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.human;
 
-
 import java.util.Set;
 
 import org.bukkit.ChatColor;
@@ -19,7 +18,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
-
 public class Bomber extends Ability {
     private final int coolTime0 = 27;
     private final Material material = Material.COBBLESTONE;
@@ -34,22 +32,9 @@ public class Bomber extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 봄버 ]  " + ChatColor.RED
-                + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN
-                + "Rank[ A ]");
-        player.sendMessage(
-                "폭발을 다루는 능력입니다.\n"
-                        + "지정된 위치에 1.5의 폭발을 일으킵니다.\n"
-                        + "우클릭으로 해당 위치에 보이지 않는 tnt를 설치하며\n"
-                        + "좌클릭으로 어디서든 폭발시킬 수 있습니다.\n"
-                        + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE
-                        + " 코블스톤 " + stack0 + "개 소모, 쿨타임 "
-                        + coolTime0 + "초"); 
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 봄버 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ A ]");
+        player.sendMessage("폭발을 다루는 능력입니다.\n" + "지정된 위치에 1.5의 폭발을 일으킵니다.\n" + "우클릭으로 해당 위치에 보이지 않는 tnt를 설치하며\n" + "좌클릭으로 어디서든 폭발시킬 수 있습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초"); 
     }
 	
     public void T_Active(PlayerInteractEvent event) {
@@ -77,14 +62,12 @@ public class Bomber extends Ability {
 
             location.setY(location.getY() + 1);
             this.tntLocation = location;
-            player.sendMessage(
-                    "해당 블럭에 폭탄이 설치되었습니다.");			
+            player.sendMessage("해당 블럭에 폭탄이 설치되었습니다.");			
         }
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 0)
-                && PlayerInventory.ItemCheck(player, material, stack0)) {
+        if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
             if (tntLocation != null) {
                 Skill.Use(player, material, stack0, 0, coolTime0);
                 World world = player.getWorld();

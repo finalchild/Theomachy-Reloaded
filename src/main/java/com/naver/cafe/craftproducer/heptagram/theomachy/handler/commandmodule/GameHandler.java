@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
 
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Timer;
@@ -18,7 +17,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.timer.GameReadyTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.timer.TipTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
-
 public class GameHandler {
     public static boolean Ready = false;
     public static boolean Start = false;
@@ -27,9 +25,7 @@ public class GameHandler {
         if (PermissionChecker.Sender(sender)) {
             if (!Ready) {
                 Ready = true;
-                Bukkit.broadcastMessage(
-                        ChatColor.GOLD + "관리자(" + sender.getName()
-                        + ") 가 게임을 시작하였습니다.");
+                Bukkit.broadcastMessage(ChatColor.GOLD + "관리자(" + sender.getName() + ") 가 게임을 시작하였습니다.");
                 Timer t = new Timer();
 
                 t.schedule(new GameReadyTimer(), 0, 1000);
@@ -56,14 +52,11 @@ public class GameHandler {
 
                 for (World world : worlds) {
                     world.setPVP(ServerSetting.PVP);
-                    world.setSpawnFlags(ServerSetting.MONSTER,
-                            ServerSetting.ANIMAL);
+                    world.setSpawnFlags(ServerSetting.MONSTER, ServerSetting.ANIMAL);
                     world.setAutoSave(ServerSetting.AUTO_SAVE);
                     world.setDifficulty(ServerSetting.DIFFICULTY);
                 }
-                Bukkit.broadcastMessage(
-                        ChatColor.RED + "관리자(" + sender.getName()
-                        + ") 가 게임을 종료하였습니다.");
+                Bukkit.broadcastMessage(ChatColor.RED + "관리자(" + sender.getName() + ") 가 게임을 종료하였습니다.");
             } else {
                 sender.sendMessage("게임이 시작되지 않았습니다.");
             }

@@ -1,6 +1,5 @@
 package com.naver.cafe.craftproducer.heptagram.theomachy.ability.god;
 
-
 import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,7 +21,6 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
-
 public class Hephaestus extends Ability {
     private final int coolTime0 = 10;
     private final Material material = Material.COBBLESTONE;
@@ -36,22 +34,9 @@ public class Hephaestus extends Ability {
     public void description() {
         Player player = GameData.OnlinePlayer.get(playerName);
 
-        player.sendMessage(
-                ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW
-                + "능력 정보" + ChatColor.DARK_GREEN
-                + " ===================");
-        player.sendMessage(
-                ChatColor.YELLOW + "[ 헤파이스토스 ]  " + ChatColor.RED
-                + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  "
-                + ChatColor.GREEN + "Rank[ B ]");
-        player.sendMessage(
-                "불의 신입니다.\n"
-                        + "기본적으로 화염데미지를 받지 않으며 용암을 자유자재로 다룰 수 있습니다.\n"
-                        + "좌클릭을 통해 해당 지역에 용암을 놓을 수 있습니다. 놓은 용암은 2초뒤 사라집니다.\n"
-                        + "하지만 물에는 약하여 물에 들어갈시 데미지를 입습니다.\n"
-                        + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE
-                        + " 코블스톤 " + stack0 + "개 소모, 쿨타임 "
-                        + coolTime0 + "초\n");
+        player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
+        player.sendMessage(ChatColor.YELLOW + "[ 헤파이스토스 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ B ]");
+        player.sendMessage("불의 신입니다.\n" + "기본적으로 화염데미지를 받지 않으며 용암을 자유자재로 다룰 수 있습니다.\n" + "좌클릭을 통해 해당 지역에 용암을 놓을 수 있습니다. 놓은 용암은 2초뒤 사라집니다.\n" + "하지만 물에는 약하여 물에 들어갈시 데미지를 입습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
     public void T_Active(PlayerInteractEvent event) {
@@ -73,8 +58,7 @@ public class Hephaestus extends Ability {
         Block block = location.getBlock();
 
         if (block.isEmpty()) {
-            if (CoolTimeChecker.Check(player, 0)
-                    && PlayerInventory.ItemCheck(player, material, stack0)) {
+            if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
                 Skill.Use(player, material, stack0, 0, coolTime0);
                 block.setType(Material.LAVA);
                 Timer t = new Timer();
@@ -88,8 +72,7 @@ public class Hephaestus extends Ability {
         Player player = (Player) event.getEntity();
         DamageCause dc = event.getCause();
 
-        if (dc.equals(DamageCause.LAVA) || dc.equals(DamageCause.FIRE)
-                || dc.equals(DamageCause.FIRE_TICK)) {
+        if (dc.equals(DamageCause.LAVA) || dc.equals(DamageCause.FIRE) || dc.equals(DamageCause.FIRE_TICK)) {
             event.setCancelled(true);
             player.setFireTicks(0);
         } else if (dc.equals(DamageCause.DROWNING)) {
