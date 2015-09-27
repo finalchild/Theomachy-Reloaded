@@ -29,15 +29,15 @@ public class GameReadyTimer extends TimerTask {
     private World world;
     public GameReadyTimer() {
         this.playerList = Bukkit.getOnlinePlayers().toArray(new Player[0]);
-        setting[0] = Theomachy.INVENTORY_CLEAR ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[1] = Theomachy.GIVE_ITEM ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[2] = Theomachy.IGNORE_BED ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[3] = Theomachy.AUTO_SAVE ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[4] = Theomachy.ANIMAL ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[5] = Theomachy.MONSTER ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
-        setting[7] = Theomachy.ENTITIES_REMOVE ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[0] = Theomachy.inventoryClear ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[1] = Theomachy.giveItem ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[2] = Theomachy.ignoreBed ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[3] = Theomachy.autoSave ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[4] = Theomachy.animal ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[5] = Theomachy.monster ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
+        setting[7] = Theomachy.entitiesRemove ? ChatColor.AQUA + "ON" : ChatColor.RED + "OFF";
         difficulty = null;
-        switch (Theomachy.DIFFICULTY) {
+        switch (Theomachy.difficulty) {
         case 0:
             setting[6] = ChatColor.GREEN + "평화로움";
             difficulty = Difficulty.PEACEFUL;
@@ -66,7 +66,7 @@ public class GameReadyTimer extends TimerTask {
     }
 	
     public void run() {		
-        if (GameHandler.Ready && count < 45) {
+        if (GameHandler.ready && count < 45) {
             switch (count) {
             case 4:
                 Bukkit.broadcastMessage(ChatColor.RED + "신들의 전쟁 플러그인은 스카이블럭 전용이며 야생,하드코어로는 부적합합니다");
@@ -102,7 +102,7 @@ public class GameReadyTimer extends TimerTask {
             case 20:
                 Bukkit.broadcastMessage(ChatColor.AQUA + "현재 능력이 적용되지 않은 플레이어 목록");
                 for (int i = 0; i < playerList.length; i++) {
-                    if (!GameData.PlayerAbility.containsKey(playerList[i].getName())) {
+                    if (!GameData.playerAbility.containsKey(playerList[i].getName())) {
                         Bukkit.broadcastMessage(i + 1 + ".  " + ChatColor.GOLD + playerList[i].getName());
                     }
                 }
@@ -111,7 +111,7 @@ public class GameReadyTimer extends TimerTask {
             case 24:
                 Bukkit.broadcastMessage(ChatColor.BLUE + "현재 팀이 적용되지 않은 플레이어 목록");
                 for (int i = 0; i < playerList.length; i++) {
-                    if (!GameData.PlayerTeam.containsKey(playerList[i].getName())) {
+                    if (!GameData.playerTeam.containsKey(playerList[i].getName())) {
                         Bukkit.broadcastMessage(i + 1 + ".  " + ChatColor.GOLD + playerList[i].getName());
                     }
                 }
@@ -148,7 +148,7 @@ public class GameReadyTimer extends TimerTask {
                 break;
 
             case 40:
-                if (Theomachy.ENTITIES_REMOVE) {
+                if (Theomachy.entitiesRemove) {
                     try {
                         List<Entity> entities = world.getEntities();
 
@@ -177,10 +177,10 @@ public class GameReadyTimer extends TimerTask {
                     e.setExp(0.0F);
                     e.setHealth(20);
                     PlayerInventory.skyBlockBasicItemAdd(e);					
-                    String teamName = GameData.PlayerTeam.get(e.getName());
+                    String teamName = GameData.playerTeam.get(e.getName());
 
                     if (teamName != null) {
-                        Location location = GameData.SpawnArea.get(teamName);
+                        Location location = GameData.spawnArea.get(teamName);
 
                         if (location != null) {
                             e.teleport(location);
@@ -197,17 +197,17 @@ public class GameReadyTimer extends TimerTask {
 
             case 41:
                 world.setPVP(true);
-                world.setAutoSave(Theomachy.AUTO_SAVE);
-                world.setSpawnFlags(Theomachy.MONSTER, Theomachy.ANIMAL);
+                world.setAutoSave(Theomachy.autoSave);
+                world.setSpawnFlags(Theomachy.monster, Theomachy.animal);
                 world.setDifficulty(this.difficulty);
                 world.setTime(6000);
-                Collection<Ability> playerAbilityList = GameData.PlayerAbility.values();
+                Collection<Ability> playerAbilityList = GameData.playerAbility.values();
 
                 for (Ability e : playerAbilityList) {
                     e.conditionSet();
                     e.buff();
                 }
-                GameHandler.Start = true;
+                GameHandler.start = true;
                 Bukkit.broadcastMessage(ChatColor.GOLD + "게임 시작!");
 				
             }

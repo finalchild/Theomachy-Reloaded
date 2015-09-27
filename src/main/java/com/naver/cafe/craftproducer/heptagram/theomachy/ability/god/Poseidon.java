@@ -32,7 +32,7 @@ public class Poseidon extends Ability {
     }
 
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 포세이돈 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ S ]");
@@ -141,9 +141,9 @@ public class Poseidon extends Ability {
 
         if (event.getCause() == DamageCause.DROWNING) {
             event.setCancelled(true);
-            CoolTime.COOL0.put(playerName + "0", 7);
-            T_Message.PassiveEnable(player, 0);
-        } else if (CoolTime.COOL0.containsKey(player.getName() + "0")) {
+            CoolTime.cool0.put(playerName + "0", 7);
+            T_Message.onPassiveEnabled(player, 0);
+        } else if (CoolTime.cool0.containsKey(player.getName() + "0")) {
             int rn = (int) (Math.random() * 3);
 
             if (rn == 0) {
@@ -154,14 +154,14 @@ public class Poseidon extends Ability {
     }
 
     public void conditionSet() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.setMaximumAir(0);
         player.setRemainingAir(0);
     }
 	
     public void conditionReSet() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.setMaximumAir(300);
         player.setRemainingAir(300);

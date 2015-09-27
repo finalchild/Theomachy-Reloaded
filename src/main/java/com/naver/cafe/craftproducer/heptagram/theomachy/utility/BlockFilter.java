@@ -10,7 +10,7 @@ public class BlockFilter {
         if (!block.isEmpty()) {
             return true;
         } else {
-            T_Message.TooFarError(player, 1);
+            T_Message.onTooFar(player, 1);
             return false;
         }
     }

@@ -12,11 +12,11 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 public class GetPlayerList {
     public static List<Player> getTeamMember(Player player) {
-        String teamName = GameData.PlayerTeam.get(player.getName());
+        String teamName = GameData.playerTeam.get(player.getName());
         ArrayList<String> memberName = new ArrayList<String>();
 
-        if (GameData.PlayerTeam.containsValue(teamName)) {
-            Iterator<Entry<String, String>> iterator = GameData.PlayerTeam.entrySet().iterator();
+        if (GameData.playerTeam.containsValue(teamName)) {
+            Iterator<Entry<String, String>> iterator = GameData.playerTeam.entrySet().iterator();
 
             while (iterator.hasNext()) {
                 Entry<String, String> entry = iterator.next();
@@ -29,8 +29,8 @@ public class GetPlayerList {
         ArrayList<Player> memberPlayer = new ArrayList<Player>();
 
         for (String e : memberName) {
-            if (GameData.OnlinePlayer.containsKey(e)) {
-                memberPlayer.add(GameData.OnlinePlayer.get(e));
+            if (GameData.onlinePlayer.containsKey(e)) {
+                memberPlayer.add(GameData.onlinePlayer.get(e));
             }
         }
         return memberPlayer;
@@ -38,7 +38,7 @@ public class GetPlayerList {
 	
     public static List<Player> getNearByTeamMembers(Player player, double x, double y, double z) {
         String playerName = player.getName();
-        String playerTeamName = GameData.PlayerTeam.get(playerName);
+        String playerTeamName = GameData.playerTeam.get(playerName);
 
         ArrayList<Player> nearByTeamMembers = new ArrayList<Player>();
 
@@ -49,7 +49,7 @@ public class GetPlayerList {
                 for (Entity e : nearByEntityList) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.PlayerTeam.get(memberName);
+                        String memberTeamName = GameData.playerTeam.get(memberName);
 
                         if (memberTeamName.equals(playerTeamName)) {
                             nearByTeamMembers.add((Player) e);
@@ -63,7 +63,7 @@ public class GetPlayerList {
 	
     public static List<Player> getNearByNotTeamMembers(Player player, double x, double y, double z) {
         String playerName = player.getName();
-        String playerTeamName = GameData.PlayerTeam.get(playerName);
+        String playerTeamName = GameData.playerTeam.get(playerName);
 
         ArrayList<Player> nearByNotTeamMembers = new ArrayList<Player>();
         List<Entity> nearByEntityList = player.getNearbyEntities(x, y, z);
@@ -73,7 +73,7 @@ public class GetPlayerList {
                 for (Entity e : nearByEntityList) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.PlayerTeam.get(memberName);
+                        String memberTeamName = GameData.playerTeam.get(memberName);
 
                         if (!memberTeamName.equals(playerTeamName)) {
                             nearByNotTeamMembers.add((Player) e);

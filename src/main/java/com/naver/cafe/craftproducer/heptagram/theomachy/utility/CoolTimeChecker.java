@@ -10,28 +10,28 @@ public class CoolTimeChecker {
         String key = player.getName();
 		
         if (abilityCase == 0) {
-            if (CoolTime.COOL0.containsKey(key)) {
-                int cool = CoolTime.COOL0.get(key);
+            if (CoolTime.cool0.containsKey(key)) {
+                int cool = CoolTime.cool0.get(key);
 
-                T_Message.CoolTimeTeller(player, abilityCase, cool);
+                T_Message.tellCooltime(player, abilityCase, cool);
                 return false;
             } else {
                 return true;
             }
         } else if (abilityCase == 1) {
-            if (CoolTime.COOL1.containsKey(key)) {
-                int cool = CoolTime.COOL1.get(key);
+            if (CoolTime.cool1.containsKey(key)) {
+                int cool = CoolTime.cool1.get(key);
 
-                T_Message.CoolTimeTeller(player, abilityCase, cool);
+                T_Message.tellCooltime(player, abilityCase, cool);
                 return false;
             } else {
                 return true;
             }
         } else if (abilityCase == 2) {
-            if (CoolTime.COOL2.containsKey(key)) {
-                int cool = CoolTime.COOL2.get(key);
+            if (CoolTime.cool2.containsKey(key)) {
+                int cool = CoolTime.cool2.get(key);
 
-                T_Message.CoolTimeTeller(player, abilityCase, cool);
+                T_Message.tellCooltime(player, abilityCase, cool);
                 return false;
             } else {
                 return true;

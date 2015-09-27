@@ -37,7 +37,7 @@ public class Assassin extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 암살자 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ B ]");
@@ -67,8 +67,8 @@ public class Assassin extends Ability {
         Block b = temp.add(0, -1, 0).getBlock();
 
         if ((b.isEmpty()) || (b.getType() == Material.SNOW) || (b.getType() == Material.STEP)) {	
-            if ((!CoolTime.COOL0.containsKey(playerName + "0") && (PlayerInventory.ItemCheck(player, material, stack1)))) {
-                CoolTime.COOL0.put(playerName + "0", coolTime1);
+            if ((!CoolTime.cool0.containsKey(playerName + "0") && (PlayerInventory.ItemCheck(player, material, stack1)))) {
+                CoolTime.cool0.put(playerName + "0", coolTime1);
                 PlayerInventory.ItemRemove(player, material, stack1);
                 World world = player.getWorld();
                 Location location = player.getLocation();
@@ -90,8 +90,8 @@ public class Assassin extends Ability {
                 if (e instanceof Player) {
                     Player target = (Player) e;
 					
-                    String targetTeamName = GameData.PlayerTeam.get(target.getName());
-                    String playerTeamName = GameData.PlayerTeam.get(player.getName());
+                    String targetTeamName = GameData.playerTeam.get(target.getName());
+                    String playerTeamName = GameData.playerTeam.get(player.getName());
 
                     if ((targetTeamName == null) || !(targetTeamName.equals(playerTeamName))) {
                         Skill.Use(player, material, stack2, 2, coolTime2);

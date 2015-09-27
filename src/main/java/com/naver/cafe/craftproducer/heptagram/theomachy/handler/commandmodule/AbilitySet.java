@@ -46,9 +46,9 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecke
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.RandomNumberConstuctor;
 
 public class AbilitySet {
-    public static void Module(CommandSender sender, Command command, String label, String[] data) {
+    public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.Sender(sender)) {
-            if (!GameHandler.Ready) {
+            if (!GameHandler.ready) {
                 if (data.length <= 1) {
                     sender.sendMessage("/t a help   모든 능력의 코드표를 확인합니다.");
                     sender.sendMessage("/t a random 현재 접속한 모든 플레이어에게 랜덤으로 능력을 할당합니다.");
@@ -60,14 +60,14 @@ public class AbilitySet {
                 } else if (data[1].equalsIgnoreCase("remove")) // 삭제
                 {
                     if (data[2] != null) {
-                        Remove(sender, data[2]);
+                        remove(sender, data[2]);
                     } else {
                         sender.sendMessage("능력을 삭제할 플레이어의 이름을 적어주세요.");
                     }
                 } else if (data[1].equalsIgnoreCase("reset")) { // 리셋
-                    Reset();
+                    reset();
                 } else if (data[1].equalsIgnoreCase("random")) { // 랜덤
-                    RandomAssignment(sender);
+                    assignRandomly(sender);
                 } else if (data.length >= 3) {
                     forceAssignment(sender, data);
                 } else {
@@ -80,26 +80,26 @@ public class AbilitySet {
         }
     }
 	
-    public static void Remove(CommandSender sender, String playerName) {
-        Ability ability = GameData.PlayerAbility.get(playerName);
+    public static void remove(CommandSender sender, String playerName) {
+        Ability ability = GameData.playerAbility.get(playerName);
 
         if (ability != null) {
-            GameData.PlayerAbility.remove(playerName);
+            GameData.playerAbility.remove(playerName);
             sender.sendMessage("플레이어의 능력을 삭제하였습니다.");
         } else {
             sender.sendMessage("플레이어의 능력이 없습니다.");
         }
     }
 	
-    public static void Reset() {
-        GameData.PlayerAbility.clear();
+    public static void reset() {
+        GameData.playerAbility.clear();
         Bukkit.broadcastMessage(ChatColor.AQUA + "관리자가 모두의 능력을 초기화 하였습니다.");
     }
 	
-    private static void RandomAssignment(CommandSender sender) {
-        if (!GameData.PlayerAbility.isEmpty()) {
+    private static void assignRandomly(CommandSender sender) {
+        if (!GameData.playerAbility.isEmpty()) {
             Bukkit.broadcastMessage("모든 능력을 삭제 한후 재 추첨합니다.");
-            GameData.PlayerAbility.clear();
+            GameData.playerAbility.clear();
         }
         Player[] playerlist = Bukkit.getOnlinePlayers().toArray(new Player[0]);
 
@@ -113,7 +113,7 @@ public class AbilitySet {
         for (int i = 0; i < length; i++) {
             String playerName = playerlist[i].getName();
 
-            abiltiyAssignment(rn[i], playerName, sender);
+            assignAbility(rn[i], playerName, sender);
         }
         Bukkit.broadcastMessage("모두에게 능력이 적용되었습니다.");
         Bukkit.broadcastMessage("/t help 로 확인해보세요.");
@@ -127,12 +127,12 @@ public class AbilitySet {
             String abilityName = data[1];
             String playerName = data[i];
 
-            if (GameData.OnlinePlayer.containsKey(playerName)) {
+            if (GameData.onlinePlayer.containsKey(playerName)) {
                 try {
                     int abilityCode = Integer.parseInt(abilityName);
 
-                    abiltiyAssignment(abilityCode, playerName, sender);
-                    Player player = GameData.OnlinePlayer.get(playerName);
+                    assignAbility(abilityCode, playerName, sender);
+                    Player player = GameData.onlinePlayer.get(playerName);
 
                     Bukkit.broadcastMessage("관리자가 " + ChatColor.RED + playerName + ChatColor.WHITE + " 에게 능력을 할당하였습니다.");
                     player.sendMessage("능력이 할당되었습니다. /t help로 능력을 확인해보세요.");
@@ -145,71 +145,71 @@ public class AbilitySet {
         }
     }
 	
-    private static void abiltiyAssignment(int abilityCode, String playerName, CommandSender sender) {
+    private static void assignAbility(int abilityCode, String playerName, CommandSender sender) {
         if (abilityCode == 1) {
-            GameData.PlayerAbility.put(playerName, new Zeus(playerName));
+            GameData.playerAbility.put(playerName, new Zeus(playerName));
         } else if (abilityCode == 2) {
-            GameData.PlayerAbility.put(playerName, new Poseidon(playerName));
+            GameData.playerAbility.put(playerName, new Poseidon(playerName));
         } else if (abilityCode == 3) {
-            GameData.PlayerAbility.put(playerName, new Hades(playerName));
+            GameData.playerAbility.put(playerName, new Hades(playerName));
         } else if (abilityCode == 4) {
-            GameData.PlayerAbility.put(playerName, new Demeter(playerName));
+            GameData.playerAbility.put(playerName, new Demeter(playerName));
         } else if (abilityCode == 5) {
-            GameData.PlayerAbility.put(playerName, new Athena(playerName));
+            GameData.playerAbility.put(playerName, new Athena(playerName));
         } else if (abilityCode == 6) {
-            GameData.PlayerAbility.put(playerName, new Apollon(playerName));
+            GameData.playerAbility.put(playerName, new Apollon(playerName));
         } else if (abilityCode == 7) {
-            GameData.PlayerAbility.put(playerName, new Artemis(playerName));
+            GameData.playerAbility.put(playerName, new Artemis(playerName));
         } else if (abilityCode == 8) {
-            GameData.PlayerAbility.put(playerName, new Ares(playerName));
+            GameData.playerAbility.put(playerName, new Ares(playerName));
         } else if (abilityCode == 9) {
-            GameData.PlayerAbility.put(playerName, new Hephaestus(playerName));
+            GameData.playerAbility.put(playerName, new Hephaestus(playerName));
         } else if (abilityCode == 10) {
-            GameData.PlayerAbility.put(playerName, new Asclepius(playerName));
+            GameData.playerAbility.put(playerName, new Asclepius(playerName));
         } else if (abilityCode == 11) {
-            GameData.PlayerAbility.put(playerName, new Hermes(playerName));
+            GameData.playerAbility.put(playerName, new Hermes(playerName));
         } else if (abilityCode == 12) {
-            GameData.PlayerAbility.put(playerName, new Dionysus(playerName));
+            GameData.playerAbility.put(playerName, new Dionysus(playerName));
         } else if (abilityCode == 101) {
-            GameData.PlayerAbility.put(playerName, new Archer(playerName));
+            GameData.playerAbility.put(playerName, new Archer(playerName));
         } else if (abilityCode == 102) {
-            GameData.PlayerAbility.put(playerName, new Miner(playerName));
+            GameData.playerAbility.put(playerName, new Miner(playerName));
         } else if (abilityCode == 103) {
-            GameData.PlayerAbility.put(playerName, new Stance(playerName));
+            GameData.playerAbility.put(playerName, new Stance(playerName));
         } else if (abilityCode == 104) {
-            GameData.PlayerAbility.put(playerName, new Teleporter(playerName));
+            GameData.playerAbility.put(playerName, new Teleporter(playerName));
         } else if (abilityCode == 105) {
-            GameData.PlayerAbility.put(playerName, new Bomber(playerName));
+            GameData.playerAbility.put(playerName, new Bomber(playerName));
         } else if (abilityCode == 106) {
-            GameData.PlayerAbility.put(playerName, new Creeper(playerName));
+            GameData.playerAbility.put(playerName, new Creeper(playerName));
         } else if (abilityCode == 107) {
-            GameData.PlayerAbility.put(playerName, new Wizard(playerName));
+            GameData.playerAbility.put(playerName, new Wizard(playerName));
         } else if (abilityCode == 108) {
-            GameData.PlayerAbility.put(playerName, new Assassin(playerName));
+            GameData.playerAbility.put(playerName, new Assassin(playerName));
         } else if (abilityCode == 109) {
-            GameData.PlayerAbility.put(playerName, new Reflection(playerName));
+            GameData.playerAbility.put(playerName, new Reflection(playerName));
         } else if (abilityCode == 110) {
-            GameData.PlayerAbility.put(playerName, new Blinder(playerName));
+            GameData.playerAbility.put(playerName, new Blinder(playerName));
         } else if (abilityCode == 111) {
-            GameData.PlayerAbility.put(playerName, new Invincibility(playerName));
+            GameData.playerAbility.put(playerName, new Invincibility(playerName));
         } else if (abilityCode == 112) {
-            GameData.PlayerAbility.put(playerName, new Cloaking(playerName));
+            GameData.playerAbility.put(playerName, new Cloaking(playerName));
         } else if (abilityCode == 113) {
-            GameData.PlayerAbility.put(playerName, new Blacksmith(playerName));
+            GameData.playerAbility.put(playerName, new Blacksmith(playerName));
         } else if (abilityCode == 114) {
-            GameData.PlayerAbility.put(playerName, new Boxer(playerName));
+            GameData.playerAbility.put(playerName, new Boxer(playerName));
         } else if (abilityCode == 115) {
-            GameData.PlayerAbility.put(playerName, new Priest(playerName));
+            GameData.playerAbility.put(playerName, new Priest(playerName));
         } else if (abilityCode == 116) {
-            GameData.PlayerAbility.put(playerName, new Witch(playerName));
+            GameData.playerAbility.put(playerName, new Witch(playerName));
         } else if (abilityCode == 117) {
-            GameData.PlayerAbility.put(playerName, new Meteor(playerName));
+            GameData.playerAbility.put(playerName, new Meteor(playerName));
         } else if (abilityCode == 118) {
-            GameData.PlayerAbility.put(playerName, new Sniper(playerName));
+            GameData.playerAbility.put(playerName, new Sniper(playerName));
         } else if (abilityCode == 119) {
-            GameData.PlayerAbility.put(playerName, new Voodoo(playerName));
+            GameData.playerAbility.put(playerName, new Voodoo(playerName));
         } else if (abilityCode == 940523) {
-            GameData.PlayerAbility.put(playerName, new Septagram(playerName));
+            GameData.playerAbility.put(playerName, new Septagram(playerName));
         } else {
             sender.sendMessage("능력 혹은 능력 코드 번호를 잘못 입력하셨습니다.");
             sender.sendMessage("/t a help 명령어로 능력 코드를 확인하실 수 있습니다.");

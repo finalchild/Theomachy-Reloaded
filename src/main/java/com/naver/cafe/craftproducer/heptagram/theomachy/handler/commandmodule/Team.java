@@ -9,22 +9,22 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
 public class Team {
-    public static void Module(CommandSender sender, Command command, String label, String[] data) {
+    public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.Sender(sender)) {
             if (data.length > 2) {
                 for (int i = 2; i < data.length; i++) {
-                    if (GameData.OnlinePlayer.containsKey(data[i])) {
+                    if (GameData.onlinePlayer.containsKey(data[i])) {
                         String playerName = data[i];
                         String teamName = data[1];
-                        String teamNameOld = GameData.PlayerTeam.get(playerName);
+                        String teamNameOld = GameData.playerTeam.get(playerName);
 
                         if (teamNameOld == null) // 플레이어 팀 초기화
                         {
-                            GameData.PlayerTeam.put(data[i], teamName);
+                            GameData.playerTeam.put(data[i], teamName);
                             Bukkit.broadcastMessage("플레이어 " + ChatColor.RED + playerName + ChatColor.WHITE + " (이)가 팀 " + ChatColor.DARK_AQUA + teamName + ChatColor.WHITE + " 에 등록되었습니다.");
                         } else // 플레이어 팀 변경
                         {
-                            GameData.PlayerTeam.put(data[i], teamName);
+                            GameData.playerTeam.put(data[i], teamName);
                             Bukkit.broadcastMessage("플레이어 " + ChatColor.RED + playerName + ChatColor.WHITE + " 의 팀이 변경되었습니다.    " + ChatColor.BLUE + teamNameOld + ChatColor.WHITE + " > " + ChatColor.DARK_AQUA + teamName);
                         }
                     } else {

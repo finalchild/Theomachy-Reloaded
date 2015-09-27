@@ -14,18 +14,18 @@ public class Skill {
         if (coolTime > 0) {
             switch (abilityCase) {
             case 0:
-                CoolTime.COOL0.put(player.getName(), coolTime);
+                CoolTime.cool0.put(player.getName(), coolTime);
                 break;
 
             case 1:
-                CoolTime.COOL1.put(player.getName(), coolTime);
+                CoolTime.cool1.put(player.getName(), coolTime);
                 break;
 
             case 2:
-                CoolTime.COOL2.put(player.getName(), coolTime);
+                CoolTime.cool2.put(player.getName(), coolTime);
                 break;
             }
         }
-        T_Message.Skill_Used(player, abilityCase);
+        T_Message.onSkillUsed(player, abilityCase);
     }
 }

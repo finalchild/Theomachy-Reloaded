@@ -10,13 +10,13 @@ import org.bukkit.command.CommandSender;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 public class TeamInfo {
-    public static void Module(CommandSender sender, Command command, String label, String[] data) {
+    public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (data.length >= 2) {
             String teamName = data[1];
 
-            if (GameData.PlayerTeam.containsValue(teamName)) {
+            if (GameData.playerTeam.containsValue(teamName)) {
                 sender.sendMessage(ChatColor.GREEN + "======  " + ChatColor.DARK_AQUA + teamName + ChatColor.GREEN + "  ======");
-                Iterator<Entry<String, String>> iterator = GameData.PlayerTeam.entrySet().iterator();
+                Iterator<Entry<String, String>> iterator = GameData.playerTeam.entrySet().iterator();
 
                 for (int i = 1; iterator.hasNext(); i++) {
                     Entry<String, String> entry = iterator.next();
@@ -32,12 +32,12 @@ public class TeamInfo {
             }
         } else {
             sender.sendMessage(ChatColor.YELLOW + "자신의 팀을 확인합니다");
-            String teamName = GameData.PlayerTeam.get(sender.getName());
+            String teamName = GameData.playerTeam.get(sender.getName());
 
             if (teamName != null) {
-                if (GameData.PlayerTeam.containsValue(teamName)) {
+                if (GameData.playerTeam.containsValue(teamName)) {
                     sender.sendMessage(ChatColor.GREEN + "======  " + ChatColor.DARK_AQUA + teamName + ChatColor.GREEN + "  ======");
-                    Iterator<Entry<String, String>> iterator = GameData.PlayerTeam.entrySet().iterator();
+                    Iterator<Entry<String, String>> iterator = GameData.playerTeam.entrySet().iterator();
 
                     for (int i = 1; iterator.hasNext(); i++) {
                         Entry<String, String> entry = iterator.next();

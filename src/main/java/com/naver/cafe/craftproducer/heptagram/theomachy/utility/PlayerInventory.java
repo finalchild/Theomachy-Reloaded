@@ -24,7 +24,7 @@ public class PlayerInventory {
         if (inventory.contains(material, stack)) {
             return true;
         } else {
-            T_Message.LackItemError(player, material, stack);
+            T_Message.onItemLack(player, material, stack);
             return false;
         }
     }
@@ -38,14 +38,14 @@ public class PlayerInventory {
     public static void skyBlockBasicItemAdd(Player player) {
         Inventory inventory = player.getInventory();
 
-        if (Theomachy.INVENTORY_CLEAR) {
+        if (Theomachy.inventoryClear) {
             inventory.clear();
             player.getInventory().setHelmet(new ItemStack(Material.AIR));
             player.getInventory().setChestplate(new ItemStack(Material.AIR));
             player.getInventory().setLeggings(new ItemStack(Material.AIR));
             player.getInventory().setBoots(new ItemStack(Material.AIR));
         }
-        if (Theomachy.GIVE_ITEM) {
+        if (Theomachy.giveItem) {
             inventory.addItem(new ItemStack(Material.CHEST));
             inventory.addItem(new ItemStack(Material.LAVA_BUCKET));
             inventory.addItem(new ItemStack(Material.LAVA_BUCKET));

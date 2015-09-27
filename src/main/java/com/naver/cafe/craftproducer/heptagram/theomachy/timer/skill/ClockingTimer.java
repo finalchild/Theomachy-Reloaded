@@ -19,9 +19,9 @@ public class ClockingTimer extends TimerTask {
 	
     public void run() {
         try {
-            if (GameData.PlayerAbility.get(player.getName()).flag) {
+            if (GameData.playerAbility.get(player.getName()).flag) {
                 player.sendMessage("은신 시간이 종료되었습니다.");
-                GameData.PlayerAbility.get(player.getName()).flag = false;
+                GameData.playerAbility.get(player.getName()).flag = false;
             }
             for (Player e : targetList) {
                 e.showPlayer(player);

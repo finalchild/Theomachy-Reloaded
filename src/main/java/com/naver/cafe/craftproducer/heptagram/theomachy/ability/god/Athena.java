@@ -31,7 +31,7 @@ public class Athena extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 아테나 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ S ]");
@@ -83,18 +83,18 @@ public class Athena extends Ability {
 	
     public void T_Passive(PlayerDeathEvent event) {
         if (event.getEntity().getLastDamageCause().getCause() != DamageCause.SUICIDE) {
-            Player player = GameData.OnlinePlayer.get(playerName);
+            Player player = GameData.onlinePlayer.get(playerName);
 
             player.setLevel(player.getLevel() + 1);
         }
     }
 	
     public void conditionSet() {
-        EventManager.PlayerDeathEventList.add(this); // 나중에 콘디셧셋으로 바꾸기
+        EventManager.playerDeathEventList.add(this); // 나중에 콘디셧셋으로 바꾸기
     }
 
     public void conditionReSet() {
-        EventManager.PlayerDeathEventList.remove(this); // 나중에 콘디션 리셋으로 바꾸기
+        EventManager.playerDeathEventList.remove(this); // 나중에 콘디션 리셋으로 바꾸기
     }
 }
 

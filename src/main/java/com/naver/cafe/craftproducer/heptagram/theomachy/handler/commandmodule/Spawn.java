@@ -11,7 +11,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
 public class Spawn {
-    public static void Module(CommandSender sender, Command command, String label, String[] data) {
+    public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.Sender(sender)) {
             if (data.length == 1) {
                 Player player = (Player) sender;
@@ -31,7 +31,7 @@ public class Spawn {
                 location.setX(location.getX() + 0.5);
                 location.setZ(location.getZ() + 0.5);
                 location.setYaw((int) player.getLocation().getYaw());
-                GameData.SpawnArea.put(teamName, location);
+                GameData.spawnArea.put(teamName, location);
                 player.sendMessage("현재 위치가 팀 " + ChatColor.DARK_AQUA + teamName + ChatColor.WHITE + " 의 스폰지역으로 설정되었습니다.");	
             }
         }

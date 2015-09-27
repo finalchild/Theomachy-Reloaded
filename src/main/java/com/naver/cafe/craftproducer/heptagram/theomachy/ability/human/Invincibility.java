@@ -30,7 +30,7 @@ public class Invincibility extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 무적 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active, Buff  " + ChatColor.GREEN + "Rank[ A ]");
@@ -58,7 +58,7 @@ public class Invincibility extends Ability {
     private void leftAction(Player player) {
         if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
             Skill.Use(player, material, stack1, 1, coolTime1); {
-                CoolTime.COOL0.put(playerName + "1", 7);
+                CoolTime.cool0.put(playerName + "1", 7);
             }
         }
     }
@@ -71,7 +71,7 @@ public class Invincibility extends Ability {
     }
 	
     public void T_Passive(EntityDamageEvent event) {
-        if (CoolTime.COOL0.containsKey(playerName + "1")) {
+        if (CoolTime.cool0.containsKey(playerName + "1")) {
             event.setCancelled(true);
             event.getEntity().setFireTicks(0);
         }

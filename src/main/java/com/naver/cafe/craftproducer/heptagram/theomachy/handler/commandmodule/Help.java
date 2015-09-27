@@ -8,9 +8,9 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 public class Help {
 
-    public static void Module(CommandSender sender, Command command, String label, String[] data) {
+    public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         String playerName = sender.getName();
-        Ability ability = GameData.PlayerAbility.get(playerName);
+        Ability ability = GameData.playerAbility.get(playerName);
 
         if (ability != null) {
             ability.description();

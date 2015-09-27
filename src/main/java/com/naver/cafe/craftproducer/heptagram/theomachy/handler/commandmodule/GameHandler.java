@@ -18,13 +18,13 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.timer.TipTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
 public class GameHandler {
-    public static boolean Ready = false;
-    public static boolean Start = false;
+    public static boolean ready = false;
+    public static boolean start = false;
 	
-    public static void GameReady(CommandSender sender) {
+    public static void gameReady(CommandSender sender) {
         if (PermissionChecker.Sender(sender)) {
-            if (!Ready) {
-                Ready = true;
+            if (!ready) {
+                ready = true;
                 Bukkit.broadcastMessage(ChatColor.GOLD + "관리자(" + sender.getName() + ") 가 게임을 시작하였습니다.");
                 Timer t = new Timer();
 
@@ -37,24 +37,24 @@ public class GameHandler {
         }
     }
 	
-    public static void GameStop(CommandSender sender) {
+    public static void gameStop(CommandSender sender) {
         if (PermissionChecker.Sender(sender)) {
-            if (Ready) {
-                Collection<Ability> playerAbilityList = GameData.PlayerAbility.values();
+            if (ready) {
+                Collection<Ability> playerAbilityList = GameData.playerAbility.values();
 
                 for (Ability e : playerAbilityList) {
                     e.conditionReSet();
                 }
-                Ready = false;
-                Start = false;
+                ready = false;
+                start = false;
                 CoolTime.ini = true;
                 List<World> worlds = Bukkit.getWorlds();
 
                 for (World world : worlds) {
-                    world.setPVP(ServerSetting.PVP);
-                    world.setSpawnFlags(ServerSetting.MONSTER, ServerSetting.ANIMAL);
-                    world.setAutoSave(ServerSetting.AUTO_SAVE);
-                    world.setDifficulty(ServerSetting.DIFFICULTY);
+                    world.setPVP(ServerSetting.pvp);
+                    world.setSpawnFlags(ServerSetting.monster, ServerSetting.animal);
+                    world.setAutoSave(ServerSetting.autoSave);
+                    world.setDifficulty(ServerSetting.difficulty);
                 }
                 Bukkit.broadcastMessage(ChatColor.RED + "관리자(" + sender.getName() + ") 가 게임을 종료하였습니다.");
             } else {

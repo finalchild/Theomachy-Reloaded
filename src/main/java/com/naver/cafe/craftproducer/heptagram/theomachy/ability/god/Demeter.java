@@ -27,7 +27,7 @@ public class Demeter extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 데메테르 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ B ]");

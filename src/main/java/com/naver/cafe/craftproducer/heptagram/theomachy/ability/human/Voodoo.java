@@ -30,7 +30,7 @@ public class Voodoo extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.OnlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayer.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 부두술사 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ A ]");
@@ -55,7 +55,7 @@ public class Voodoo extends Ability {
                 Block block = event.getClickedBlock();
 
                 if ((block.getType() == Material.SIGN_POST || block.getType() == Material.WALL_SIGN) && this.postSign.getState().equals(block.getState())) {
-                    Player player = GameData.OnlinePlayer.get(targetName);
+                    Player player = GameData.onlinePlayer.get(targetName);
 
                     if (player != null) {
                         player.damage(1, event.getPlayer());
@@ -79,7 +79,7 @@ public class Voodoo extends Ability {
     public void T_Passive(SignChangeEvent event) {
         Player player = event.getPlayer();
         String targetName = event.getLine(0);
-        Player target = GameData.OnlinePlayer.get(targetName);
+        Player target = GameData.onlinePlayer.get(targetName);
 
         if (target != null) {
             Skill.Use(player, material, stack0, 0, coolTime0);

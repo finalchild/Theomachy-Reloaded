@@ -14,11 +14,11 @@ public class TipTimer extends TimerTask {
     int count = 1;
 	
     public void run() {
-        if (!GameHandler.Ready) {
+        if (!GameHandler.ready) {
             this.cancel();
         }
         if (count % 75 == 0) {
-            if (Theomachy.AUTO_SAVE) {
+            if (Theomachy.autoSave) {
                 Bukkit.getServer().savePlayers();
                 Theomachy.log.info("[신들의전쟁] 오토세이브 완료");
             }
@@ -72,8 +72,8 @@ public class TipTimer extends TimerTask {
             case 600:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage(ChatColor.RED + "신들의 전쟁 (Theomachy) - Reloaded");
-                Bukkit.broadcastMessage("버전  : " + PluginData.version);
-                Bukkit.broadcastMessage("빌드  : " + PluginData.buildnumber);
+                Bukkit.broadcastMessage("버전  : " + PluginData.VERSION);
+                Bukkit.broadcastMessage("빌드  : " + PluginData.BUILD_NUMBER);
                 Bukkit.broadcastMessage("원작자  : 칠각별(septagram)");
                 Bukkit.broadcastMessage("제작자 : 파차(finalchild)");
                 Bukkit.broadcastMessage(ChatColor.GREEN + "http://blog.naver.com/septagram/");

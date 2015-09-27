@@ -40,7 +40,7 @@ public class EventManager implements Listener {
 
             if (arrow.getShooter() instanceof Player) {
                 Player player = (Player) arrow.getShooter();
-                Ability ability = GameData.PlayerAbility.get(player.getName());
+                Ability ability = GameData.playerAbility.get(player.getName());
 
                 if (ability != null && ability.abilityCode == 118) {
                     ability.T_Passive(event, player);
@@ -51,9 +51,9 @@ public class EventManager implements Listener {
 	
     @EventHandler
     public static void onPlayerInteractEvent(PlayerInteractEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             String playerName = event.getPlayer().getName();
-            Ability ability = GameData.PlayerAbility.get(playerName);
+            Ability ability = GameData.playerAbility.get(playerName);
 
             if (ability != null && ability.activeType) {
                 ability.T_Active(event);
@@ -63,12 +63,12 @@ public class EventManager implements Listener {
 	
     @EventHandler
     public static void onEntityDamage(EntityDamageEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.PlayerAbility.containsKey(playerName)) {
-                    GameData.PlayerAbility.get(playerName).T_Passive(event);
+                if (GameData.playerAbility.containsKey(playerName)) {
+                    GameData.playerAbility.get(playerName).T_Passive(event);
                 }
             }
             if (event.getCause() == DamageCause.LIGHTNING && event.getEntity() instanceof LivingEntity) {
@@ -82,12 +82,12 @@ public class EventManager implements Listener {
     @EventHandler
     public static void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         try {
-            if (GameHandler.Start) {
+            if (GameHandler.start) {
                 if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
                     String key1 = ((Player) event.getEntity()).getName();
                     String key2 = ((Player) event.getDamager()).getName();
-                    Ability ability1 = GameData.PlayerAbility.get(key1);
-                    Ability ability2 = GameData.PlayerAbility.get(key2);
+                    Ability ability1 = GameData.playerAbility.get(key1);
+                    Ability ability2 = GameData.playerAbility.get(key2);
 
                     if (ability1 != null) {
                         ability1.T_Passive(event);
@@ -101,7 +101,7 @@ public class EventManager implements Listener {
                     if (arrow.getShooter() instanceof Player) {
                         Player player = (Player) arrow.getShooter();
                         String key = player.getName();
-                        Ability ability = GameData.PlayerAbility.get(key);
+                        Ability ability = GameData.playerAbility.get(key);
 
                         if (ability != null && ability.abilityCode == 7 || ability.abilityCode == 101) {
                             ability.T_Passive(event);
@@ -113,15 +113,15 @@ public class EventManager implements Listener {
             Theomachy.log.info("onEntityDamageByEntity Error\n" + e.getLocalizedMessage());
         }
     }
-    public static ArrayList<Ability> PlayerDeathEventList = new ArrayList<Ability>();
+    public static ArrayList<Ability> playerDeathEventList = new ArrayList<Ability>();
     @EventHandler
     public static void onPlayerDeath(PlayerDeathEvent event) {
-        if (GameHandler.Start) {
-            for (Ability e : PlayerDeathEventList) {
+        if (GameHandler.start) {
+            for (Ability e : playerDeathEventList) {
                 e.T_Passive(event);
             }
             Player player = event.getEntity();
-            Ability ability = GameData.PlayerAbility.get(player.getName());
+            Ability ability = GameData.playerAbility.get(player.getName());
 
             if (ability != null) {
                 if (ability.abilityCode == 106 || ability.abilityCode == 3) {
@@ -134,12 +134,12 @@ public class EventManager implements Listener {
 
     @EventHandler
     public static void onFoodLevelChange(FoodLevelChangeEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.PlayerAbility.containsKey(playerName)) {
-                    GameData.PlayerAbility.get(playerName).T_Passive(event);
+                if (GameData.playerAbility.containsKey(playerName)) {
+                    GameData.playerAbility.get(playerName).T_Passive(event);
                 }
             }
         }
@@ -147,12 +147,12 @@ public class EventManager implements Listener {
 
     @EventHandler
     public static void onEntityRegainHealth(EntityRegainHealthEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.PlayerAbility.containsKey(playerName)) {
-                    GameData.PlayerAbility.get(playerName).T_Passive(event);
+                if (GameData.playerAbility.containsKey(playerName)) {
+                    GameData.playerAbility.get(playerName).T_Passive(event);
                 }
             }
         }
@@ -160,9 +160,9 @@ public class EventManager implements Listener {
 
     @EventHandler
     public static void onBlockBreak(BlockBreakEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             String playerName = event.getPlayer().getName();
-            Ability ability = GameData.PlayerAbility.get(playerName);
+            Ability ability = GameData.playerAbility.get(playerName);
 
             if (ability != null) {
                 ability.T_Passive(event);
@@ -172,29 +172,29 @@ public class EventManager implements Listener {
 
     @EventHandler
     public static void onPlayerRespawn(PlayerRespawnEvent event) {
-        if (GameHandler.Start) {
+        if (GameHandler.start) {
             Player player = event.getPlayer();
 
-            if (Theomachy.IGNORE_BED) {
-                if (GameData.PlayerTeam.containsKey(player.getName())) {
-                    String teamName = GameData.PlayerTeam.get(player.getName());
-                    Location respawnLocation = GameData.SpawnArea.get(teamName);
+            if (Theomachy.ignoreBed) {
+                if (GameData.playerTeam.containsKey(player.getName())) {
+                    String teamName = GameData.playerTeam.get(player.getName());
+                    Location respawnLocation = GameData.spawnArea.get(teamName);
 
                     if (respawnLocation != null) {
                         event.setRespawnLocation(respawnLocation);
                     }
                 }
             } else {
-                if (!event.isBedSpawn() && GameData.PlayerTeam.containsKey(player.getName())) {
-                    String teamName = GameData.PlayerTeam.get(player.getName());
-                    Location respawnLocation = GameData.SpawnArea.get(teamName);
+                if (!event.isBedSpawn() && GameData.playerTeam.containsKey(player.getName())) {
+                    String teamName = GameData.playerTeam.get(player.getName());
+                    Location respawnLocation = GameData.spawnArea.get(teamName);
 
                     if (respawnLocation != null) {
                         event.setRespawnLocation(respawnLocation);
                     }
                 }
             }
-            Ability ability = GameData.PlayerAbility.get(player.getName());
+            Ability ability = GameData.playerAbility.get(player.getName());
 
             if (ability != null) {
                 if (ability.buffType) {
@@ -236,8 +236,8 @@ public class EventManager implements Listener {
 	
     @EventHandler
     public void onSignChange(SignChangeEvent event) {
-        if (GameHandler.Start) {
-            Ability ability = GameData.PlayerAbility.get(event.getPlayer().getName());
+        if (GameHandler.start) {
+            Ability ability = GameData.playerAbility.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.T_Passive(event);
@@ -247,8 +247,8 @@ public class EventManager implements Listener {
 	
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
-        if (GameHandler.Start) {
-            Ability ability = GameData.PlayerAbility.get(event.getPlayer().getName());
+        if (GameHandler.start) {
+            Ability ability = GameData.playerAbility.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.T_Passive(event);
@@ -260,9 +260,9 @@ public class EventManager implements Listener {
     public static void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        GameData.OnlinePlayer.put(player.getName(), player);
-        if (GameHandler.Start) {
-            Ability ability = GameData.PlayerAbility.get(player.getName());
+        GameData.onlinePlayer.put(player.getName(), player);
+        if (GameHandler.start) {
+            Ability ability = GameData.playerAbility.get(player.getName());
 
             if (ability != null && (ability.abilityCode == 2 || ability.abilityCode == 9)) {
                 ability.conditionSet();
@@ -274,7 +274,7 @@ public class EventManager implements Listener {
     public static void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        GameData.OnlinePlayer.remove(player.getName());
+        GameData.onlinePlayer.remove(player.getName());
     }
 	
     @EventHandler
@@ -286,7 +286,7 @@ public class EventManager implements Listener {
     public static void onEntityExplode(EntityExplodeEvent event) {
         Entity entity = event.getEntity();
 
-        if (GameHandler.Start && entity != null && entity.getType() == EntityType.FIREBALL) {
+        if (GameHandler.start && entity != null && entity.getType() == EntityType.FIREBALL) {
             event.blockList().clear();
         }
     }
