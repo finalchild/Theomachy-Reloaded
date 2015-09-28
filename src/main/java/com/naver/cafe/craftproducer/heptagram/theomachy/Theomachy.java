@@ -51,11 +51,11 @@ public class Theomachy extends JavaPlugin {
         difficulty = getConfig().getInt("Difficulty");
 		
         getLogger().info("---------------------------------------");
-        getLogger().info("게임 시작시 인벤토리 클리어 : " + String.valueOf(inventoryClear));
-        getLogger().info("게임 시작시 스카이블럭 기본 아이템 지급 : " + String.valueOf(giveItem));
-        getLogger().info("게임 시작시 몬스터,동물,아이템삭제 : " + String.valueOf(entitiesRemove));
-        getLogger().info("리스폰시 침대 무시 : " + String.valueOf(ignoreBed));
-        getLogger().info("서버 자동저장 : " + String.valueOf(autoSave));
+        getLogger().info("게임 시작 시 인벤토리 클리어 : " + String.valueOf(inventoryClear));
+        getLogger().info("게임 시작 시 스카이블록 기본 아이템 지급 : " + String.valueOf(giveItem));
+        getLogger().info("게임 시작 시 몬스터,동물,아이템 삭제 : " + String.valueOf(entitiesRemove));
+        getLogger().info("리스폰 시 침대 무시 : " + String.valueOf(ignoreBed));
+        getLogger().info("서버 자동 저장 : " + String.valueOf(autoSave));
         getLogger().info("동물 스폰 : " + String.valueOf(animal));
         getLogger().info("몬스터 스폰 : " + String.valueOf(monster));
         getLogger().info("난이도 : " + String.valueOf(difficulty));

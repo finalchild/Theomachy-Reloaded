@@ -25,32 +25,32 @@ public class TipTimer extends TimerTask {
             switch (count) {
             case 75:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("능력은 크게 액티브,패시브(버프) 능력으로 나뉩니다");
-                Bukkit.broadcastMessage("패시브 능력은 항상 혹은 특정 조건시 활성화 되며 액티브능력은 블레이즈로드 또는 능력설명에 적힌 아이템으로 사용 할 수 있습니다.");
-                Bukkit.broadcastMessage("능력 발동 조건이 없는 능력은 블레이즈 로드를 이용해서 사용 할 수 있습니다.");
-                Bukkit.broadcastMessage("블레이즈 로드는 나무막대기 3개를 크래프팅 박스에 세로 일렬로 놓으시면 얻으실 수 있습니다.");
+                Bukkit.broadcastMessage("능력은 크게 액티브, 패시브(버프) 능력으로 나뉩니다.");
+                Bukkit.broadcastMessage("패시브 능력은 항상 혹은 특정 조건 시 활성화되며 액티브 능력은 블레이즈 막대 또는 능력 설명에 적힌 아이템으로 사용할 수 있습니다.");
+                Bukkit.broadcastMessage("능력 발동 조건이 없는 능력은 블레이즈 막대를 이용해서 사용할 수 있습니다.");
+                Bukkit.broadcastMessage("블레이즈 막대는 막대기 3개를 제작대에 세로 일렬로 놓으시면 얻으실 수 있습니다.");
                 break;
 
             case 150:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("신들의 전쟁 플러그인은 스카이블럭 기준으로 만들어진 플러그인입니다.");
-                Bukkit.broadcastMessage("야생, 하드코어(한번죽으면 밴) 에선 부적합합니다.");
+                Bukkit.broadcastMessage("신들의 전쟁 플러그인은 스카이블록 기준으로 만들어진 플러그인입니다.");
+                Bukkit.broadcastMessage("야생, 하드코어(한번 죽으면 밴)에선 부적합합니다.");
                 break;
 
             case 225:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("능력은 크게 Active, Passive로 나뉘며 Active에는 " + ChatColor.AQUA + "[일반]" + ChatColor.WHITE + "능력과 " + ChatColor.RED + "[고급]" + ChatColor.WHITE + "능력이 있습니다.\n" + "대부분 " + ChatColor.AQUA + "[일반]" + ChatColor.WHITE + "능력은 좌클릭이며 " + ChatColor.RED + "[고급]" + ChatColor.WHITE + "능력은 우클릭입니다.");
+                Bukkit.broadcastMessage("능력은 크게 액티브, 패시브로 나뉘며 액티브에는 " + ChatColor.AQUA + "[일반]" + ChatColor.WHITE + "능력과 " + ChatColor.RED + "[고급]" + ChatColor.WHITE + "능력이 있습니다.\n" + "대부분 " + ChatColor.AQUA + "[일반]" + ChatColor.WHITE + "능력은 좌클릭이며 " + ChatColor.RED + "[고급]" + ChatColor.WHITE + "능력은 우클릭입니다.");
                 break;
 
             case 300:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("인원이 많고 맵이 넓다면 서버 메모리를 많이(2G 이상) 잡아주세요.");
-                Bukkit.broadcastMessage("메모리사용이 급증해 서버가 팅길수도있습니다.");
+                Bukkit.broadcastMessage("메모리 사용이 급증해 서버가 튕길 수도 있습니다.");
                 break;
 
             case 375:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("가끔 서버 설정에 인해 능력을 핵으로 인식하여 강퇴하는 경우가 있습니다.");
+                Bukkit.broadcastMessage("가끔 서버 설정으로 인해 능력을 핵으로 인식하여 강퇴하는 경우가 있습니다.");
                 Bukkit.broadcastMessage("원활한 게임 플레이를 위해 버킷 최신버전(R4.0, 2222 이상) 을 사용해주세요");
                 Bukkit.broadcastMessage("이전버전 버킷은 능력을 핵으로 오인해 킥을 할 수도 있습니다.");
                 break;
@@ -64,7 +64,7 @@ public class TipTimer extends TimerTask {
 
             case 525:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("팀 정하실때 이름적느라 힘드시죠? ㅠㅠ 다음 플러그인에선 좀더 쉽게 만들도록 하겠습니다.");
+                Bukkit.broadcastMessage("팀 정하실때 이름 적느라 힘드시죠? ㅠㅠ 다음 플러그인에선 좀더 쉽게 만들도록 하겠습니다.");
                 Bukkit.broadcastMessage("플레이어 이름을 어느정도 적고 [Tab] 키를 누르시면 이름이 전체가 적힙니다.");
                 Bukkit.broadcastMessage("예) sept > [Tab] > Septagram");
                 break;
