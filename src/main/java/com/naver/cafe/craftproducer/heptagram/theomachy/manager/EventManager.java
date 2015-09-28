@@ -33,6 +33,9 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 public class EventManager implements Listener {
+	
+    public static ArrayList<Ability> playerDeathEventList = new ArrayList<Ability>();
+    
     @EventHandler
     public static void onProjectileLaunch(ProjectileLaunchEvent event) {
         if (event.getEntity() instanceof Arrow) {
@@ -50,7 +53,7 @@ public class EventManager implements Listener {
     }
 	
     @EventHandler
-    public static void onPlayerInteractEvent(PlayerInteractEvent event) {
+    public static void onPlayerInteract(PlayerInteractEvent event) {
         if (GameHandler.start) {
             String playerName = event.getPlayer().getName();
             Ability ability = GameData.playerAbility.get(playerName);
@@ -113,7 +116,7 @@ public class EventManager implements Listener {
             Theomachy.log.info("onEntityDamageByEntity Error\n" + e.getLocalizedMessage());
         }
     }
-    public static ArrayList<Ability> playerDeathEventList = new ArrayList<Ability>();
+    
     @EventHandler
     public static void onPlayerDeath(PlayerDeathEvent event) {
         if (GameHandler.start) {

@@ -17,13 +17,13 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Te
 public class CommandHandler {
     public static void handleT(CommandSender sender, Command command, String label, String[] data) {
         if (data[0].equals("start")) {
-            GameHandler.gameReady(sender);
+            GameHandler.startGame(sender);
         } else if (data[0].equals("stop")) {
-            GameHandler.gameStop(sender);
+            GameHandler.stopGame(sender);
         } else if (data[0].equals("ability") || data[0].equals("a")) {
             AbilitySet.onCommand(sender, command, label, data);
         } else if (data[0].equals("aaaaa")) {
-            AbilityInfo.showAllAbility(sender);
+            AbilityInfo.showAllAbilities(sender);
         } else if (data[0].equals("help")) {
             Help.onCommand(sender, command, label, data);
         } else if (data[0].equals("spawn") || data[0].equals("s")) {

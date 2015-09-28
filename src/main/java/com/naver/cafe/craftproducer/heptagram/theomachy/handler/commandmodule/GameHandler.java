@@ -21,11 +21,11 @@ public class GameHandler {
     public static boolean ready = false;
     public static boolean start = false;
 	
-    public static void gameReady(CommandSender sender) {
+    public static void startGame(CommandSender sender) {
         if (PermissionChecker.checkSender(sender)) {
             if (!ready) {
                 ready = true;
-                Bukkit.broadcastMessage(ChatColor.GOLD + "관리자(" + sender.getName() + ") 가 게임을 시작하였습니다.");
+                Bukkit.broadcastMessage(ChatColor.GOLD + "관리자(" + sender.getName() + ")가 게임을 시작하였습니다.");
                 Timer t = new Timer();
 
                 t.schedule(new GameReadyTimer(), 0, 1000);
@@ -37,7 +37,7 @@ public class GameHandler {
         }
     }
 	
-    public static void gameStop(CommandSender sender) {
+    public static void stopGame(CommandSender sender) {
         if (PermissionChecker.checkSender(sender)) {
             if (ready) {
                 Collection<Ability> playerAbilityList = GameData.playerAbility.values();
