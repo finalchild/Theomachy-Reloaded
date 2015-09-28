@@ -41,8 +41,8 @@ public class Sniper extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BOW)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BOW)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -62,11 +62,11 @@ public class Sniper extends Ability {
 	
     @Override
     public void T_Passive(ProjectileLaunchEvent event, Player player) {
-        if (this.sniping && (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0))) {
+        if (this.sniping && (CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0))) {
             Entity entity = event.getEntity();
 
             if (entity instanceof Arrow) {
-                Skill.Use(player, material, stack0, 0, coolTime0);
+                Skill.use(player, material, stack0, 0, coolTime0);
                 entity.remove();
                 @SuppressWarnings("deprecation")
                 Arrow arrow = player.shootArrow();

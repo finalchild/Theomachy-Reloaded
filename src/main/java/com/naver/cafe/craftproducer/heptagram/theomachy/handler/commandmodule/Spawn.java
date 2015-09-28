@@ -12,7 +12,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecke
 
 public class Spawn {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (data.length == 1) {
                 Player player = (Player) sender;
                 World world = player.getWorld();

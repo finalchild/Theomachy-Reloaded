@@ -22,7 +22,7 @@ public class GameHandler {
     public static boolean start = false;
 	
     public static void gameReady(CommandSender sender) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (!ready) {
                 ready = true;
                 Bukkit.broadcastMessage(ChatColor.GOLD + "관리자(" + sender.getName() + ") 가 게임을 시작하였습니다.");
@@ -38,7 +38,7 @@ public class GameHandler {
     }
 	
     public static void gameStop(CommandSender sender) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (ready) {
                 Collection<Ability> playerAbilityList = GameData.playerAbility.values();
 

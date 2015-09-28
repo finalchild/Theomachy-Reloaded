@@ -15,7 +15,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
-import com.naver.cafe.craftproducer.heptagram.theomachy.utility.GetPlayerList;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerList;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
@@ -42,8 +42,8 @@ public class Priest extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -58,8 +58,8 @@ public class Priest extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
-            Skill.Use(player, material, stack1, 1, coolTime1);
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
+            Skill.use(player, material, stack1, 1, coolTime1);
             Random random = new Random();
 
             if (random.nextInt(2) == 0) {
@@ -86,9 +86,9 @@ public class Priest extends Ability {
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
-            Skill.Use(player, material, stack2, 2, coolTime2);
-            List<Player> targetList = GetPlayerList.getTeamMember(player);
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
+            Skill.use(player, material, stack2, 2, coolTime2);
+            List<Player> targetList = PlayerList.getTeammates(player);
 
             if (targetList != null) {
                 Random random = new Random();

@@ -9,7 +9,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
 
 public class Skill {
 	
-    public static void Use(Player player, Material material, int stack, int abilityCase, int coolTime) {
+    public static void use(Player player, Material material, int stack, int abilityCase, int coolTime) {
         player.getInventory().removeItem(new ItemStack(material, stack));
         if (coolTime > 0) {
             switch (abilityCase) {

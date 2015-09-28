@@ -40,8 +40,8 @@ public class Invincibility extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -56,16 +56,16 @@ public class Invincibility extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
-            Skill.Use(player, material, stack1, 1, coolTime1); {
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
+            Skill.use(player, material, stack1, 1, coolTime1); {
                 CoolTime.cool0.put(playerName + "1", 7);
             }
         }
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
-            Skill.Use(player, material, stack2, 2, coolTime2);
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
+            Skill.use(player, material, stack2, 2, coolTime2);
             player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 500, 0), true);
         }
     }

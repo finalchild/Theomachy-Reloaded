@@ -43,7 +43,7 @@ public class Voodoo extends Ability {
         if (blockType == Material.SIGN_POST || blockType == Material.WALL_SIGN) {
             Player player = event.getPlayer();
 
-            if (!(CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0))) {
+            if (!(CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0))) {
                 event.setCancelled(true);
             }
         }
@@ -69,7 +69,7 @@ public class Voodoo extends Ability {
             if (action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
                 Player player = event.getPlayer();
 
-                if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
+                if (CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0)) {
                     player.sendMessage("스킬을 사용 할 수 있습니다.");
                 }
             }
@@ -82,7 +82,7 @@ public class Voodoo extends Ability {
         Player target = GameData.onlinePlayer.get(targetName);
 
         if (target != null) {
-            Skill.Use(player, material, stack0, 0, coolTime0);
+            Skill.use(player, material, stack0, 0, coolTime0);
             this.targetName = targetName;
             this.postSign = event.getBlock();
             player.sendMessage(ChatColor.RED + targetName + ChatColor.WHITE + " 를(을) 팻말과 연결시켰습니다.");

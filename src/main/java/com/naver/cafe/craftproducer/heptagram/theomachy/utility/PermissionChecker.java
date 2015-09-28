@@ -4,7 +4,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class PermissionChecker {
-    public static boolean Player(Player player) {
+    public static boolean checkPlayer(Player player) {
         if (player.isOp()) {
             return true;
         } else {
@@ -13,7 +13,7 @@ public class PermissionChecker {
         }
     }
 	
-    public static boolean Sender(CommandSender sender) {
+    public static boolean checkSender(CommandSender sender) {
         if (sender.isOp()) {
             return true;
         } else {

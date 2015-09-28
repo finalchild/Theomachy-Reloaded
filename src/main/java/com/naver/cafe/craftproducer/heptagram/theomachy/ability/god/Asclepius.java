@@ -12,7 +12,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
-import com.naver.cafe.craftproducer.heptagram.theomachy.utility.GetPlayerList;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerList;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
@@ -39,8 +39,8 @@ public class Asclepius extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -55,18 +55,18 @@ public class Asclepius extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
-            Skill.Use(player, material, stack1, 1, coolTime1);
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
+            Skill.use(player, material, stack1, 1, coolTime1);
             player.setHealth(20);
         }
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
-            List<Player> targetList = GetPlayerList.getNearByTeamMembers(player, 5, 5, 5);
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
+            List<Player> targetList = PlayerList.getNearbyTeammates(player, 5, 5, 5);
 
             if (!targetList.isEmpty()) {
-                Skill.Use(player, material, stack2, 2, coolTime2);
+                Skill.use(player, material, stack2, 2, coolTime2);
                 player.sendMessage("자신을 제외한 모든 팀원의 체력을 회복합니다.");
                 player.sendMessage(ChatColor.GREEN + "체력을 회복한 플레이어 목록");
                 for (Player e : targetList) {

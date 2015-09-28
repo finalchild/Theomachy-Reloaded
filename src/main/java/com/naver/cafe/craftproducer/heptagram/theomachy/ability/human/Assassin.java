@@ -47,8 +47,8 @@ public class Assassin extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -67,9 +67,9 @@ public class Assassin extends Ability {
         Block b = temp.add(0, -1, 0).getBlock();
 
         if ((b.isEmpty()) || (b.getType() == Material.SNOW) || (b.getType() == Material.STEP)) {	
-            if ((!CoolTime.cool0.containsKey(playerName + "0") && (PlayerInventory.ItemCheck(player, material, stack1)))) {
+            if ((!CoolTime.cool0.containsKey(playerName + "0") && (PlayerInventory.checkItem(player, material, stack1)))) {
                 CoolTime.cool0.put(playerName + "0", coolTime1);
-                PlayerInventory.ItemRemove(player, material, stack1);
+                PlayerInventory.removeItem(player, material, stack1);
                 World world = player.getWorld();
                 Location location = player.getLocation();
                 Vector v = player.getEyeLocation().getDirection();
@@ -82,7 +82,7 @@ public class Assassin extends Ability {
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
             boolean flag = true;
             List<Entity> entityList = player.getNearbyEntities(10, 10, 10);
 
@@ -94,7 +94,7 @@ public class Assassin extends Ability {
                     String playerTeamName = GameData.playerTeam.get(player.getName());
 
                     if ((targetTeamName == null) || !(targetTeamName.equals(playerTeamName))) {
-                        Skill.Use(player, material, stack2, 2, coolTime2);
+                        Skill.use(player, material, stack2, 2, coolTime2);
                         Location fakeLocation = player.getLocation();
                         Location location = target.getLocation();
                         World world = player.getWorld();
@@ -103,7 +103,7 @@ public class Assassin extends Ability {
                         for (Player each : playerlist) {
                             each.hidePlayer(player);
                         }
-                        switch (DirectionChecker.PlayerDirection(target)) {
+                        switch (DirectionChecker.getPlayerDirection(target)) {
                         case 0:
                             location.add(0, 0, -1);
                             break;

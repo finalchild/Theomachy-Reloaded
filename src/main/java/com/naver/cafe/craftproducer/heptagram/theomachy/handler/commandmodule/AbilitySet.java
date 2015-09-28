@@ -47,7 +47,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.RandomNumberCons
 
 public class AbilitySet {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (!GameHandler.ready) {
                 if (data.length <= 1) {
                     sender.sendMessage("/t a help   모든 능력의 코드표를 확인합니다.");

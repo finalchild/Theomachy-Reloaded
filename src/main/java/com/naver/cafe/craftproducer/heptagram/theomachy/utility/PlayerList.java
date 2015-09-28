@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
-public class GetPlayerList {
-    public static List<Player> getTeamMember(Player player) {
+public class PlayerList {
+    public static List<Player> getTeammates(Player player) {
         String teamName = GameData.playerTeam.get(player.getName());
         ArrayList<String> memberName = new ArrayList<String>();
 
@@ -36,7 +36,7 @@ public class GetPlayerList {
         return memberPlayer;
     }
 	
-    public static List<Player> getNearByTeamMembers(Player player, double x, double y, double z) {
+    public static List<Player> getNearbyTeammates(Player player, double x, double y, double z) {
         String playerName = player.getName();
         String playerTeamName = GameData.playerTeam.get(playerName);
 
@@ -61,7 +61,7 @@ public class GetPlayerList {
         return nearByTeamMembers;
     }
 	
-    public static List<Player> getNearByNotTeamMembers(Player player, double x, double y, double z) {
+    public static List<Player> getNearbyEnemies(Player player, double x, double y, double z) {
         String playerName = player.getName();
         String playerTeamName = GameData.playerTeam.get(playerName);
 

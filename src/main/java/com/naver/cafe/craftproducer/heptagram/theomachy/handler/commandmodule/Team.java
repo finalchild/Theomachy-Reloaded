@@ -10,7 +10,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecke
 
 public class Team {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (data.length > 2) {
                 for (int i = 2; i < data.length; i++) {
                     if (GameData.onlinePlayer.containsKey(data[i])) {

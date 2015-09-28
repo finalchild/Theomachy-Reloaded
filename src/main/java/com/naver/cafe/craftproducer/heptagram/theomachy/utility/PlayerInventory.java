@@ -10,7 +10,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 public class PlayerInventory {
 	
-    public static boolean InHandItemCheck(Player player, Material material) {
+    public static boolean checkInHandItem(Player player, Material material) {
         if (player.getItemInHand().getType() == material) {
             return true;
         } else {
@@ -18,7 +18,7 @@ public class PlayerInventory {
         }
     }
 	
-    public static boolean ItemCheck(Player player, Material material, int stack) {
+    public static boolean checkItem(Player player, Material material, int stack) {
         Inventory inventory = player.getInventory();
 
         if (inventory.contains(material, stack)) {
@@ -29,13 +29,13 @@ public class PlayerInventory {
         }
     }
 	
-    public static void ItemRemove(Player player, Material material, int stack) {
+    public static void removeItem(Player player, Material material, int stack) {
         Inventory inventory = player.getInventory();
 
         inventory.removeItem(new ItemStack(material, stack));
     }
 	
-    public static void skyBlockBasicItemAdd(Player player) {
+    public static void addSkyblockBasicItems(Player player) {
         Inventory inventory = player.getInventory();
 
         if (Theomachy.inventoryClear) {

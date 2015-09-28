@@ -43,8 +43,8 @@ public class Teleporter extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -59,7 +59,7 @@ public class Teleporter extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
             Block block = player.getTargetBlock((Set<Material>) null, 25);
 
             if (BlockFilter.isTooFar(player, block)) {
@@ -72,7 +72,7 @@ public class Teleporter extends Ability {
                 Block block1 = location1.getBlock();
 
                 if ((block0.isEmpty() || block1.getType() == Material.SNOW) && block1.isEmpty()) {
-                    Skill.Use(player, material, stack1, 1, coolTime1);
+                    Skill.use(player, material, stack1, 1, coolTime1);
                     Location plocation = player.getLocation();
                     Location tlocation = block.getLocation();
 
@@ -90,7 +90,7 @@ public class Teleporter extends Ability {
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
             if (abilitytarget != null) {
                 Player target = GameData.onlinePlayer.get(abilitytarget);
 
@@ -98,7 +98,7 @@ public class Teleporter extends Ability {
                     Location location = player.getLocation();
 
                     location.setY(location.getY() - 1);
-                    Skill.Use(player, material, stack2, 2, coolTime2);
+                    Skill.use(player, material, stack2, 2, coolTime2);
                     Location tloc = target.getLocation();
                     Location ploc = player.getLocation();
 

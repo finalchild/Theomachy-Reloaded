@@ -45,8 +45,8 @@ public class Wizard extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -61,7 +61,7 @@ public class Wizard extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
             List<Entity> entityList = player.getNearbyEntities(10, 10, 10);
             ArrayList<Player> targetList = new ArrayList<Player>(); 
 
@@ -71,7 +71,7 @@ public class Wizard extends Ability {
                 }
             }
             if (!targetList.isEmpty()) {
-                Skill.Use(player, material, stack1, 1, coolTime1);
+                Skill.use(player, material, stack1, 1, coolTime1);
                 Timer t = new Timer();
                 Vector v = new Vector(0, 0.5, 0);
                 double vertical = 2.4d;
@@ -81,7 +81,7 @@ public class Wizard extends Ability {
                     e.setVelocity(v);
                     e.sendMessage("마법사의 능력에 의해 날아갑니다.");
                 }
-                switch (DirectionChecker.PlayerDirection(player)) {
+                switch (DirectionChecker.getPlayerDirection(player)) {
                 case 0:
                     v.add(new Vector(0, 0, diagonal));
                     break;
@@ -122,7 +122,7 @@ public class Wizard extends Ability {
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
             List<Entity> entityList = player.getNearbyEntities(5, 5, 5);
             ArrayList<Player> targetList = new ArrayList<Player>(); 
 
@@ -132,7 +132,7 @@ public class Wizard extends Ability {
                 }
             }
             if (!targetList.isEmpty()) {
-                Skill.Use(player, material, stack2, 2, coolTime2);
+                Skill.use(player, material, stack2, 2, coolTime2);
                 player.setHealth(player.getHealth() / 2);
                 Vector v = new Vector(0, 1.6, 0);
 

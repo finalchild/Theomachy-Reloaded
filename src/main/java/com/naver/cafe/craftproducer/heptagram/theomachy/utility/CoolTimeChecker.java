@@ -6,7 +6,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
 
 public class CoolTimeChecker {
-    public static boolean Check(Player player, int abilityCase) {
+    public static boolean check(Player player, int abilityCase) {
         String key = player.getName();
 		
         if (abilityCase == 0) {

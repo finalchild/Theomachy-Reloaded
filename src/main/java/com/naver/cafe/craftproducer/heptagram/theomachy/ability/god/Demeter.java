@@ -37,8 +37,8 @@ public class Demeter extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
             case 2:
@@ -50,8 +50,8 @@ public class Demeter extends Ability {
     }
 
     private void Action(Player player) {
-        if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
-            Skill.Use(player, material, stack0, 0, coolTime0);
+        if (CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0)) {
+            Skill.use(player, material, stack0, 0, coolTime0);
             Inventory inventory = player.getInventory();
 
             inventory.addItem(new ItemStack(Material.BREAD, stack0));

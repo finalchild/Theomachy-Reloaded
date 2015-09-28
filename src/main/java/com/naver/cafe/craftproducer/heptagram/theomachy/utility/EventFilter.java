@@ -4,7 +4,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class EventFilter {
-    public static int PlayerInteract(PlayerInteractEvent event) {
+    public static int sortInteraction(PlayerInteractEvent event) {
         Action action = event.getAction();
 
         if (action.equals(Action.LEFT_CLICK_AIR)) {

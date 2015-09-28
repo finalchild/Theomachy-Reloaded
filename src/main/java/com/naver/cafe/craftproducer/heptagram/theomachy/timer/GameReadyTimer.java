@@ -176,7 +176,7 @@ public class GameReadyTimer extends TimerTask {
                     e.setExhaustion(0.0F);
                     e.setExp(0.0F);
                     e.setHealth(20);
-                    PlayerInventory.skyBlockBasicItemAdd(e);					
+                    PlayerInventory.addSkyblockBasicItems(e);					
                     String teamName = GameData.playerTeam.get(e.getName());
 
                     if (teamName != null) {

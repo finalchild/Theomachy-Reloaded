@@ -16,7 +16,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
-import com.naver.cafe.craftproducer.heptagram.theomachy.utility.GetPlayerList;
+import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerList;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.Skill;
 
@@ -41,8 +41,8 @@ public class Blinder extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -52,11 +52,11 @@ public class Blinder extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 0) && PlayerInventory.ItemCheck(player, material, stack0)) {
-            List<Player> targetList = GetPlayerList.getNearByNotTeamMembers(player, 5, 5, 5);
+        if (CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0)) {
+            List<Player> targetList = PlayerList.getNearbyEnemies(player, 5, 5, 5);
 
             if (!targetList.isEmpty()) {
-                Skill.Use(player, material, stack0, 0, coolTime0);
+                Skill.use(player, material, stack0, 0, coolTime0);
                 player.sendMessage("자신의 팀원을 제외한 모든 플레이어를 블라인드 합니다.");
                 for (Player e : targetList) {
                     e.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 160, 0), true);

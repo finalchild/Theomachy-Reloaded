@@ -41,8 +41,8 @@ public class Athena extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -57,21 +57,21 @@ public class Athena extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
-            Skill.Use(player, material, stack1, 1, coolTime1);
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
+            Skill.use(player, material, stack1, 1, coolTime1);
             player.getInventory().addItem(new ItemStack(Material.BOOK, 3));
         }
     }
 	
     private void rightAction(Player player) {
         if (abilityLimitCounter > 0) {
-            if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
+            if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
                 if (abilityLimitCounter > 1) {
-                    Skill.Use(player, material, stack2, 2, coolTime2);
+                    Skill.use(player, material, stack2, 2, coolTime2);
                     player.getInventory().addItem(new ItemStack(Material.ENCHANTMENT_TABLE, 1));
                     player.sendMessage("남은 교환 횟수 : " + --abilityLimitCounter);
                 } else {
-                    Skill.Use(player, material, stack2, 2, 0);
+                    Skill.use(player, material, stack2, 2, 0);
                     player.getInventory().addItem(new ItemStack(Material.ENCHANTMENT_TABLE, 1));
                     player.sendMessage("남은 교환 횟수 : " + --abilityLimitCounter);
                 }

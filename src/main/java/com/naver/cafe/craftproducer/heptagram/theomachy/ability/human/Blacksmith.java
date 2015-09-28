@@ -39,8 +39,8 @@ public class Blacksmith extends Ability {
     public void T_Active(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
-        if (PlayerInventory.InHandItemCheck(player, Material.BLAZE_ROD)) {
-            switch (EventFilter.PlayerInteract(event)) {
+        if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
+            switch (EventFilter.sortInteraction(event)) {
             case 0:
             case 1:
                 leftAction(player);
@@ -55,8 +55,8 @@ public class Blacksmith extends Ability {
     }
 
     private void leftAction(Player player) {
-        if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material1, stack1)) {
-            Skill.Use(player, material1, stack1, 1, coolTime1);
+        if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material1, stack1)) {
+            Skill.use(player, material1, stack1, 1, coolTime1);
             World world = player.getWorld();
 
             world.dropItem(player.getLocation().add(0, 2, 0), new ItemStack(Material.IRON_INGOT, 10));
@@ -64,8 +64,8 @@ public class Blacksmith extends Ability {
     }
 	
     private void rightAction(Player player) {
-        if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material2, stack2)) {
-            Skill.Use(player, material2, stack2, 2, coolTime2);
+        if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material2, stack2)) {
+            Skill.use(player, material2, stack2, 2, coolTime2);
             World world = player.getWorld();
 
             world.dropItem(player.getLocation().add(0, 2, 0), new ItemStack(Material.DIAMOND, 5));

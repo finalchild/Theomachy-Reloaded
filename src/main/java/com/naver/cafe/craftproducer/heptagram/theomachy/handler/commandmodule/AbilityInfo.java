@@ -11,7 +11,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecke
 
 public class AbilityInfo {
     public static void showAllAbility(CommandSender sender) {
-        if (PermissionChecker.Sender(sender)) {
+        if (PermissionChecker.checkSender(sender)) {
             if (!GameData.playerAbility.isEmpty()) {
                 Collection<Ability> ability = GameData.playerAbility.values();
 

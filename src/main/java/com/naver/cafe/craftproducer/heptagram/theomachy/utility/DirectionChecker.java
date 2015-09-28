@@ -3,7 +3,7 @@ package com.naver.cafe.craftproducer.heptagram.theomachy.utility;
 import org.bukkit.entity.Player;
 
 public class DirectionChecker {
-    public static int PlayerDirection(Player player) {
+    public static int getPlayerDirection(Player player) {
         int direction = (int) player.getLocation().getYaw();
 
         if (direction >= 0) {
