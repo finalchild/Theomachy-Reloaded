@@ -77,7 +77,7 @@ public class Athena extends Ability {
                 }
             }
         } else {
-            player.sendMessage("이 능력은 더이상 사용할 수 없습니다.");
+            player.sendMessage("이 능력은 더 이상 사용할 수 없습니다.");
         }
     }
 	
