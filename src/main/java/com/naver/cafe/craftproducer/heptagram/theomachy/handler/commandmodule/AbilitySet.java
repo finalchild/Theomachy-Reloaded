@@ -56,7 +56,7 @@ public class AbilitySet {
                     sender.sendMessage("/t a reset  모든 능력을 초기화 합니다");
                     sender.sendMessage("/t a <AbilityCode> <Player>  플레이어에게 해당 능력을 적용합니다.");
                 } else if (data[1].equalsIgnoreCase("help")) {
-                    CodeHelper.ShowAbilityCodeNumber(sender);
+                    CodeHelper.showAbilityCodeNumber(sender);
                 } else if (data[1].equalsIgnoreCase("remove")) // 삭제
                 {
                     if (data[2] != null) {

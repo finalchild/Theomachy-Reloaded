@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 public class BlockFilter {
-    public static boolean AirToFar(Player player, Block block) {
+    public static boolean isTooFar(Player player, Block block) {
         if (!block.isEmpty()) {
             return true;
         } else {

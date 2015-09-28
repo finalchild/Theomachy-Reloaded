@@ -62,7 +62,7 @@ public class Teleporter extends Ability {
         if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
             Block block = player.getTargetBlock((Set<Material>) null, 25);
 
-            if (BlockFilter.AirToFar(player, block)) {
+            if (BlockFilter.isTooFar(player, block)) {
                 Location location0 = block.getLocation();
                 Location location1 = block.getLocation();
 

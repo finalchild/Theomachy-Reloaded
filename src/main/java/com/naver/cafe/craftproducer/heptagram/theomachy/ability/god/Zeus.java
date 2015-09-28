@@ -67,7 +67,7 @@ public class Zeus extends Ability {
         if (CoolTimeChecker.Check(player, 1) && PlayerInventory.ItemCheck(player, material, stack1)) {
             Block block = player.getTargetBlock((Set<Material>) null, 50);
 
-            if (BlockFilter.AirToFar(player, block)) {
+            if (BlockFilter.isTooFar(player, block)) {
                 Skill.Use(player, material, stack1, 1, coolTime1);
                 World world = player.getWorld();
                 Location location = block.getLocation();
@@ -81,7 +81,7 @@ public class Zeus extends Ability {
         if (CoolTimeChecker.Check(player, 2) && PlayerInventory.ItemCheck(player, material, stack2)) {
             Block block = player.getTargetBlock((Set<Material>) null, 30);
 
-            if (BlockFilter.AirToFar(player, block)) {
+            if (BlockFilter.isTooFar(player, block)) {
                 Skill.Use(player, material, stack2, 2, coolTime2);
                 World world = player.getWorld();
                 Location location = block.getLocation();

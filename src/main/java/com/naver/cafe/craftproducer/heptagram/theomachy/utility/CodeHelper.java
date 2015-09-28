@@ -8,9 +8,9 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 
 public class CodeHelper {
 
-    public static void ShowAbilityCodeNumber(CommandSender sender) {
+    public static void showAbilityCodeNumber(CommandSender sender) {
         if (sender instanceof Player) {
-            showCode(sender);
+            showCode((Player) sender);
         } else {
             showCode();
         }
@@ -41,7 +41,7 @@ public class CodeHelper {
         Theomachy.log.info(String.format("%" + w[4] + "s : %" + w[3] + "s", "Voodoo", "119"));
     }
 	
-    private static void showCode(CommandSender sender) {
+    private static void showCode(Player sender) {
         sender.sendMessage(ChatColor.YELLOW + "신-------\n" + ChatColor.RED + "제우스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 1\n" + ChatColor.RED + "포세이돈 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 2\n" + ChatColor.RED + "하데스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 3\n" + ChatColor.RED + "데메테르 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 4\n" + ChatColor.RED + "아테나 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 5\n" + ChatColor.RED + "아폴론 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 6\n" + ChatColor.RED + "아르테미스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 7\n" + ChatColor.RED + "아레스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 8\n" + ChatColor.RED + "헤파이토스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 9\n" + ChatColor.RED + "아스클레피오스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 10\n" + ChatColor.RED + "헤르메스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 11\n" + ChatColor.RED + "디오니소스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 12\n" + ChatColor.YELLOW + "인간-------\n" + ChatColor.RED + "아처 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 101\n" + ChatColor.RED + "광부 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 102\n" + ChatColor.RED + "스탠스 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 103\n" + ChatColor.RED + "텔레포터 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 104\n" + ChatColor.RED + "봄버 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 105\n" + ChatColor.RED + "크리퍼 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 106\n" + ChatColor.RED + "마법사 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 107\n" + ChatColor.RED + "암살자 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 108\n" + ChatColor.RED + "반사 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 109\n" + ChatColor.RED + "블라인더 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 110\n" + ChatColor.RED + "무적 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 111\n" + ChatColor.RED + "클로킹 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 112\n" + ChatColor.RED + "대장장이 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 113\n" + ChatColor.RED + "복서 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 114\n" + ChatColor.RED + "사제 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 115\n" + ChatColor.RED + "마녀 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 116\n" + ChatColor.RED + "메테오 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 117\n" + ChatColor.RED + "스나이퍼 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 118\n" + ChatColor.RED + "부두술사 " + ChatColor.WHITE + ":" + ChatColor.GOLD + " 119");
     }
 }
