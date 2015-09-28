@@ -43,7 +43,7 @@ public class GameHandler {
                 Collection<Ability> playerAbilityList = GameData.playerAbility.values();
 
                 for (Ability e : playerAbilityList) {
-                    e.conditionReSet();
+                    e.conditionReset();
                 }
                 ready = false;
                 start = false;

@@ -44,7 +44,7 @@ public class Assassin extends Ability {
         player.sendMessage("민첩한 몸놀림을 가지고있는 능력입니다.\n" + "점프한 후 능력을 사용하면 현재 보는 방향으로 점프를 한번 더 할 수 있습니다.\n" + "좌클릭으로 해당방향으로 점프를 합니다.\n" + "우클릭으로 주변에 있는 적의 등으로 순간이동 합니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

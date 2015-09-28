@@ -38,7 +38,7 @@ public class Blinder extends Ability {
         player.sendMessage("상대방의 시야를 가리는 능력입니다.\n" + "자신을 공격한 상대는 33% 확률로 시야가 가려집니다.(4초 지속)\n" + "블레이즈 로드를 이용한 능력으로 자신의 팀원을 제외한 10칸 안에 있는 유저를 블라인드 할 수 있습니다.(8초 지속)\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -68,7 +68,7 @@ public class Blinder extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Player player = (Player) event.getEntity();
 
         if (player.getName().equals(this.playerName)) {

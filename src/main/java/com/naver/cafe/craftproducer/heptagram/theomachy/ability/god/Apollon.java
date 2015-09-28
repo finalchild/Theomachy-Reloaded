@@ -38,7 +38,7 @@ public class Apollon extends Ability {
         player.sendMessage("태양의 신입니다.\n" + "밤을 낮으로 바꿀 수 있으며 플레이어들을 태울 수도 있습니다.\n" + "일반능력은 밤을 낮으로 바꿀 수 있으며.\n" + "고급능력은 밤을 낮으로 바꿈과 동시에 내리고 있는 비와 눈을 증발시키며 자신을 제외한 모든 플레이어들을 태웁니다.(화염속성의 능력자, 그늘, 물속에 있는 플레이어는 피해를 입지 않습니다.)\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

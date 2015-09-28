@@ -31,7 +31,7 @@ public class Septagram extends Ability {
         player.sendMessage("제작자입니다.\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

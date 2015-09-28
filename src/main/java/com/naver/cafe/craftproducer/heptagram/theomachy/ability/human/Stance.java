@@ -24,7 +24,7 @@ public class Stance extends Ability {
         player.sendMessage("강한 의지를 갖고 있는 능력입니다.\n" + "모든 데미지 증폭 효과, 연타효과를 무시하며 모든 공격에 100퍼센트 확률로 밀려나지 않습니다.\n" + "패널티로 모든 자신의 방어 효과는 무시됩니다.");
     }
 	
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         if (event.getCause() == DamageCause.ENTITY_ATTACK || event.getCause() == DamageCause.PROJECTILE) {
             Player player = (Player) event.getEntity();
             double damage = event.getDamage();

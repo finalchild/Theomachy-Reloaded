@@ -34,7 +34,7 @@ public class Demeter extends Ability {
         player.sendMessage("수확의 신입니다.\n" + "코블스톤을 이용해서 빵을 얻을 수 있습니다.\n" + "기본적으로 배고픔이 닳지 않으며 체력 회복속도가 4배로 상승합니다.\n" + ChatColor.GREEN + "(좌,우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -58,12 +58,12 @@ public class Demeter extends Ability {
         }
     }
 	
-    public void T_Passive(FoodLevelChangeEvent event) {
+    public void onFoodLevelChange(FoodLevelChangeEvent event) {
         ((Player) event.getEntity()).setFoodLevel(20);
         event.setCancelled(true);
     }
 	
-    public void T_Passive(EntityRegainHealthEvent event) {
+    public void onEntityRegainHealth(EntityRegainHealthEvent event) {
         event.setAmount(event.getAmount() * 4);
     }
 }

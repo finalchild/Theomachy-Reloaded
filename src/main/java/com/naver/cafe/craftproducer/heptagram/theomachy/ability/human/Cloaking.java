@@ -38,7 +38,7 @@ public class Cloaking extends Ability {
         player.sendMessage("일정시간 자신의 몸을 숨길 수 있는 능력입니다.\n" + "일반능력을 이용해 자신의 모습을 7초간 감출 수 있습니다. 감춘상태에서 상대방을 공격할 시 다시 모습이 나타나게 되며 공격 당한 상대는 20%확률로 사망합니다.\n" + ChatColor.GREEN + "(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -65,7 +65,7 @@ public class Cloaking extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (flag) {
             Player player = (Player) event.getDamager();
 

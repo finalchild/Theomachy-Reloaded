@@ -42,7 +42,7 @@ public class Wizard extends Ability {
         player.sendMessage("신의 능력을 빌려 쓰는 능력입니다.\n" + "일반능력은 주변 10칸 모든 플레이어를 자신이 보는 방향으로 모두 날려버리며\n" + "고급능력은 주변 5칸 모든 플레이어를 공중으로 띄운 후 플레이어에게 번개를 떨어뜨립니다. 패널티로 자신의 체력이 반으로 줄어듭니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

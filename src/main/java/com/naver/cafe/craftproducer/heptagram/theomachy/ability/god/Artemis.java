@@ -41,7 +41,7 @@ public class Artemis extends Ability {
         player.sendMessage("사냥과 달의 신입니다.\n" + "화살과 활을 코블스톤과 교환할수 있습니다.(좌클릭 : 화살 1개, 우클릭 : 활 1개)\n" + "화살로 공격당한 플레이어는 20퍼센트의 확률로 즉사합니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -79,7 +79,7 @@ public class Artemis extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
 		
         Arrow arrow = (Arrow) event.getDamager();
         Player player = (Player) arrow.getShooter();

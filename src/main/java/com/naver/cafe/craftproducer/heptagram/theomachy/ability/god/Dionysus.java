@@ -26,7 +26,7 @@ public class Dionysus extends Ability {
         player.sendMessage("술의 신입니다.\n" + "10% 확률로 자신을 공격한 10초간 상대의 시야를 어지럽히며\n" + "동시에 상대의 이동속도, 공격력을 낮춥니다.\n");
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Player player = (Player) event.getEntity();
 
         if (player.getName().equals(playerName)) {

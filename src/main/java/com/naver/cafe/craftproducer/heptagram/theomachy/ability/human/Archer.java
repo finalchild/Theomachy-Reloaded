@@ -37,7 +37,7 @@ public class Archer extends Ability {
         player.sendMessage("궁수 입니다.\n" + "활공격 데미지가 1.2배로 상승합니다.\n" + "좌클릭으로 화살을 얻을수있으며 우클릭으로 활을 얻을수 있습니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -75,7 +75,7 @@ public class Archer extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         int damage = (int) (event.getDamage());
 
         event.setDamage((int) (damage * 1.2));

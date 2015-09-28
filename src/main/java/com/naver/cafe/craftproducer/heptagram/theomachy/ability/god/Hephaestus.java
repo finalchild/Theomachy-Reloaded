@@ -39,7 +39,7 @@ public class Hephaestus extends Ability {
         player.sendMessage("불의 신입니다.\n" + "기본적으로 화염데미지를 받지 않으며 용암을 자유자재로 다룰 수 있습니다.\n" + "좌클릭을 통해 해당 지역에 용암을 놓을 수 있습니다. 놓은 용암은 2초뒤 사라집니다.\n" + "하지만 물에는 약하여 물에 들어갈시 데미지를 입습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -68,7 +68,7 @@ public class Hephaestus extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         Player player = (Player) event.getEntity();
         DamageCause dc = event.getCause();
 
@@ -87,7 +87,7 @@ public class Hephaestus extends Ability {
         player.setRemainingAir(0);
     }
 	
-    public void conditionReSet() {
+    public void conditionReset() {
         Player player = GameData.onlinePlayer.get(playerName);
 
         player.setMaximumAir(300);

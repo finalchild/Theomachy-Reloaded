@@ -37,7 +37,7 @@ public class Creeper extends Ability {
         player.sendMessage("몬스터형 능력입니다.\n" + "블레이즈 로드를 통해 능력을 사용하면\n" + "1.0의 폭발을 일으킵니다.\n" + "번개를 맞은적이 있다면 폭발력이 두배로 증가합니다.(죽으면 초기화됩니다.)\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -62,14 +62,14 @@ public class Creeper extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         if (event.getCause() == DamageCause.LIGHTNING) {
             this.plasma = true;
             ((Player) event.getEntity()).sendMessage(ChatColor.AQUA + "플라즈마 크리퍼 모드 활성화!");
         }
     }
 	
-    public void T_Passive(PlayerDeathEvent event) {
+    public void onPlayerDeath(PlayerDeathEvent event) {
         this.plasma = false;
     }
 }

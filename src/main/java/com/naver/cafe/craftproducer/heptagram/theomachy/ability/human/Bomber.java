@@ -37,7 +37,7 @@ public class Bomber extends Ability {
         player.sendMessage("폭발을 다루는 능력입니다.\n" + "지정된 위치에 1.5의 폭발을 일으킵니다.\n" + "우클릭으로 해당 위치에 보이지 않는 tnt를 설치하며\n" + "좌클릭으로 어디서든 폭발시킬 수 있습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초"); 
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

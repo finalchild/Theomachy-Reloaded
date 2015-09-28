@@ -37,7 +37,7 @@ public class Voodoo extends Ability {
         player.sendMessage("팻말을 이용해서 상대를 타격할 수 있는 능력입니다.\n" + "팻말에 타격할 상대의 이름을 적을시 그 아이디를 가진 플레이어는 팻말과 연결되며\n" + "팻말을 두들겨 팰시 대상 플레이어가 데미지를 입습니다.\n" + "설치후 7초 동안 효과가 지속되며 7초 이후에 자동으로 팻말이 부숴집니다.\n" + "데미지는 무기의 영향을 받지 않습니다.\n" + "쿨타임은 팻말을 든채 좌클릭하면 좀 더 쉽게 확인 할 수 있습니다.\n" + ChatColor.GREEN + "펫말에 이름을 적을시 " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초");
     }
 
-    public void T_Passive(BlockPlaceEvent event) {
+    public void onBlockPlace(BlockPlaceEvent event) {
         Material blockType = event.getBlock().getType();
 
         if (blockType == Material.SIGN_POST || blockType == Material.WALL_SIGN) {
@@ -49,7 +49,7 @@ public class Voodoo extends Ability {
         }
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         if (this.postSign != null) {
             if (event.getAction() == Action.LEFT_CLICK_BLOCK) {
                 Block block = event.getClickedBlock();
@@ -76,7 +76,7 @@ public class Voodoo extends Ability {
         }
     }
 	
-    public void T_Passive(SignChangeEvent event) {
+    public void onSignChange(SignChangeEvent event) {
         Player player = event.getPlayer();
         String targetName = event.getLine(0);
         Player target = GameData.onlinePlayer.get(targetName);

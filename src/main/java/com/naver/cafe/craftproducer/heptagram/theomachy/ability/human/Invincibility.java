@@ -37,7 +37,7 @@ public class Invincibility extends Ability {
         player.sendMessage("일정시간 데미지를 받지 않을 수 있는 능력입니다.\n" + "블레이즈로드를 이용해 능력을 사용할 수 있습니다.\n" + "좌클릭을 이용해 일정시간 자신을 무적 상태로 만듭니다.\n" + "우클릭은 자신에게 체력회복 버프를 시전합니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -70,7 +70,7 @@ public class Invincibility extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         if (CoolTime.cool0.containsKey(playerName + "1")) {
             event.setCancelled(true);
             event.getEntity().setFireTicks(0);

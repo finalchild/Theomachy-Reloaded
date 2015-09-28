@@ -24,7 +24,7 @@ public class Ares extends Ability {
         player.sendMessage("전쟁의 신입니다.\n" + "모든 공격 데미지가 1.5배 상승합니다.\n" + "추가 패시브 능력으로 10퍼센트 확률로 공격을 회피합니다");
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {		
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {		
         Player player = (Player) event.getEntity();
 
         if (!player.getName().equals(playerName)) { // 공격

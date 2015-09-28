@@ -42,7 +42,7 @@ public class Zeus extends Ability {
         player.sendMessage("신들의 왕입니다.\n" + "번개를 사용하며 블레이즈 로드를 들었을때 발동 시킬 수 있습니다.\n" + "패시브 능력으로 번개와 폭발 데미지를 받지 않습니다.\n" + "일반능력은 타겟지역(거리제한 50)에 번개를 떨어뜨리며\n" + "고급능력은 타겟지역(거리제한 30)에 대량의 번개를 떨어뜨립니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -99,7 +99,7 @@ public class Zeus extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         if (event.getCause() == DamageCause.LIGHTNING || event.getCause() == DamageCause.ENTITY_EXPLOSION) {
             event.setCancelled(true);
         }

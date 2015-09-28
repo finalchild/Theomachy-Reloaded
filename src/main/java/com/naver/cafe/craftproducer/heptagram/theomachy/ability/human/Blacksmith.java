@@ -36,7 +36,7 @@ public class Blacksmith extends Ability {
         player.sendMessage("철,다이아를 만들어 낼 수 있는 능력입니다.\n" + "일반능력으로 코블스톤을 소비하여 철괴 10개를 획득 할 수 있습니다.\n" + "고급능력으로 철괴를 소비하여 다이아 5개를 얻을 수 있습니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 철괴 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

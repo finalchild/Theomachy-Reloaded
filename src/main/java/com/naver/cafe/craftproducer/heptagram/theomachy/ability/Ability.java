@@ -16,6 +16,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
 public class Ability {
+	
     public final String playerName;
     public final String abilityName;
     public final int abilityCode;
@@ -35,38 +36,38 @@ public class Ability {
 	
     public void description() {}
 	
-    public void T_Active(PlayerInteractEvent event) {}
+    public void onPlayerInteract(PlayerInteractEvent event) {}
 	
-    public void T_Passive(BlockBreakEvent event) {}
+    public void onBlockBreak(BlockBreakEvent event) {}
 	
-    public void T_Passive(PlayerDeathEvent event) {}
+    public void onPlayerDeath(PlayerDeathEvent event) {}
 	
-    public void T_Passive(FoodLevelChangeEvent event) {}
+    public void onFoodLevelChange(FoodLevelChangeEvent event) {}
 	
-    public void T_Passive(EntityRegainHealthEvent event) {}
+    public void onEntityRegainHealth(EntityRegainHealthEvent event) {}
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {}
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {}
 	
-    public void T_Passive(EntityDamageEvent event) {}
+    public void onEntityDamage(EntityDamageEvent event) {}
 	
-    public void T_Passive(SignChangeEvent event) {}
+    public void onSignChange(SignChangeEvent event) {}
 	
-    public void T_Passive(BlockPlaceEvent event) {}
+    public void onBlockPlace(BlockPlaceEvent event) {}
 	
-    public void T_Passive(PlayerRespawnEvent event) {}
+    public void onPlayerRespawn(PlayerRespawnEvent event) {}
 	
     public void conditionSet() {}
 	
-    public void conditionReSet() {}
+    public void conditionReset() {}
+    
+    public void onPlayerMove(PlayerMoveEvent event) {}
 	
     public void buff() {}
-	
-    public void T_Passive(PlayerMoveEvent event) {}
+    
+    public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {}
 	
     public void targetSet(CommandSender sender, String targetName) {
         sender.sendMessage("타겟을 사용하는 능력이 아닙니다.");
     }
-
-    public void T_Passive(ProjectileLaunchEvent event, Player player) {}
-
+    
 }

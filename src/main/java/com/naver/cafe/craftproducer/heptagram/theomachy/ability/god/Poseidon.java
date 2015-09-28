@@ -39,7 +39,7 @@ public class Poseidon extends Ability {
         player.sendMessage("물의 신입니다.\n" + "물 속에 있을때 일정확률로 모든 피격을 33% 확률로 회피합니다. 나온 직후 7초 동안 효과가 지속됩니다.\n" + "블레이즈 로드를 이용한 능력으로 자신의 앞으로 물을 생성하며 이후 7초 동안 물에 있는 플레이어는 모두 날려버립니다.\n" + "물벽은 코블스톤을 뚫을 수 있습니다.\n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -136,7 +136,7 @@ public class Poseidon extends Ability {
         }
     }
 
-    public void T_Passive(EntityDamageEvent event) {
+    public void onEntityDamage(EntityDamageEvent event) {
         Player player = (Player) event.getEntity();
 
         if (event.getCause() == DamageCause.DROWNING) {
@@ -160,7 +160,7 @@ public class Poseidon extends Ability {
         player.setRemainingAir(0);
     }
 	
-    public void conditionReSet() {
+    public void conditionReset() {
         Player player = GameData.onlinePlayer.get(playerName);
 
         player.setMaximumAir(300);

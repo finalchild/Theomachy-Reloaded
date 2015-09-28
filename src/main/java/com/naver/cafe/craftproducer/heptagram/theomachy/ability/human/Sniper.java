@@ -38,7 +38,7 @@ public class Sniper extends Ability {
         player.sendMessage("빠른 화살을 이용해 상대방을 공격하는 능력입니다.\n" + "게임 시작시 활1개 화살 20개를 지급합니다. \n" + "활을 들고 앉은채(shift) 좌클릭하면 4초뒤 스나이핑 모드가 활성화됩니다.\n" + "스나이핑 모드일시 쏜 화살이 타겟방향으로 보이지 않는속도로 날아가며 맞은 적은 약 100~200의 데미지를 입습니다.\n" + ChatColor.AQUA + "스나이핑모드일때 화살한발 " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BOW)) {
@@ -61,7 +61,7 @@ public class Sniper extends Ability {
     }
 	
     @Override
-    public void T_Passive(ProjectileLaunchEvent event, Player player) {
+    public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {
         if (this.sniping && (CoolTimeChecker.check(player, 0) && PlayerInventory.checkItem(player, material, stack0))) {
             Entity entity = event.getEntity();
 

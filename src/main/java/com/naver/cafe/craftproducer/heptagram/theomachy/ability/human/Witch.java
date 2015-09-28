@@ -38,7 +38,7 @@ public class Witch extends Ability {
         player.sendMessage("디버프를 사용하는 능력입니다.\n" + "블레이즈 로드를 이용한 능력 사용시 주변 10칸 안에 있는 자신의 팀원을 제외한 모두에게 각종 10초간 디버프를 적용합니다.\n" + "자신을 공격한 상대는 25% 확률로 5초간 디버프에 걸리게 됩니다. \n" + ChatColor.GREEN + "(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack0 + "개 소모, 쿨타임 " + coolTime0 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -72,7 +72,7 @@ public class Witch extends Ability {
         }
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Player player = (Player) event.getEntity();
 
         if (player.getName().equals(playerName)) {

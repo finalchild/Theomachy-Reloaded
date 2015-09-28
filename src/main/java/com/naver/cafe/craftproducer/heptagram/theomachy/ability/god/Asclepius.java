@@ -36,7 +36,7 @@ public class Asclepius extends Ability {
         player.sendMessage("의술의 신입니다.\n" + "자신의 체력회복 혹은 주변 팀원의 체력을 회복합니다.\n" + "일반능력으로 자신을 모두 회복 시킬 수 있으며\n" + "고급능력으로 주변 5칸에 있는 자신을 제외한 팀원의 체력을 모두 회복 시킬 수 있습니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {

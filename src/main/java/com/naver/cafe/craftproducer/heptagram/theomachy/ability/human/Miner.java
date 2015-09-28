@@ -29,7 +29,7 @@ public class Miner extends Ability {
         player.sendMessage("돌을 효율적으로 캐는 능력입니다.\n" + "코블스톤을 캘 때 일정 5% 확률로 한번에 10개를 얻을 수 있습니다.\n");
     }
 	
-    public void T_Passive(BlockBreakEvent event) {
+    public void onBlockBreak(BlockBreakEvent event) {
         Block block = event.getBlock();
 
         if (block.getType() == Material.COBBLESTONE) {

@@ -41,7 +41,7 @@ public class Hades extends Ability {
         player.sendMessage("죽음의 신입니다.\n" + "패시브 능력으로 사망시 80% 확률로 아이템을 잃지 않습니다.\n" + "액티브 능력으로 상대를 나락으로 떨어뜨릴 수 있으며 블레이즈 로드를 들었을때 발동 시킬 수 있습니다.\n" + "일반능력은 주변 2칸에 있는 자신을 포함한 모든 플레이어,몬스터와 함께 나락으로 떨어지며\n" + "고급능력은 주변 4칸에 있는 자신을 제외한 모든 플레이어,몬스터를 나락으로 떨어뜨립니다.\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
@@ -102,7 +102,7 @@ public class Hades extends Ability {
 	
     private ItemStack[] inventory;
     private ItemStack[] armor;
-    public void T_Passive(PlayerDeathEvent event) {
+    public void onPlayerDeath(PlayerDeathEvent event) {
         int rn = (int) (Math.random() * 5);
 
         if (rn != 0) {
@@ -114,7 +114,7 @@ public class Hades extends Ability {
         }
     }
 
-    public void T_Passive(PlayerRespawnEvent event) {
+    public void onPlayerRespawn(PlayerRespawnEvent event) {
         Player player = event.getPlayer();
 
         if (inventory != null) {

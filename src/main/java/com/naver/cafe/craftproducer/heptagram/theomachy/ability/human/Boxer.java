@@ -24,7 +24,7 @@ public class Boxer extends Ability {
         player.sendMessage("빠른 주먹을 사용하는 능력입니다.\n" + "주먹을 이용해서 공격하면 아주 빠른 속도로 공격할 수 있습니다.\n" + "상대가 블로킹 중이라면 효과를 받지 않습니다.\n" + "당신의 광클실력을 보여주세요.");
     }
 	
-    public void T_Passive(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         Player player = (Player) event.getDamager();
 
         if (player.getItemInHand().getType() == Material.AIR && player.getName().equals(this.playerName)) {

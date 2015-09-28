@@ -40,7 +40,7 @@ public class Teleporter extends Ability {
         player.sendMessage("순간이동을 돕는 마법사입니다.\n" + "블레이즈 로드를 이용해 자신이 원하는 위치(25칸)에 텔레포트 할 수 있으며 같은 팀원 위치와 스위칭도 가능합니다.\n" + "좌클릭으로 자신이 가리키고 있는곳으로 텔레포트 하며.\n" + "우클릭으로 타겟에 등록해 둔 자신의 팀원과 위치를 치환합니다.(타겟 등록법 : /x <Player>)\n" + ChatColor.AQUA + "일반(좌클릭) " + ChatColor.WHITE + " 코블스톤 " + stack1 + "개 소모, 쿨타임 " + coolTime1 + "초\n" + ChatColor.RED + "고급(우클릭) " + ChatColor.WHITE + " 코블스톤 " + stack2 + "개 소모, 쿨타임 " + coolTime2 + "초\n");
     }
 	
-    public void T_Active(PlayerInteractEvent event) {
+    public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
 
         if (PlayerInventory.checkInHandItem(player, Material.BLAZE_ROD)) {
