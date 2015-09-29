@@ -38,7 +38,7 @@ public class Theomachy extends JavaPlugin {
         getServer().addRecipe(recipe);
         getServer().getPluginManager().registerEvents(new EventManager(), this);
 		
-        getLogger().info("게임의 설정 불러오는중");
+        getLogger().info("게임의 설정 불러오는 중");
         getConfig().options().copyDefaults(true);
         saveConfig();
         inventoryClear = getConfig().getBoolean("Inventory Clear");
