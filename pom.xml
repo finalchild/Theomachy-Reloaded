@@ -19,12 +19,22 @@
   		<version>1.8.8-R0.1-SNAPSHOT</version>
   		<scope>provided</scope>
   	</dependency>
+  	<dependency>
+      <groupId>com.comze_instancelabs</groupId>
+      <artifactId>MinigamesLib</artifactId>
+      <version>1.13.1</version>
+    </dependency>
   </dependencies>
   
   <repositories>
     <repository>
       <id>spigotmc</id>
       <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>MinigamesAPI-Repo</id>
+      <name>MinigamesAPI Repository</name>
+      <url>http://www.instancedev.com/bukkitdev/MinigamesAPI/maven/</url>
     </repository>
   </repositories>
 </project>
