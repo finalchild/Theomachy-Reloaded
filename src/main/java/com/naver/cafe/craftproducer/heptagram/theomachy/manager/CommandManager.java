@@ -25,7 +25,7 @@ public class CommandManager implements CommandExecutor {
                 sender.sendMessage(ChatColor.YELLOW + ("/t stop     ") + ChatColor.WHITE + ("게임을 중지합니다."));
                 sender.sendMessage(ChatColor.YELLOW + ("/t ability(a)     ") + ChatColor.WHITE + ("능력을 설정합니다"));
                 sender.sendMessage(ChatColor.YELLOW + ("/t help     ") + ChatColor.WHITE + ("자신의 능력을 확인합니다."));
-                sender.sendMessage(ChatColor.YELLOW + ("/t spawn(s) ") + ChatColor.AQUA + ("<TeamName>   ") + ChatColor.WHITE + ("해당 팀의 스폰지역을 설정합니다."));
+                sender.sendMessage(ChatColor.YELLOW + ("/t spawn(s) ") + ChatColor.AQUA + ("<TeamName>   ") + ChatColor.WHITE + ("해당 팀의 스폰 지역을 설정합니다."));
                 sender.sendMessage(ChatColor.YELLOW + ("/t team(t)  ") + ChatColor.AQUA + ("<TeamName>  ") + ChatColor.RED + ("<Player>  ") + ChatColor.WHITE + ("플레이어를 팀에 등록합니다."));
                 sender.sendMessage(ChatColor.YELLOW + ("/t info(i)  ") + ChatColor.AQUA + ("<TeamName>     ") + ChatColor.WHITE + ("해당 팀의 멤버를 확인합니다."));
                 sender.sendMessage(ChatColor.YELLOW + ("/t clear(c) ") + ChatColor.WHITE + ("쿨타임을 초기화합니다."));
