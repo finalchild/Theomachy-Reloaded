@@ -56,16 +56,16 @@ public class Ability {
 	
     public void onPlayerRespawn(PlayerRespawnEvent event) {}
 	
-    public void conditionSet() {}
+    public void onPlayerMove(PlayerMoveEvent event) {}
+
+	public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {}
+
+	public void conditionSet() {}
 	
     public void conditionReset() {}
     
-    public void onPlayerMove(PlayerMoveEvent event) {}
-	
     public void buff() {}
     
-    public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {}
-	
     public void targetSet(CommandSender sender, String targetName) {
         sender.sendMessage("타겟을 사용하는 능력이 아닙니다.");
     }

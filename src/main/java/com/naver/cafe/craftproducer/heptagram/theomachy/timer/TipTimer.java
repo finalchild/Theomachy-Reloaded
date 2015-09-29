@@ -74,22 +74,22 @@ public class TipTimer extends TimerTask {
                 Bukkit.broadcastMessage(ChatColor.RED + "신들의 전쟁 (Theomachy) - Reloaded");
                 Bukkit.broadcastMessage("버전  : " + PluginData.VERSION);
                 Bukkit.broadcastMessage("빌드  : " + PluginData.BUILD_NUMBER);
-                Bukkit.broadcastMessage("원작자  : 칠각별(septagram)");
-                Bukkit.broadcastMessage("제작자 : 파차(finalchild)");
+                Bukkit.broadcastMessage("제작자 : 파차(Final Child)");
+                Bukkit.broadcastMessage("원작자  : 칠각별(Heptagram)");
                 Bukkit.broadcastMessage(ChatColor.GREEN + "http://blog.naver.com/septagram/");
                 break;
 
             case 675:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("현재 등록된 능력은 " + AbilityData.ABILITY_NUMBER + " 개 입니다.");
-                Bukkit.broadcastMessage("이중 신의 능력은 " + AbilityData.GOD_ABILITY_NUMBER + " 개 이며");
-                Bukkit.broadcastMessage("인간의 능력은 능력은 " + AbilityData.HUMAN_ABILITY_NUMBER + " 개 입니다.");
+                Bukkit.broadcastMessage("현재 등록된 능력은 " + AbilityData.ABILITY_NUMBER + "개 입니다.");
+                Bukkit.broadcastMessage("이 중 신의 능력은 " + AbilityData.GOD_ABILITY_NUMBER + "개이며");
+                Bukkit.broadcastMessage("인간의 능력은 " + AbilityData.HUMAN_ABILITY_NUMBER + "개입니다.");
                 break;
 
             case 750:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("팀 스폰지역은 베드락이 좋습니다.");
-                Bukkit.broadcastMessage("블럭이 부숴질 경우 공중에서 스폰되어 부활하자마자 떨어져 죽는 상황이 발생 할 수 있습니다.");
+                Bukkit.broadcastMessage("팀 스폰 지역은 기반암이 좋습니다.");
+                Bukkit.broadcastMessage("블록이 부서질 경우 공중에서 스폰되어 부활하자마자 떨어져 죽는 상황이 발생할 수 있습니다.");
                 break;
 
             case 825:
@@ -102,52 +102,53 @@ public class TipTimer extends TimerTask {
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("스블에서는 창고 관리를 최우선적으로 합시다.");
                 Bukkit.broadcastMessage("창고 테러를 당하면 아무리 고급능력이라도 승리하기가 쉽지 않습니다.");
-                Bukkit.broadcastMessage("능력자전에서 육탄전으로 변하는 상황이 오게 됩니다");
+                Bukkit.broadcastMessage("능력자전에서 육탄전으로 변하는 상황이 오게 됩니다.");
                 break;
 
             case 975:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("대부분의 패시브 능력은 서로 어느정도 상성관계가 있습니다.");
+                Bukkit.broadcastMessage("대부분의 패시브 능력은 서로 어느 정도 상성 관계가 있습니다.");
                 Bukkit.broadcastMessage("디오니소스 > 복서 > 스탠스");
                 break;
 
             case 1050:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("컨트롤이 좋으면 왠만한 S랭크 효과를 넘는 능력들이있습니다. 랭크가 낮다고 실망하지마세요.");
+                Bukkit.broadcastMessage("컨트롤이 좋으면 웬만한 S랭크 효과를 넘는 능력들이 있습니다. 랭크가 낮다고 실망하지 마세요.");
                 break;
 
             case 1125:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("플러그인을 이용한 게임은 서버에게 상당한 고사양을 요구합니다.");
-                Bukkit.broadcastMessage("플레이 하는 인원수가 적다면 영향이 없겠지만 인원수가 많을시에는 저사양 컴퓨터에서 서버를 돌리는것을 추천하진 않습니다.");
+                Bukkit.broadcastMessage("플레이하는 인원수가 적다면 영향이 없겠지만 인원수가 많을 시에는 저사양 컴퓨터에서 서버를 돌리는 것을 추천하진 않습니다.");
                 break;
 
             case 1200:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("플러그인 제작에 도움을 주신 분들");
+                Bukkit.broadcastMessage("원작자: 칠각별 (어 그러니까... 코드 스타일과 맞춤법 노가다를 주셔서 감사합니다.)");
                 Bukkit.broadcastMessage("소스 참고 및 조언 : 제온 (많은 충고 감사합니다.)");
-                Bukkit.broadcastMessage("테스터 : Headings, Patrasue, raito_, 김정민, 박위선, 해럴드, ZackLee 그외...");
+                Bukkit.broadcastMessage("테스터 : Headings, Patrasue, raito_, 김정민, 박위선, 해럴드, ZackLee 그 외...");
                 break;
 
             case 1275:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("신과 인간 능력의 차이는");
                 Bukkit.broadcastMessage("이름 뿐.");
-                Bukkit.broadcastMessage("오히려 인간이 강한 능력을 가진 경우도 있습니다. 신이 아니라고 해서 실망하지마세요.");
+                Bukkit.broadcastMessage("오히려 인간이 강한 능력을 가진 경우도 있습니다. 신이 아니라고 해서 실망하지 마세요.");
                 break;
 
             case 1350:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("플러그인 라이선스: MIT License");
-                Bukkit.broadcastMessage("저작권은 septagram, 파차에게 있습니다.");
+                Bukkit.broadcastMessage("저작권은 칠각별, 파차에게 있습니다.");
                 Bukkit.broadcastMessage(ChatColor.GREEN + "http://cafe.naver.com/craftproducer");
-                Bukkit.broadcastMessage("현재 배포중인 곳은 없습니다.");
+                Bukkit.broadcastMessage("현재 배포 중인 곳은 없습니다.");
                 break;
 
             case 1425:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage("(능력) 크리퍼에게 번개 사용 시 주의하세요 ");
-                Bukkit.broadcastMessage("폭발력이 두배로 늘어납니다.");
+                Bukkit.broadcastMessage("폭발력이 두 배로 늘어납니다.");
                 break;
 
             case 1500:
@@ -164,32 +165,33 @@ public class TipTimer extends TimerTask {
 
             case 1650:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("서버가 다운되면 능력도 다운됩니다. 주의하세요");
+                Bukkit.broadcastMessage("서버가 다운되면 능력도 다운됩니다. 주의하세요.");
                 break;
 
             case 1725:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage(ChatColor.GREEN + "http://cafe.naver.com/craftproducer");
-                Bukkit.broadcastMessage("게임 개발자 까페입니다.");
-                Bukkit.broadcastMessage("관심이있으신분들은 한번씩 들려보세요.");
+                Bukkit.broadcastMessage("게임 개발자 카페입니다.");
+                Bukkit.broadcastMessage("관심이 있으신 분들은 한 번씩 들러보세요.");
                 break;
 
             case 1800:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("플러그인은 빼면 뺄수록 서버의 성능은 올라갑니다.");
+                Bukkit.broadcastMessage("플러그인을 빼면 뺄수록 서버의 성능은 올라갑니다.");
                 Bukkit.broadcastMessage(ChatColor.RED + "*될 수 있는 한 VisualAbility와 신들의전쟁을 넣거나 동시 실행하지마세요*");
                 Bukkit.broadcastMessage(ChatColor.RED + "*트래픽이 엄청납니다.*");
                 break;
 
             case 1875:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("다이아 블럭은 돌 곡괭이로 캐는 속도와 손으로 캐는속도가 동일합니다.");
+                Bukkit.broadcastMessage("다이아몬드 블록은 돌 곡괭이로 캐는 속도와 손으로 캐는 속도가 동일합니다.");
+                Bukkit.broadcastMessage("라고 칠각별님이 말하셨으나 사실은 돌 곡괭이가 네 배 더 빠르게 캡니다.");
                 break;
 
             case 1950:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
-                Bukkit.broadcastMessage("플레이 하시는 모든 분들에게 감사 말씀드립니다.");
-                Bukkit.broadcastMessage("재밌게 플레이 해 주세요.");				
+                Bukkit.broadcastMessage("플레이하시는 모든 분들에게 감사 말씀 드립니다.");
+                Bukkit.broadcastMessage("재밌게 플레이해 주세요.");				
                 count = 1;
                 break;
             }
