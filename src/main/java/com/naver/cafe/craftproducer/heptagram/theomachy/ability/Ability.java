@@ -58,9 +58,9 @@ public class Ability {
 	
     public void onPlayerMove(PlayerMoveEvent event) {}
 
-	public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {}
+    public void onProjectileLaunch(ProjectileLaunchEvent event, Player player) {}
 
-	public void conditionSet() {}
+    public void conditionSet() {}
 	
     public void conditionReset() {}
     
