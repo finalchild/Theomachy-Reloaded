@@ -127,12 +127,12 @@ public class AbilitySet {
             String abilityName = data[1];
             String playerName = data[i];
 
-            if (GameData.onlinePlayer.containsKey(playerName)) {
+            if (GameData.onlinePlayers.containsKey(playerName)) {
                 try {
                     int abilityCode = Integer.parseInt(abilityName);
 
                     assignAbility(abilityCode, playerName, sender);
-                    Player player = GameData.onlinePlayer.get(playerName);
+                    Player player = GameData.onlinePlayers.get(playerName);
 
                     Bukkit.broadcastMessage("관리자가 " + ChatColor.RED + playerName + ChatColor.WHITE + "에게 능력을 할당하였습니다.");
                     player.sendMessage("능력이 할당되었습니다. /t help로 능력을 확인해보세요.");

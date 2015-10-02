@@ -22,7 +22,7 @@ public class ApollonPlayerScorching extends TimerTask {
 
     public void run() {
         if (count > 0) {
-            List<Player> playerList = GameData.onlinePlayer.get(playerName).getWorld().getPlayers();
+            List<Player> playerList = GameData.onlinePlayers.get(playerName).getWorld().getPlayers();
 
             for (Player e : playerList) {
                 if (e.getName() != playerName && e.getLocation().getBlock().getLightLevel() == 15) {
@@ -31,7 +31,7 @@ public class ApollonPlayerScorching extends TimerTask {
             }
         } else {
             Bukkit.broadcastMessage("태양이 힘을 잃었습니다.");
-            World world = GameData.onlinePlayer.get(playerName).getWorld();
+            World world = GameData.onlinePlayers.get(playerName).getWorld();
 
             world.setTime(18000);
             this.cancel();

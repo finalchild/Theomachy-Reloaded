@@ -263,7 +263,7 @@ public class EventManager implements Listener {
     public static void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        GameData.onlinePlayer.put(player.getName(), player);
+        GameData.onlinePlayers.put(player.getName(), player);
         if (GameHandler.start) {
             Ability ability = GameData.playerAbility.get(player.getName());
 
@@ -277,7 +277,7 @@ public class EventManager implements Listener {
     public static void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        GameData.onlinePlayer.remove(player.getName());
+        GameData.onlinePlayers.remove(player.getName());
     }
 	
     @EventHandler

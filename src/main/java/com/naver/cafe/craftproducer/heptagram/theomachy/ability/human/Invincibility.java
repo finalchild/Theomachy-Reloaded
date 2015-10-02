@@ -30,7 +30,7 @@ public class Invincibility extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 무적 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active, Buff  " + ChatColor.GREEN + "Rank[ A ]");

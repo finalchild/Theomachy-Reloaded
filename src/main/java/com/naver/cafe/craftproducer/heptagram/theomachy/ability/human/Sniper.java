@@ -31,7 +31,7 @@ public class Sniper extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 저격수 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ A ]");
@@ -78,7 +78,7 @@ public class Sniper extends Ability {
 	
     @Override
     public void conditionSet() {
-        Player player = GameData.onlinePlayer.get(this.playerName);
+        Player player = GameData.onlinePlayers.get(this.playerName);
 
         player.getInventory().addItem(new ItemStack(Material.BOW, 1));
         player.getInventory().addItem(new ItemStack(Material.ARROW, 10));

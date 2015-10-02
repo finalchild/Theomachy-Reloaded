@@ -24,7 +24,7 @@ public class T_Message {
     }
 
     public static void tellCooltimeCount(int switcher, String playerName, int cool) {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         if (player != null) {
             switch (switcher) {
@@ -44,7 +44,7 @@ public class T_Message {
     }
 	
     public static void onCooltimeEnd(int switcher, String playerName) {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         if (player != null) {
             switch (switcher) {

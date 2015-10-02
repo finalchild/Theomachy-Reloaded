@@ -29,8 +29,8 @@ public class PlayerList {
         ArrayList<Player> memberPlayer = new ArrayList<Player>();
 
         for (String e : memberName) {
-            if (GameData.onlinePlayer.containsKey(e)) {
-                memberPlayer.add(GameData.onlinePlayer.get(e));
+            if (GameData.onlinePlayers.containsKey(e)) {
+                memberPlayer.add(GameData.onlinePlayers.get(e));
             }
         }
         return memberPlayer;
@@ -40,56 +40,56 @@ public class PlayerList {
         String playerName = player.getName();
         String playerTeamName = GameData.playerTeam.get(playerName);
 
-        ArrayList<Player> nearByTeamMembers = new ArrayList<Player>();
+        ArrayList<Player> nearbyTeammates = new ArrayList<Player>();
 
         if (playerTeamName != null) {
-            List<Entity> nearByEntityList = player.getNearbyEntities(x, y, z);
+            List<Entity> nearbyEntities = player.getNearbyEntities(x, y, z);
 
-            if (!nearByEntityList.isEmpty()) {
-                for (Entity e : nearByEntityList) {
+            if (!nearbyEntities.isEmpty()) {
+                for (Entity e : nearbyEntities) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
                         String memberTeamName = GameData.playerTeam.get(memberName);
 
                         if (memberTeamName.equals(playerTeamName)) {
-                            nearByTeamMembers.add((Player) e);
+                            nearbyTeammates.add((Player) e);
                         }
                     }
                 }
             }
         }
-        return nearByTeamMembers;
+        return nearbyTeammates;
     }
 	
     public static List<Player> getNearbyEnemies(Player player, double x, double y, double z) {
         String playerName = player.getName();
         String playerTeamName = GameData.playerTeam.get(playerName);
 
-        ArrayList<Player> nearByNotTeamMembers = new ArrayList<Player>();
-        List<Entity> nearByEntityList = player.getNearbyEntities(x, y, z);
+        ArrayList<Player> nearbyEnemies = new ArrayList<Player>();
+        List<Entity> nearbyEntities = player.getNearbyEntities(x, y, z);
 
         if (playerTeamName != null) {
-            if (!nearByEntityList.isEmpty()) {
-                for (Entity e : nearByEntityList) {
+            if (!nearbyEntities.isEmpty()) {
+                for (Entity e : nearbyEntities) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
                         String memberTeamName = GameData.playerTeam.get(memberName);
 
                         if (!memberTeamName.equals(playerTeamName)) {
-                            nearByNotTeamMembers.add((Player) e);
+                            nearbyEntities.add((Player) e);
                         }
                     }
                 }
             }
         } else {
-            if (!nearByEntityList.isEmpty()) {
-                for (Entity e : nearByEntityList) {
+            if (!nearbyEntities.isEmpty()) {
+                for (Entity e : nearbyEntities) {
                     if (e instanceof Player) {
-                        nearByNotTeamMembers.add((Player) e);
+                        nearbyEnemies.add((Player) e);
                     }
                 }
             }
         }
-        return nearByNotTeamMembers;
+        return nearbyEnemies;
     }
 }

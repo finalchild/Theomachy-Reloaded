@@ -33,7 +33,7 @@ public class Teleporter extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 텔레포터 ]  " + ChatColor.RED + "[ 인간 ]  " + ChatColor.BLUE + "Active  " + ChatColor.GREEN + "Rank[ B ]");
@@ -92,7 +92,7 @@ public class Teleporter extends Ability {
     private void rightAction(Player player) {
         if (CoolTimeChecker.check(player, 2) && PlayerInventory.checkItem(player, material, stack2)) {
             if (abilitytarget != null) {
-                Player target = GameData.onlinePlayer.get(abilitytarget);
+                Player target = GameData.onlinePlayers.get(abilitytarget);
 
                 if (target != null) {
                     Location location = player.getLocation();

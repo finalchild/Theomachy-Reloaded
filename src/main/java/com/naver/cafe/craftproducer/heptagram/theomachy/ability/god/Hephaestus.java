@@ -32,7 +32,7 @@ public class Hephaestus extends Ability {
     }
 	
     public void description() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.sendMessage(ChatColor.DARK_GREEN + "=================== " + ChatColor.YELLOW + "능력 정보" + ChatColor.DARK_GREEN + " ===================");
         player.sendMessage(ChatColor.YELLOW + "[ 헤파이스토스 ]  " + ChatColor.RED + "[ 신 ]  " + ChatColor.BLUE + "Active,Passive  " + ChatColor.GREEN + "Rank[ B ]");
@@ -81,14 +81,14 @@ public class Hephaestus extends Ability {
     }
 	
     public void conditionSet() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.setMaximumAir(0);
         player.setRemainingAir(0);
     }
 	
     public void conditionReset() {
-        Player player = GameData.onlinePlayer.get(playerName);
+        Player player = GameData.onlinePlayers.get(playerName);
 
         player.setMaximumAir(300);
         player.setRemainingAir(300);

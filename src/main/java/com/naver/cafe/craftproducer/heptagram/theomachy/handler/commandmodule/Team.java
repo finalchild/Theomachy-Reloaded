@@ -13,7 +13,7 @@ public class Team {
         if (PermissionChecker.checkSender(sender)) {
             if (data.length > 2) {
                 for (int i = 2; i < data.length; i++) {
-                    if (GameData.onlinePlayer.containsKey(data[i])) {
+                    if (GameData.onlinePlayers.containsKey(data[i])) {
                         String playerName = data[i];
                         String teamName = data[1];
                         String teamNameOld = GameData.playerTeam.get(playerName);

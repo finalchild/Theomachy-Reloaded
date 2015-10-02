@@ -45,7 +45,7 @@ public class CommandHandler {
         Ability ability = GameData.playerAbility.get(playerName);
 
         if (ability != null) {
-            if (GameData.onlinePlayer.containsKey(targetName)) {
+            if (GameData.onlinePlayers.containsKey(targetName)) {
                 ability.targetSet(sender, targetName);
             } else {
                 sender.sendMessage("온라인 플레이어가 아닙니다.  " + targetName);
