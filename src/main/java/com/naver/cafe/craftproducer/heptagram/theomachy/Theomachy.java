@@ -34,8 +34,8 @@ public class Theomachy extends JavaPlugin {
         getLogger().info("총합: " + AbilityData.ABILITY_NUMBER);
         getLogger().info("플러그인 스크립트 적용중");
         cm = new CommandManager(this);
+        
         ShapedRecipe recipe = new ShapedRecipe(new ItemStack(Material.BLAZE_ROD)).shape(new String[] { "|", "|", "|"}).setIngredient('|', Material.STICK);
-
         getServer().addRecipe(recipe);
         getServer().getPluginManager().registerEvents(new EventManager(), this);
 		
