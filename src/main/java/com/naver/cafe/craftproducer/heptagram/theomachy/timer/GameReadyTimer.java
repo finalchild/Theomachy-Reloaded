@@ -122,7 +122,7 @@ public class GameReadyTimer extends TimerTask {
                 Bukkit.broadcastMessage("Github: https://github.com/fcreloaded/Theomachy-Reloaded");
                 Bukkit.broadcastMessage("원작자: Septagram(칠각별)");
                 Bukkit.broadcastMessage("원작자 블로그 : http://blog.naver.com/septagram/");
-                Bukkit.broadcastMessage("버그 신고는 Github에서 해주세요.");
+                Bukkit.broadcastMessage("버그 신고는 GitHub에서 해주세요.");
                 break;
 
             case 34:
