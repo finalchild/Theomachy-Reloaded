@@ -83,12 +83,12 @@ public class T_Message {
     public static void onItemLack(Player player, Material material, int stack) {
         switch (material) {
         case COBBLESTONE:
-            player.sendMessage("코블스톤이 부족합니다.");
+            player.sendMessage("조약돌이 부족합니다.");
             player.sendMessage("필요갯수 : " + ChatColor.RED + stack);
             break;
 
         case WOOD:
-            player.sendMessage("가공된 나무가 부족합니다.");
+            player.sendMessage("목재가 부족합니다.");
             player.sendMessage("필요갯수 : " + ChatColor.RED + stack);
             break;
 
