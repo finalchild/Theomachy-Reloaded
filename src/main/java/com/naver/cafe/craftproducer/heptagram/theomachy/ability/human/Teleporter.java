@@ -115,8 +115,8 @@ public class Teleporter extends Ability {
     }
 	
     public void targetSet(CommandSender sender, String targetName) {
-        String playerTeamName = GameData.playerTeam.get(playerName);
-        String targetTeamName = GameData.playerTeam.get(targetName);
+        String playerTeamName = GameData.TeamMembers.get(playerName);
+        String targetTeamName = GameData.TeamMembers.get(targetName);
 
         if (playerTeamName != null && targetTeamName != null && playerTeamName.equals(targetTeamName)) {
             if (!playerName.equals(targetName)) {

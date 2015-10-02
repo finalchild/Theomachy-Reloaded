@@ -90,7 +90,7 @@ public class CoolTimer extends TimerTask {
                 ini = false;
             }
             if (count % 150 == 0) {
-                Collection<Ability> playerAbilityList = GameData.playerAbility.values();
+                Collection<Ability> playerAbilityList = GameData.playerAbilities.values();
 
                 for (Ability e : playerAbilityList) {
                     if (e.buffType) {

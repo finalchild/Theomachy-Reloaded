@@ -16,15 +16,15 @@ public class Team {
                     if (GameData.onlinePlayers.containsKey(data[i])) {
                         String playerName = data[i];
                         String teamName = data[1];
-                        String teamNameOld = GameData.playerTeam.get(playerName);
+                        String teamNameOld = GameData.TeamMembers.get(playerName);
 
                         if (teamNameOld == null) // 플레이어 팀 초기화
                         {
-                            GameData.playerTeam.put(data[i], teamName);
+                            GameData.TeamMembers.put(data[i], teamName);
                             Bukkit.broadcastMessage("플레이어 " + ChatColor.RED + playerName + ChatColor.WHITE + " (이)가 팀 " + ChatColor.DARK_AQUA + teamName + ChatColor.WHITE + " 에 등록되었습니다.");
                         } else // 플레이어 팀 변경
                         {
-                            GameData.playerTeam.put(data[i], teamName);
+                            GameData.TeamMembers.put(data[i], teamName);
                             Bukkit.broadcastMessage("플레이어 " + ChatColor.RED + playerName + ChatColor.WHITE + " 의 팀이 변경되었습니다.    " + ChatColor.BLUE + teamNameOld + ChatColor.WHITE + " > " + ChatColor.DARK_AQUA + teamName);
                         }
                     } else {

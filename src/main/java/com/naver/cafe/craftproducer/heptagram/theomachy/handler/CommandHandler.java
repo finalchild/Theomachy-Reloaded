@@ -42,7 +42,7 @@ public class CommandHandler {
     public static void handleX(CommandSender sender, Command command, String label, String[] data) {
         String playerName = sender.getName();
         String targetName = data[0];
-        Ability ability = GameData.playerAbility.get(playerName);
+        Ability ability = GameData.playerAbilities.get(playerName);
 
         if (ability != null) {
             if (GameData.onlinePlayers.containsKey(targetName)) {

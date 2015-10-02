@@ -102,7 +102,7 @@ public class GameReadyTimer extends TimerTask {
             case 20:
                 Bukkit.broadcastMessage(ChatColor.AQUA + "현재 능력이 적용되지 않은 플레이어 목록");
                 for (int i = 0; i < playerList.length; i++) {
-                    if (!GameData.playerAbility.containsKey(playerList[i].getName())) {
+                    if (!GameData.playerAbilities.containsKey(playerList[i].getName())) {
                         Bukkit.broadcastMessage(i + 1 + ".  " + ChatColor.GOLD + playerList[i].getName());
                     }
                 }
@@ -111,7 +111,7 @@ public class GameReadyTimer extends TimerTask {
             case 24:
                 Bukkit.broadcastMessage(ChatColor.BLUE + "현재 팀이 적용되지 않은 플레이어 목록");
                 for (int i = 0; i < playerList.length; i++) {
-                    if (!GameData.playerTeam.containsKey(playerList[i].getName())) {
+                    if (!GameData.TeamMembers.containsKey(playerList[i].getName())) {
                         Bukkit.broadcastMessage(i + 1 + ".  " + ChatColor.GOLD + playerList[i].getName());
                     }
                 }
@@ -179,10 +179,10 @@ public class GameReadyTimer extends TimerTask {
                     e.setExp(0.0F);
                     e.setHealth(20);
                     PlayerInventory.addSkyblockBasicItems(e);					
-                    String teamName = GameData.playerTeam.get(e.getName());
+                    String teamName = GameData.TeamMembers.get(e.getName());
 
                     if (teamName != null) {
-                        Location location = GameData.spawnArea.get(teamName);
+                        Location location = GameData.spawnAreas.get(teamName);
 
                         if (location != null) {
                             e.teleport(location);
@@ -203,7 +203,7 @@ public class GameReadyTimer extends TimerTask {
                 world.setSpawnFlags(Theomachy.monster, Theomachy.animal);
                 world.setDifficulty(this.difficulty);
                 world.setTime(6000);
-                Collection<Ability> playerAbilityList = GameData.playerAbility.values();
+                Collection<Ability> playerAbilityList = GameData.playerAbilities.values();
 
                 for (Ability e : playerAbilityList) {
                     e.conditionSet();

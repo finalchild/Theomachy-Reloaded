@@ -12,11 +12,11 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
 public class PlayerList {
     public static List<Player> getTeammates(Player player) {
-        String teamName = GameData.playerTeam.get(player.getName());
+        String teamName = GameData.TeamMembers.get(player.getName());
         ArrayList<String> memberName = new ArrayList<String>();
 
-        if (GameData.playerTeam.containsValue(teamName)) {
-            Iterator<Entry<String, String>> iterator = GameData.playerTeam.entrySet().iterator();
+        if (GameData.TeamMembers.containsValue(teamName)) {
+            Iterator<Entry<String, String>> iterator = GameData.TeamMembers.entrySet().iterator();
 
             while (iterator.hasNext()) {
                 Entry<String, String> entry = iterator.next();
@@ -38,7 +38,7 @@ public class PlayerList {
 	
     public static List<Player> getNearbyTeammates(Player player, double x, double y, double z) {
         String playerName = player.getName();
-        String playerTeamName = GameData.playerTeam.get(playerName);
+        String playerTeamName = GameData.TeamMembers.get(playerName);
 
         ArrayList<Player> nearbyTeammates = new ArrayList<Player>();
 
@@ -49,7 +49,7 @@ public class PlayerList {
                 for (Entity e : nearbyEntities) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.playerTeam.get(memberName);
+                        String memberTeamName = GameData.TeamMembers.get(memberName);
 
                         if (memberTeamName.equals(playerTeamName)) {
                             nearbyTeammates.add((Player) e);
@@ -63,7 +63,7 @@ public class PlayerList {
 	
     public static List<Player> getNearbyEnemies(Player player, double x, double y, double z) {
         String playerName = player.getName();
-        String playerTeamName = GameData.playerTeam.get(playerName);
+        String playerTeamName = GameData.TeamMembers.get(playerName);
 
         ArrayList<Player> nearbyEnemies = new ArrayList<Player>();
         List<Entity> nearbyEntities = player.getNearbyEntities(x, y, z);
@@ -73,7 +73,7 @@ public class PlayerList {
                 for (Entity e : nearbyEntities) {
                     if (e instanceof Player) {
                         String memberName = ((Player) e).getName();
-                        String memberTeamName = GameData.playerTeam.get(memberName);
+                        String memberTeamName = GameData.TeamMembers.get(memberName);
 
                         if (!memberTeamName.equals(playerTeamName)) {
                             nearbyEntities.add((Player) e);

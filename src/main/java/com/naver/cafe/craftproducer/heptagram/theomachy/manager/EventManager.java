@@ -43,7 +43,7 @@ public class EventManager implements Listener {
 
             if (arrow.getShooter() instanceof Player) {
                 Player player = (Player) arrow.getShooter();
-                Ability ability = GameData.playerAbility.get(player.getName());
+                Ability ability = GameData.playerAbilities.get(player.getName());
 
                 if (ability != null && ability.abilityCode == 118) {
                     ability.onProjectileLaunch(event, player);
@@ -56,7 +56,7 @@ public class EventManager implements Listener {
     public static void onPlayerInteract(PlayerInteractEvent event) {
         if (GameHandler.start) {
             String playerName = event.getPlayer().getName();
-            Ability ability = GameData.playerAbility.get(playerName);
+            Ability ability = GameData.playerAbilities.get(playerName);
 
             if (ability != null && ability.activeType) {
                 ability.onPlayerInteract(event);
@@ -70,8 +70,8 @@ public class EventManager implements Listener {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.playerAbility.containsKey(playerName)) {
-                    GameData.playerAbility.get(playerName).onEntityDamage(event);
+                if (GameData.playerAbilities.containsKey(playerName)) {
+                    GameData.playerAbilities.get(playerName).onEntityDamage(event);
                 }
             }
             if (event.getCause() == DamageCause.LIGHTNING && event.getEntity() instanceof LivingEntity) {
@@ -89,8 +89,8 @@ public class EventManager implements Listener {
                 if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
                     String key1 = ((Player) event.getEntity()).getName();
                     String key2 = ((Player) event.getDamager()).getName();
-                    Ability ability1 = GameData.playerAbility.get(key1);
-                    Ability ability2 = GameData.playerAbility.get(key2);
+                    Ability ability1 = GameData.playerAbilities.get(key1);
+                    Ability ability2 = GameData.playerAbilities.get(key2);
 
                     if (ability1 != null) {
                         ability1.onEntityDamageByEntity(event);
@@ -104,7 +104,7 @@ public class EventManager implements Listener {
                     if (arrow.getShooter() instanceof Player) {
                         Player player = (Player) arrow.getShooter();
                         String key = player.getName();
-                        Ability ability = GameData.playerAbility.get(key);
+                        Ability ability = GameData.playerAbilities.get(key);
 
                         if (ability != null && ability.abilityCode == 7 || ability.abilityCode == 101) {
                             ability.onEntityDamageByEntity(event);
@@ -124,7 +124,7 @@ public class EventManager implements Listener {
                 e.onPlayerDeath(event);
             }
             Player player = event.getEntity();
-            Ability ability = GameData.playerAbility.get(player.getName());
+            Ability ability = GameData.playerAbilities.get(player.getName());
 
             if (ability != null) {
                 if (ability.abilityCode == 106 || ability.abilityCode == 3) {
@@ -141,8 +141,8 @@ public class EventManager implements Listener {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.playerAbility.containsKey(playerName)) {
-                    GameData.playerAbility.get(playerName).onFoodLevelChange(event);
+                if (GameData.playerAbilities.containsKey(playerName)) {
+                    GameData.playerAbilities.get(playerName).onFoodLevelChange(event);
                 }
             }
         }
@@ -154,8 +154,8 @@ public class EventManager implements Listener {
             if (event.getEntity() instanceof Player) {
                 String playerName = ((Player) event.getEntity()).getName();
 
-                if (GameData.playerAbility.containsKey(playerName)) {
-                    GameData.playerAbility.get(playerName).onEntityRegainHealth(event);
+                if (GameData.playerAbilities.containsKey(playerName)) {
+                    GameData.playerAbilities.get(playerName).onEntityRegainHealth(event);
                 }
             }
         }
@@ -165,7 +165,7 @@ public class EventManager implements Listener {
     public static void onBlockBreak(BlockBreakEvent event) {
         if (GameHandler.start) {
             String playerName = event.getPlayer().getName();
-            Ability ability = GameData.playerAbility.get(playerName);
+            Ability ability = GameData.playerAbilities.get(playerName);
 
             if (ability != null) {
                 ability.onBlockBreak(event);
@@ -179,25 +179,25 @@ public class EventManager implements Listener {
             Player player = event.getPlayer();
 
             if (Theomachy.ignoreBed) {
-                if (GameData.playerTeam.containsKey(player.getName())) {
-                    String teamName = GameData.playerTeam.get(player.getName());
-                    Location respawnLocation = GameData.spawnArea.get(teamName);
+                if (GameData.TeamMembers.containsKey(player.getName())) {
+                    String teamName = GameData.TeamMembers.get(player.getName());
+                    Location respawnLocation = GameData.spawnAreas.get(teamName);
 
                     if (respawnLocation != null) {
                         event.setRespawnLocation(respawnLocation);
                     }
                 }
             } else {
-                if (!event.isBedSpawn() && GameData.playerTeam.containsKey(player.getName())) {
-                    String teamName = GameData.playerTeam.get(player.getName());
-                    Location respawnLocation = GameData.spawnArea.get(teamName);
+                if (!event.isBedSpawn() && GameData.TeamMembers.containsKey(player.getName())) {
+                    String teamName = GameData.TeamMembers.get(player.getName());
+                    Location respawnLocation = GameData.spawnAreas.get(teamName);
 
                     if (respawnLocation != null) {
                         event.setRespawnLocation(respawnLocation);
                     }
                 }
             }
-            Ability ability = GameData.playerAbility.get(player.getName());
+            Ability ability = GameData.playerAbilities.get(player.getName());
 
             if (ability != null) {
                 if (ability.buffType) {
@@ -240,7 +240,7 @@ public class EventManager implements Listener {
     @EventHandler
     public void onSignChange(SignChangeEvent event) {
         if (GameHandler.start) {
-            Ability ability = GameData.playerAbility.get(event.getPlayer().getName());
+            Ability ability = GameData.playerAbilities.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.onSignChange(event);
@@ -251,7 +251,7 @@ public class EventManager implements Listener {
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (GameHandler.start) {
-            Ability ability = GameData.playerAbility.get(event.getPlayer().getName());
+            Ability ability = GameData.playerAbilities.get(event.getPlayer().getName());
 
             if (ability != null && ability.abilityCode == 119) {
                 ability.onBlockPlace(event);
@@ -265,7 +265,7 @@ public class EventManager implements Listener {
 
         GameData.onlinePlayers.put(player.getName(), player);
         if (GameHandler.start) {
-            Ability ability = GameData.playerAbility.get(player.getName());
+            Ability ability = GameData.playerAbilities.get(player.getName());
 
             if (ability != null && (ability.abilityCode == 2 || ability.abilityCode == 9)) {
                 ability.conditionSet();

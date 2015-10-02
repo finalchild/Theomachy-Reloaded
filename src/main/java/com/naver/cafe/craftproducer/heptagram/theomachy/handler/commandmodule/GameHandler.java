@@ -40,7 +40,7 @@ public class GameHandler {
     public static void stopGame(CommandSender sender) {
         if (PermissionChecker.checkSender(sender)) {
             if (ready) {
-                Collection<Ability> playerAbilityList = GameData.playerAbility.values();
+                Collection<Ability> playerAbilityList = GameData.playerAbilities.values();
 
                 for (Ability e : playerAbilityList) {
                     e.conditionReset();

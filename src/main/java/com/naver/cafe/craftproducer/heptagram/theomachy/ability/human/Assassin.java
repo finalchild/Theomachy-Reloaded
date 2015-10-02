@@ -90,8 +90,8 @@ public class Assassin extends Ability {
                 if (e instanceof Player) {
                     Player target = (Player) e;
 					
-                    String targetTeamName = GameData.playerTeam.get(target.getName());
-                    String playerTeamName = GameData.playerTeam.get(player.getName());
+                    String targetTeamName = GameData.TeamMembers.get(target.getName());
+                    String playerTeamName = GameData.TeamMembers.get(player.getName());
 
                     if ((targetTeamName == null) || !(targetTeamName.equals(playerTeamName))) {
                         Skill.use(player, material, stack2, 2, coolTime2);

@@ -12,8 +12,8 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecke
 public class AbilityInfo {
     public static void showAllAbilities(CommandSender sender) {
         if (PermissionChecker.checkSender(sender)) {
-            if (!GameData.playerAbility.isEmpty()) {
-                Collection<Ability> ability = GameData.playerAbility.values();
+            if (!GameData.playerAbilities.isEmpty()) {
+                Collection<Ability> ability = GameData.playerAbilities.values();
 
                 for (Ability e : ability) {
                     sender.sendMessage(ChatColor.GOLD + e.playerName + "  :  " + ChatColor.RED + e.abilityName);

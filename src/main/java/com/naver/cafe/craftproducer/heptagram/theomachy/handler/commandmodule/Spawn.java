@@ -31,7 +31,7 @@ public class Spawn {
                 location.setX(location.getX() + 0.5);
                 location.setZ(location.getZ() + 0.5);
                 location.setYaw((int) player.getLocation().getYaw());
-                GameData.spawnArea.put(teamName, location);
+                GameData.spawnAreas.put(teamName, location);
                 player.sendMessage("현재 위치가 팀 " + ChatColor.DARK_AQUA + teamName + ChatColor.WHITE + " 의 스폰지역으로 설정되었습니다.");	
             }
         }
