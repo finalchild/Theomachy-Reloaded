@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 
 public class Skill {
 	
@@ -14,15 +14,15 @@ public class Skill {
         if (coolTime > 0) {
             switch (abilityCase) {
             case 0:
-                CoolTime.cool0.put(player.getName(), coolTime);
+                CoolTimer.cool0.put(player.getName(), coolTime);
                 break;
 
             case 1:
-                CoolTime.cool1.put(player.getName(), coolTime);
+                CoolTimer.cool1.put(player.getName(), coolTime);
                 break;
 
             case 2:
-                CoolTime.cool2.put(player.getName(), coolTime);
+                CoolTimer.cool2.put(player.getName(), coolTime);
                 break;
             }
         }

@@ -17,7 +17,7 @@ import org.bukkit.util.Vector;
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.DirectionChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
@@ -67,8 +67,8 @@ public class Assassin extends Ability {
         Block b = temp.add(0, -1, 0).getBlock();
 
         if ((b.isEmpty()) || (b.getType() == Material.SNOW) || (b.getType() == Material.STEP)) {	
-            if ((!CoolTime.cool0.containsKey(playerName + "0") && (PlayerInventory.checkItem(player, material, stack1)))) {
-                CoolTime.cool0.put(playerName + "0", coolTime1);
+            if ((!CoolTimer.cool0.containsKey(playerName + "0") && (PlayerInventory.checkItem(player, material, stack1)))) {
+                CoolTimer.cool0.put(playerName + "0", coolTime1);
                 PlayerInventory.removeItem(player, material, stack1);
                 World world = player.getWorld();
                 Location location = player.getLocation();

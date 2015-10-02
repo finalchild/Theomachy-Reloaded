@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.ServerSetting;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.timer.GameReadyTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.timer.TipTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
@@ -30,7 +30,7 @@ public class GameHandler {
 
                 t.schedule(new GameReadyTimer(), 0, 1000);
                 t.schedule(new TipTimer(), 0, 1000);
-                t.schedule(new CoolTime(), 0, 1000);
+                t.schedule(new CoolTimer(), 0, 1000);
             } else {
                 sender.sendMessage("게임이 이미 시작되었습니다.");
             }
@@ -47,7 +47,7 @@ public class GameHandler {
                 }
                 ready = false;
                 start = false;
-                CoolTime.ini = true;
+                CoolTimer.ini = true;
                 List<World> worlds = Bukkit.getWorlds();
 
                 for (World world : worlds) {

@@ -13,7 +13,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 import java.util.TimerTask;
 
-public class CoolTime extends TimerTask {
+public class CoolTimer extends TimerTask {
     public static boolean ini = false;
     public static HashMap<String, Integer> cool0 = new HashMap<String, Integer>();
     public static HashMap<String, Integer> cool1 = new HashMap<String, Integer>();

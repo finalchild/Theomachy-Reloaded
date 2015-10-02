@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
@@ -85,7 +85,7 @@ public class Artemis extends Ability {
         Player player = (Player) arrow.getShooter();
         Player target = (Player) event.getEntity();
 
-        if (!CoolTime.cool0.containsKey(target.getName() + "1")) // 무적 코드 1번
+        if (!CoolTimer.cool0.containsKey(target.getName() + "1")) // 무적 코드 1번
         {
             Random random = new Random();
 

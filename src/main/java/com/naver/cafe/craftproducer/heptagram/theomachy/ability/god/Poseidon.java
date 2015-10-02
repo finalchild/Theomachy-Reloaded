@@ -15,7 +15,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
@@ -141,9 +141,9 @@ public class Poseidon extends Ability {
 
         if (event.getCause() == DamageCause.DROWNING) {
             event.setCancelled(true);
-            CoolTime.cool0.put(playerName + "0", 7);
+            CoolTimer.cool0.put(playerName + "0", 7);
             T_Message.onPassiveEnabled(player, 0);
-        } else if (CoolTime.cool0.containsKey(player.getName() + "0")) {
+        } else if (CoolTimer.cool0.containsKey(player.getName() + "0")) {
             int rn = (int) (Math.random() * 3);
 
             if (rn == 0) {

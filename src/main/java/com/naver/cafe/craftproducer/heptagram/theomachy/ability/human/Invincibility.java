@@ -11,7 +11,7 @@ import org.bukkit.potion.PotionEffectType;
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTime;
+import com.naver.cafe.craftproducer.heptagram.theomachy.timer.CoolTimer;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CoolTimeChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.EventFilter;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
@@ -58,7 +58,7 @@ public class Invincibility extends Ability {
     private void leftAction(Player player) {
         if (CoolTimeChecker.check(player, 1) && PlayerInventory.checkItem(player, material, stack1)) {
             Skill.use(player, material, stack1, 1, coolTime1); {
-                CoolTime.cool0.put(playerName + "1", 7);
+                CoolTimer.cool0.put(playerName + "1", 7);
             }
         }
     }
@@ -71,7 +71,7 @@ public class Invincibility extends Ability {
     }
 	
     public void onEntityDamage(EntityDamageEvent event) {
-        if (CoolTime.cool0.containsKey(playerName + "1")) {
+        if (CoolTimer.cool0.containsKey(playerName + "1")) {
             event.setCancelled(true);
             event.getEntity().setFireTicks(0);
         }
