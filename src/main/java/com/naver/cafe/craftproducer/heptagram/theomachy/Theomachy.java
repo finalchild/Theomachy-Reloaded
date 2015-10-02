@@ -8,7 +8,6 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.db.PluginData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.manager.CommandManager;
 import com.naver.cafe.craftproducer.heptagram.theomachy.manager.EventManager;
 
@@ -22,12 +21,14 @@ public class Theomachy extends JavaPlugin {
     public static boolean monster = true;
     public static int difficulty = 1;
 	
+    private static Theomachy plugin;
     public static Logger log;
     public CommandManager cm;
 	
     public void onEnable() {
-        Theomachy.log = this.getLogger();
-        getLogger().info("플러그인 활성화  " + PluginData.BUILD_NUMBER + "  " + PluginData.VERSION);
+    	plugin = this;
+        log = this.getLogger();
+        getLogger().info("플러그인 활성화  " + this.getDescription().getVersion());
         getLogger().info("등록된 능력");
         getLogger().info("신: " + AbilityData.GOD_ABILITY_NUMBER + ", 인간: " + AbilityData.HUMAN_ABILITY_NUMBER);
         getLogger().info("총합: " + AbilityData.ABILITY_NUMBER);
@@ -60,5 +61,9 @@ public class Theomachy extends JavaPlugin {
         getLogger().info("몬스터 스폰 : " + String.valueOf(monster));
         getLogger().info("난이도 : " + String.valueOf(difficulty));
         getLogger().info("---------------------------------------");
+    }
+    
+    public static Theomachy getPlugin() {
+    	return plugin;
     }
 }

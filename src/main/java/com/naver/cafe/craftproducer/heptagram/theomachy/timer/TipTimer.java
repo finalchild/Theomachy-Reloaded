@@ -7,7 +7,6 @@ import org.bukkit.ChatColor;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.db.PluginData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 public class TipTimer extends TimerTask {
@@ -72,8 +71,7 @@ public class TipTimer extends TimerTask {
             case 600:
                 Bukkit.broadcastMessage(ChatColor.YELLOW + "[ Tip ]");
                 Bukkit.broadcastMessage(ChatColor.RED + "신들의 전쟁 (Theomachy) - Reloaded");
-                Bukkit.broadcastMessage("버전  : " + PluginData.VERSION);
-                Bukkit.broadcastMessage("빌드  : " + PluginData.BUILD_NUMBER);
+                Bukkit.broadcastMessage("버전  : " + Theomachy.getPlugin().getDescription().getVersion());
                 Bukkit.broadcastMessage("제작자 : 파차(Final Child)");
                 Bukkit.broadcastMessage("원작자  : 칠각별(Heptagram)");
                 Bukkit.broadcastMessage(ChatColor.GREEN + "http://blog.naver.com/septagram/");
