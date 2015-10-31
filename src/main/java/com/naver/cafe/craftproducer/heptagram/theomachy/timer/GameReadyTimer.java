@@ -17,8 +17,8 @@ import org.bukkit.entity.Player;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PlayerInventory;
 
 public class GameReadyTimer extends TimerTask {

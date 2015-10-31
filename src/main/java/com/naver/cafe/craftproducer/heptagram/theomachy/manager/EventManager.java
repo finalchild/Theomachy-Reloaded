@@ -29,8 +29,8 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 public class EventManager implements Listener {
 	

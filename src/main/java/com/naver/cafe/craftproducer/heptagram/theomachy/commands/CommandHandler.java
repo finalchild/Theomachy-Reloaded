@@ -1,18 +1,10 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.handler;
+package com.naver.cafe.craftproducer.heptagram.theomachy.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.AbilityInfo;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.AbilitySet;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.CoolTimeHandler;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Help;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Spawn;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.Team;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.TeamInfo;
 
 public class CommandHandler {
     public static void handleT(CommandSender sender, Command command, String label, String[] data) {

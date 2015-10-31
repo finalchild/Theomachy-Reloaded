@@ -6,8 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 
 public class TipTimer extends TimerTask {
     int count = 1;

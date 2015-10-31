@@ -7,8 +7,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.CommandManager;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.CommandTheomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.manager.CommandManager;
 import com.naver.cafe.craftproducer.heptagram.theomachy.manager.EventManager;
 
 public class Theomachy extends JavaPlugin {
@@ -23,17 +24,18 @@ public class Theomachy extends JavaPlugin {
 	
     private static Theomachy plugin;
     public static Logger log;
-    public CommandManager cm;
 	
     public void onEnable() {
     	plugin = this;
-        log = this.getLogger();
+        log = getLogger();
         getLogger().info("플러그인 활성화  " + this.getDescription().getVersion());
         getLogger().info("등록된 능력");
         getLogger().info("신: " + AbilityData.GOD_ABILITY_NUMBER + ", 인간: " + AbilityData.HUMAN_ABILITY_NUMBER);
         getLogger().info("총합: " + AbilityData.ABILITY_NUMBER);
         getLogger().info("플러그인 스크립트 적용중");
-        cm = new CommandManager(this);
+        getCommand("theomachy").setExecutor(new CommandTheomachy());
+        getCommand("t").setExecutor(new CommandTheomachy());
+        getCommand("x").setExecutor(new CommandTarget());
         
         ShapedRecipe recipe = new ShapedRecipe(new ItemStack(Material.BLAZE_ROD)).shape(new String[] { "|", "|", "|"}).setIngredient('|', Material.STICK);
         getServer().addRecipe(recipe);

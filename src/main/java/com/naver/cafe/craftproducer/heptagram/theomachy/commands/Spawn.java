@@ -1,4 +1,4 @@
-package com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule;
+package com.naver.cafe.craftproducer.heptagram.theomachy.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

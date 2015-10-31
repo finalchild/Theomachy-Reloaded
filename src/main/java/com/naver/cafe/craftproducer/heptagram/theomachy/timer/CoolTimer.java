@@ -7,8 +7,8 @@ import java.util.Map.Entry;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.Theomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
-import com.naver.cafe.craftproducer.heptagram.theomachy.handler.commandmodule.GameHandler;
 import com.naver.cafe.craftproducer.heptagram.theomachy.message.T_Message;
 
 import java.util.TimerTask;
