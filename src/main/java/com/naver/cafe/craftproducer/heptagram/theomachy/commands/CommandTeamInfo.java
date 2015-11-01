@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 
-public class TeamInfo {
+public class CommandTeamInfo {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (data.length >= 2) {
             String teamName = data[1];

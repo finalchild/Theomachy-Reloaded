@@ -9,8 +9,8 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.ability.Ability;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
-public class AbilityInfo {
-    public static void showAllAbilities(CommandSender sender) {
+public class CommandAbilities {
+    public static void onCommand(CommandSender sender) {
         if (PermissionChecker.checkSender(sender)) {
             if (!GameData.playerAbilities.isEmpty()) {
                 Collection<Ability> ability = GameData.playerAbilities.values();

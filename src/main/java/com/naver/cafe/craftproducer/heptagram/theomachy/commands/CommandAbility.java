@@ -45,7 +45,7 @@ import com.naver.cafe.craftproducer.heptagram.theomachy.utility.CodeHelper;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.RandomNumberConstuctor;
 
-public class AbilitySet {
+public class CommandAbility {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.checkSender(sender)) {
             if (!GameHandler.ready) {

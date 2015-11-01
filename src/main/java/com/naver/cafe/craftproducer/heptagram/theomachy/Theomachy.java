@@ -49,8 +49,8 @@ public class Theomachy extends JavaPlugin {
         entitiesRemove = getConfig().getBoolean("Remove Entities");
         ignoreBed = getConfig().getBoolean("Ignore Bed");
         autoSave = getConfig().getBoolean("Auto Save");
-        animal = getConfig().getBoolean("Spawn Animal");
-        monster = getConfig().getBoolean("Spawn Monster");
+        animal = getConfig().getBoolean("CommandSpawn Animal");
+        monster = getConfig().getBoolean("CommandSpawn Monster");
         difficulty = getConfig().getInt("Difficulty");
 		
         getLogger().info("---------------------------------------");

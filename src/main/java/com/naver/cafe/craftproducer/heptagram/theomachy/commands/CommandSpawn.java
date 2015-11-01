@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
-public class Spawn {
+public class CommandSpawn {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.checkSender(sender)) {
             if (data.length == 1) {

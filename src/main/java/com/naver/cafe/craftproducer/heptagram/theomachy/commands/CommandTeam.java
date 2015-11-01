@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.GameData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.utility.PermissionChecker;
 
-public class Team {
+public class CommandTeam {
     public static void onCommand(CommandSender sender, Command command, String label, String[] data) {
         if (PermissionChecker.checkSender(sender)) {
             if (data.length > 2) {
