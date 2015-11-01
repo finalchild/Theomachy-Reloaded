@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.naver.cafe.craftproducer.heptagram.theomachy.commands.CommandManager;
+import com.naver.cafe.craftproducer.heptagram.theomachy.commands.CommandTarget;
 import com.naver.cafe.craftproducer.heptagram.theomachy.commands.CommandTheomachy;
 import com.naver.cafe.craftproducer.heptagram.theomachy.db.AbilityData;
 import com.naver.cafe.craftproducer.heptagram.theomachy.manager.EventManager;
